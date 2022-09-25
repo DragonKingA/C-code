@@ -1004,55 +1004,55 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 下标 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18···
 年龄11 8 7 6 5 5 4 4 4 3  3  3  3  2  2  2  2  2  2···
 */
-#include <stdio.h>
-int main(){
-    int year;
-    long long int sum;
-    long long int temp;
-    long long int AgeOfCow[10000];
-    //cowIndex用于记录下次产的牛于数组的索引
-    while(scanf("%d",&year) != EOF,year){   
+// #include <stdio.h>
+// int main(){
+//     int year;
+//     long long int sum;
+//     long long int temp;
+//     long long int AgeOfCow[10000];
+//     //cowIndex用于记录下次产的牛于数组的索引
+//     while(scanf("%d",&year) != EOF,year){   
         
-        sum=1;
-        temp=sum=1;
-        AgeOfCow[0]= 3;
-        for(long long int i=1;i<10000;i++){
-            AgeOfCow[i]=0;
-        }
+//         sum=1;
+//         temp=sum=1;
+//         AgeOfCow[0]= 3;
+//         for(long long int i=1;i<10000;i++){
+//             AgeOfCow[i]=0;
+//         }
 
-        for(long long int i=1;i<year;i++){//除去第一年
-//year = 2 -- >sum=2 
-//year = 3 -- >sum=3
-//year = 4 -- >sum=4
-//year = 5 -- >sum=
-//···
-            for(long long int j=0;j<sum;j++){
-                AgeOfCow[j]++;
-                if(AgeOfCow[j] > 3){
-                    AgeOfCow[temp]++;
-                    temp++;
-                }
-            }
-            sum = temp;
-        }
+//         for(long long int i=1;i<year;i++){//除去第一年
+// //year = 2 -- >sum=2 
+// //year = 3 -- >sum=3
+// //year = 4 -- >sum=4
+// //year = 5 -- >sum=
+// //···
+//             for(long long int j=0;j<sum;j++){
+//                 AgeOfCow[j]++;
+//                 if(AgeOfCow[j] > 3){
+//                     AgeOfCow[temp]++;
+//                     temp++;
+//                 }
+//             }
+//             sum = temp;
+//         }
         
-        //计算到第year年总牛数sum
-        // for(int i=0;i<cowIndex;i++){
-        //     if(AgeOfCow[i]>3){
-        //         sum += AgeOfCow[i] - 3;
-        //     }
-        // }
-        printf("%lld\n",sum);
+//         //计算到第year年总牛数sum
+//         // for(int i=0;i<cowIndex;i++){
+//         //     if(AgeOfCow[i]>3){
+//         //         sum += AgeOfCow[i] - 3;
+//         //     }
+//         // }
+//         printf("%lld\n",sum);
 
-    }
-    return 0;
-}
+//     }
+//     return 0;
+// }
 //为什么输出溢出（0<year<55）不能覆盖全部year
-//使用递归
+//使用递归····
 
 
 
-
+//
 
 
 

@@ -1806,14 +1806,14 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //     }
 
 
-
-
 //     for(int i=0;i<n;i++){
 //         printf("%s\n",str[index[i]]);
 //     }
 
 //     return 0;
 // }
+
+
 
 // #include <stdio.h>
 // #include <string.h>
@@ -1864,6 +1864,14 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //     //如果1的个数相同，按ascii码大小排序strcmp(s1,s2)>0  大的s1在后
 //     return 0;
 // }
+
+//用结构体方法写
+
+
+
+
+
+
 
 
 
@@ -1993,33 +2001,33 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//
-#include <stdio.h>
-int sum=0;
-int f(int n,int d){
-    int temp,r;
-    if(n!=0){
-        r=n%d;
-        n/=d;
-        sum+=r;
-        f(n,d);
-    }else{
-        temp=sum;
-        sum=0;
-        return temp;
-    }
-}
-int main(){
-    int num;
-    while(scanf("%d",&num) != EOF,num){
-        if(f(num,16)==f(num,12) && f(num,10)==f(num,16)){
-            printf("%d is a Sky Number.\n",num);
-        }else{
-            printf("%d is not a Sky Number.\n",num);
-        }
-    }
-    return 0;
-}
+//sky数
+// #include <stdio.h>
+// int sum=0;
+// int f(int n,int d){
+//     int temp,r;
+//     if(n!=0){
+//         r=n%d;
+//         n/=d;
+//         sum+=r;
+//         f(n,d);
+//     }else{
+//         temp=sum;
+//         sum=0;
+//         return temp;
+//     }
+// }
+// int main(){
+//     int num;
+//     while(scanf("%d",&num) != EOF,num){
+//         if(f(num,16)==f(num,12) && f(num,10)==f(num,16)){
+//             printf("%d is a Sky Number.\n",num);
+//         }else{
+//             printf("%d is not a Sky Number.\n",num);
+//         }
+//     }
+//     return 0;
+// }
 
 
 

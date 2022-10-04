@@ -101,8 +101,8 @@ void main(){
     //scanf("%7s",word);
     //scanf("%7s",word2);
     //一行输入123456789时，第一个scanf接收前7个字符结束，第二个scanf继续接收后面7个字符，接收完为止
-    printf("%s\n",word);//1234567
-    printf("%s\n",word2);//89
+    // printf("%s\n",word);//1234567
+    // printf("%s\n",word2);//89
 
     char buffer[100] = "";//这是一个长度为 100 的空字符串，buffer[0] = '\0'
     char buffer0[]="";//这是一个长度被定义为 1 的空字符串，buffer0[0] = '\0'
@@ -140,12 +140,12 @@ void main(){
     //     p = malloc(1);
     //     *p = 0;
     // }   
-    //由于向空指针（指针p的地址为空或者说为NULL或者说为0）传值，如果没有把null地址（空地址）占用，就会一直分配空间
+    //由于向空指针（指针p存放的地址为空或者说为NULL或者说为0）传值，如果没有把null地址（空地址）占用，就会一直分配空间
 
     char *ab[100];
-    //可存放100个地址，可分别指向100个字符串
-    scanf("%s",ab[1]);
-    printf("%s\n",ab[1]);
+    //可存放100个地址，可分别指向100个随意长度的字符串
+    //scanf("%s",ab[1]);
+    //printf("%s\n",ab[1]);
 
 
 
@@ -159,13 +159,15 @@ void main(){
 
 
     //关于 string.h 中常见函数————————————————————————————————————————————————————————————————————————————————————————————————————
-
-    //1.strlen() 返回一个 字符数组或字符指针 的 字符串长度（不包括'\0'）,
+    //1.strlen(str) -- size_t strlen(const char *str) 
+    //返回一个 字符数组或字符指针 的 字符串长度（不包括'\0'）,
     //返回值类型为 无符号长整型整数 (long unsigned) ，故用 %lu 接收
     printf("w1的strlen=%lu\n",strlen(w1));//6,因为 字符串长度 不包括其标识符'\0'
     printf("w1的sizeof=%lu\n",sizeof(w1));//7,而 数组或指针实际长度 包括标识符占据的空间
 
-    //2.strcmp(s1,s2)即string compare 比较两个字符串
+
+    //2.strcmp(s1,s2) -- int strcmp(const char*str1,const char *str2)
+    //即string compare 比较两个字符串
     //返回整数,  s1 == s2 --> 0 , s1 > s2 --> 1 , s1 < s2 --> -1 
     char cmp1[]="abc";
     char cmp2[]="abc ";//"abc " - "abc" = 32,依ASCII值，空格 - '\0' = 32 - 0 = 32
@@ -176,11 +178,16 @@ void main(){
     printf("strcmp返回值3=%d\n",strcmp(cmp1,cmp2_t));//两者字符串相同，故返回0
     printf("cmp1==cmp2的返回值=%d\n",cmp1==cmp2);//判断两者地址是否相同，由于同值的不同数组变量的地址不同，则返回0
 
-    //3.strcpy(dst,src)
-    //将src的字符串拷贝到dst中，随后函数返回dst
+
+    //3.strcpy(dst,src) -- char *strcpy(char *restrict dst,const char *restrict src)
+    //将src的字符串拷贝到dst中，随后函数返回dst (直接返回dst可以方便代码链接，不用另起一行对dst操作)
+    //其中关键字restrict表明src和dst不重叠
     char destination[4];
     strcpy(destination,"jkl");
     printf("destination=%s\n",destination);
+    char *src = "abc";
+    char *dst=(char *)malloc(strlen(src) + 1);
+
 
     //4.strcat(s1,s2)
     //把s2字符串拷贝接到s1字符串尾部，变成一个长的字符串，随后函数返回s1。注意接收者s1空间必须足够大
@@ -189,18 +196,41 @@ void main(){
     //该函数是从 目标字符串s1 索引位置为strlen(s1)开始拷贝，因为s1[strlen(s1)] = '\0',
     //最后s1的尾部标识'\0'是由s2拷贝而来的，而s1原来的'\0'被s2的第一个字符所覆盖
 
+
     //5.以上函数strcpy,strcat不安全，而对应安全的版本是
     //strncpy(dst,src,n) 字符串src中最多n个字符复制到字符数组dst中
     //strncat(s1,s2,n)   将字符串s2中前n个字符连接到s1中
 
+
     //6.寻找字符串中的某个字符
-    //strchr(str,c) 从str字符串的端部开始找一个字符c
-    //strrchr(str,c)从str字符串的尾部开始找一个字符c
+    //strchr(str,c) -- char *strchr(const char *s,int c)
+    //从str字符串的端部开始找一个字符c
+
+    //strrchr(str,c) -- char *strrchr(const char *s,int c)
+    //从str字符串的尾部开始找一个字符c
     //没找到都会返回NULL，找到了会返回一个 指针 ，指向找到的字符的位置
+    char ss[] = "Hello world";
+    char *pp7 = strchr(ss,'l');
+    printf("strchr=%s\n",pp7);// 输出 llo,world!
+    // pp7 = strchr(pp7+1,'l');//从第二个'l'开始
+    // printf("strchr=%s\n",pp7);// 输出 lo,world!
+
+    char cr = *pp7;//暂存
+    printf("ss=%s\n",ss);//ss="Hello world"
+    *pp7 = '\0';
+    printf("ss=%s\n",ss);//ss="He"
+    // *pp7 = cr;//还原ss
+    // printf("ss=%s\n",ss);//ss="Hello world"
+    char *temp = (char *)malloc(strlen(ss)+1);
+    strcpy(temp,ss);
+    printf("temp=%s\n",temp);//"He"
+    free(temp);
 
 
-
-
+    //7.strstr(s1,s2) -- char *strstr(const char *s1,const char *s2)
+    //区分大小写
+    //strcase(s1,s2) -- char *strcasestr(const char *s1,const char *s2)
+    //忽略大小写
 
 
 

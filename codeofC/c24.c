@@ -2031,8 +2031,101 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
+//a(n)=a(n-1)*a(n-2)*a(n-3) - 1 , 其中a1=1,a2=2,a3=3
+//求第20221006项的a(n)值
+// #include <stdio.h>
+// long long int a1=1,a2=2,a3=3,a4=5;
+// long long int f(long long int n){
+//     while(n>3){
+//         a4=a1*a2*a3-1;
+//         a1=a2;
+//         a2=a3;
+//         a3=a4%1000000;
+//         n--;
+//     }
+//     return a4;
+//     //递归（算法复杂度O(n)过大）：
+//     // if(n > 3)
+//     //     return (f(n-1)%1000)*(f(n-2)%1000)*(f(n-3)%1000) - 1;
+//     // else
+//     //     return arr[n-1];
+// }
+// int main(){
+//     int num;
+//     scanf("%d",&num);//
+//     printf("%lld\n",f(num));
+//     return 0;
+// }
+//a7=62929 a8=792024393
 
 
+
+//数集中有几个数是等于数集中另外两个不同的数之和
+#include <stdio.h>
+int main(){
+    int arr[101][101];
+    int n,count=0;
+    scanf("%d",&n);
+    //录入表格的表头行和表头列
+    /*若输入1 2 3 4 5，则二维数组图像化：
+  i 0 1 2 3 4 5
+j  
+0     1 2 3 4 5
+1   1
+2   2
+3   3
+4   4
+5   5
+    */
+    //arr[0][0]不具有意义
+    for(int i=1;i<=n;i++){
+        scanf("%d",&arr[0][i]);
+        arr[i][0] = arr[0][i];
+    }
+    //录入两数和
+    /*二维数组图像化：
+  i 0 1 2 3 4 5
+j  
+0     1 2 3 4 5
+1   1 X 3 4 5 6
+2   2 X X 5 6 7
+3   3 X X X 7 8
+4   4 X X X X 9
+5   5 X X X X X
+    */
+    for(int i=1;i<=n;i++){
+        for(int j=i;j<=n;j++){
+            if(i != j)
+                arr[i][j] = arr[0][j] + arr[i][0];
+        }
+    }
+    //判断，并对已计数项废除（赋予值-1）
+    for(int m=1;m<=n;m++){
+        for(int i=1;i<=n;i++){
+            for(int j=i;j<=n;j++){
+                if(i != j && arr[i][j] == arr[0][m]){
+                    count++;
+                    arr[0][m] = -1;
+                }
+            }
+        }
+    }
+    printf("%d\n",count);
+    return 0;
+}
+//
+// for(int m=1;m<=n;m++){
+            //     if(i != j && arr[i][j] == arr[0][m]){
+            //         arr[0][m] = -1;
+            //         count++;
+            //     }
+            // }
+    // for(int i=1;i<=n;i++){
+    //     for(int j=i;j<=n;j++){
+    //         if(i!=j)
+    //         printf("arr[%d][%d]=%d\n",i,j,arr[i][j]);
+    //     }
+    // }
 
 
 

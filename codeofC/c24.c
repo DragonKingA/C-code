@@ -1348,7 +1348,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //2.
 // #include <stdio.h>
 // int GetFib(int n){
-//     int a,b,c;
+//     long long int a,b,c;
 //     a=b=c=1;
 //     while(n>2){
 //         c=a+b;
@@ -1361,7 +1361,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 // int main(){
 //     int num;
 //     scanf("%d",&num);
-//     printf("%d\n",GetFib(num));
+//     printf("%lld\n",GetFib(num));
 //     return 0;
 // }
 
@@ -2061,71 +2061,59 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 //数集中有几个数是等于数集中另外两个不同的数之和
-#include <stdio.h>
-int main(){
-    int arr[101][101];
-    int n,count=0;
-    scanf("%d",&n);
-    //录入表格的表头行和表头列
-    /*若输入1 2 3 4 5，则二维数组图像化：
-  i 0 1 2 3 4 5
-j  
-0     1 2 3 4 5
-1   1
-2   2
-3   3
-4   4
-5   5
-    */
-    //arr[0][0]不具有意义
-    for(int i=1;i<=n;i++){
-        scanf("%d",&arr[0][i]);
-        arr[i][0] = arr[0][i];
-    }
-    //录入两数和
-    /*二维数组图像化：
-  i 0 1 2 3 4 5
-j  
-0     1 2 3 4 5
-1   1 X 3 4 5 6
-2   2 X X 5 6 7
-3   3 X X X 7 8
-4   4 X X X X 9
-5   5 X X X X X
-    */
-    for(int i=1;i<=n;i++){
-        for(int j=i;j<=n;j++){
-            if(i != j)
-                arr[i][j] = arr[0][j] + arr[i][0];
-        }
-    }
-    //判断，并对已计数项废除（赋予值-1）
-    for(int m=1;m<=n;m++){
-        for(int i=1;i<=n;i++){
-            for(int j=i;j<=n;j++){
-                if(i != j && arr[i][j] == arr[0][m]){
-                    count++;
-                    arr[0][m] = -1;
-                }
-            }
-        }
-    }
-    printf("%d\n",count);
-    return 0;
-}
-//
-// for(int m=1;m<=n;m++){
-            //     if(i != j && arr[i][j] == arr[0][m]){
-            //         arr[0][m] = -1;
-            //         count++;
-            //     }
-            // }
-    // for(int i=1;i<=n;i++){
-    //     for(int j=i;j<=n;j++){
-    //         if(i!=j)
-    //         printf("arr[%d][%d]=%d\n",i,j,arr[i][j]);
-    //     }
-    // }
+// #include <stdio.h>
+// int main(){
+//     int arr[101][101];
+//     int n,count=0;
+//     scanf("%d",&n);
+//     //录入表格的表头行和表头列
+//     /*若输入1 2 3 4 5，则二维数组图像化：
+//   i 0 1 2 3 4 5
+// j  
+// 0     1 2 3 4 5
+// 1   1
+// 2   2
+// 3   3
+// 4   4
+// 5   5
+//     */
+//     //arr[0][0]不具有意义
+//     for(int i=1;i<=n;i++){
+//         scanf("%d",&arr[0][i]);
+//         arr[i][0] = arr[0][i];
+//     }
+//     //录入两数和
+//     /*二维数组图像化：
+//   i 0 1 2 3 4 5
+// j  
+// 0     1 2 3 4 5
+// 1   1 X 3 4 5 6
+// 2   2 X X 5 6 7
+// 3   3 X X X 7 8
+// 4   4 X X X X 9
+// 5   5 X X X X X
+//     */
+//     for(int i=1;i<=n;i++){
+//         for(int j=i;j<=n;j++){
+//             if(i != j)
+//                 arr[i][j] = arr[0][j] + arr[i][0];
+//         }
+//     }
+//     //判断，并对已计数项废除（赋予值-1）
+//     for(int m=1;m<=n;m++){
+//         for(int i=1;i<=n;i++){
+//             for(int j=i;j<=n;j++){
+//                 if(i != j && arr[i][j] == arr[0][m]){
+//                     count++;
+//                     arr[0][m] = -1;
+//                 }
+//             }
+//         }
+//     }
+//     printf("%d\n",count);
+//     return 0;
+// }
+
 
 
 

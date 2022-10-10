@@ -1,16 +1,18 @@
 #include <stdio.h>
 #include <stdbool.h>
+#pragma pack(16) //64位系统的基本对齐系数（默认对齐数）是8 （32位系统默认是4）
 
+//#pragma pack(8) //作用于该句后结构体，自定义默认对齐数
 struct pointA{
     int m;
     int n;
 };
-
+//#pragma pack() //将默认对齐数还原为默认值
 struct pointA pa = {0,0};
 
 void getStruct(struct pointA p){
     printf("p 输入m n:");
-    scanf("%d %d",&p.m,&p.n);
+    //scanf("%d %d",&p.m,&p.n);
     printf("m=%d n=%d\n",p.m,p.n);
 }
 
@@ -22,14 +24,14 @@ void outputStruct(struct pointA p){
 struct pointA getStruct_Ex(void){
     struct pointA t;
     printf("t 输入m n:");
-    scanf("%d %d",&t.m,&t.n);
+    //scanf("%d %d",&t.m,&t.n);
     return t;
 }
 
 
 struct pointA* getStruct_p(struct pointA *pm){
     printf("pm 输入m n:");
-    scanf("%d %d",&pm->m,&pm->n);
+    //scanf("%d %d",&pm->m,&pm->n);
     printf("m=%d n=%d\n",pm->m,pm->n);
 }
 
@@ -144,6 +146,94 @@ void main(){
     L1.p1.a = 1;
     Lp -> p1.a = 1; 
 
+//关于结构体的占用字节数
+    //内存对齐 相关概念：
+    //1.基本对齐系数（默认对齐数）：
+        //默认情况：由 编译器 和 操作系统 决定，一般来说 32位系统对齐系数 为 4（字节）；64位系统对齐系数 为 8（字节）
+        //自定义情况：通过 #pragma pack(n) 定义
+    //2.最大类型字节数：
+        //数据结构的所有 基本类型 成员中，所占字节数 最多 的成员的字节长度
+        //如这里对于 结构类型A 来说，其最大类型字节数就是 sizeof(int) 即 4
+    //3.结构体对齐系数：
+        //结构体本身的字节大小 必须是 结构体对齐系数 的整数倍
+        //*结构体对齐系数 = MIN { 基本对齐系数 , 最大类型字节数 }
+        //如对于 结构类型A , 结构体A 的对齐系数为MIN{8,sizeof(int)} = 4
+
+
+    struct A{
+        char c1;
+        int i1;
+        char c2;
+    }A1;
+//0-7 8 9-11 12-15 16
+    struct B{
+        //各成员定义的顺序一般会影响最终结构体的字节数大小
+        //要在内存对齐中节省空间： 让占用空间小的成员尽量集中在一起。比如如下将char和int置于邻位
+        double d;
+        char c;
+        int i;
+        /*
+        若顺序为:
+        char c;
+        double d;
+        int i;
+        那么字节数 = 8(7) + 8 + 8(4) = 24 , 将会浪费11个字节数
+        */
+    }B1;
+    
+    struct B_{
+        //各成员定义的顺序一般会影响最终结构体的字节数大小
+        //要在内存对齐中节省空间： 让占用空间小的成员尽量集中在一起。比如如下将char和int置于邻位
+        double d;
+        char c;
+        int i;
+        int arr[10];//相当于10个int类型变量
+        // 8 + 8[1+4](3) + 8*5 = 56
+    }B2;
+
+    struct C{
+        short int si;//字节数为2
+        struct B C_B;//sizeof(struct B) = 16,且该成员中的最大类型字节数为sizeof(double)=8
+        char c0;
+        //如果成员也是一个数据结构，则结构C的对齐数一定是该成员中“最大类型字节数”的整数倍
+        //那么这里MIN{8,sizeof(short int),8(这个是子结构体最大成员字节数)} = 2,但是如上前提，对齐数直接就为8 （取决于sizeof(struct B)）
+        //sizeof(struct C) = 8(6) + 16[8 + 8] + 8(7)= 32
+    }C1;
+//0-15 16-31 32    0-11 12-15 16-31 32
+    struct C_{
+        long double ld;//16  (32位下占12个字节,64位占16个)
+        struct B C_B;//sizeof(struct B) = 16,且该成员中的最大类型字节数为sizeof(double)=8
+        char c0;
+        //那么这里MIN{8,16,8(这个是子结构体最大成员字节数)} = 8
+        //sizeof(struct C_) = 
+    }C2;
+
+    printf("sizeof(struct A)=%lu\n",sizeof(struct A));//12  =  4(3) + 4 + 4(3) //括号内为浪费掉的字节数,共浪费了6个字节
+    printf("sizeof(struct B)=%lu\n",sizeof(struct B));//16  =  8 + 8[1+4](3)   //共浪费3个字节
+    printf("sizeof(struct B_)=%lu\n",sizeof(struct B_));//56 = 8 + 8[1+4](3) + 8[4+4] * 5
+    printf("sizeof(struct C)=%lu\n",sizeof(struct C));//32  =  8(6) + 16[8 + 8] + 8(7) //共浪费13个字节
+    printf("sizeof(struct C_)=%lu\n",sizeof(struct C_));//48？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？
+    //printf("sizeof(long double)=%lu\n",sizeof());
+
+
+/*
+为什么会有内存对齐?
+1. 平台原因(移植原因)：不是所有的硬件平台都能访问任意地址上的任意数据的；某些硬件平台只能在某些地址处取某些特 定类型的数据，否则抛出硬件异常。
+2. 性能原因：数据结构(尤其是栈)应该尽可能地在自然边界上对齐。原因是为了访问未对齐的内存，处理器需要作两次内存访问；而对齐的内存访问仅需要一次访问。
+
+总体来说： 结构体的内存对齐是拿空间来换取时间的做法。
+*/
+
+
+
+
+
+
+
+
+
+
+
 
 //=======================================================================================================================================================
 
@@ -157,22 +247,36 @@ void main(){
     // 对第一个成员进行初始化
     union AnElement{
         int i;
-        char c;
+        char c[sizeof(int)];//LEN=4
     }e1,e2;
     //sizeof(AnElement) = sizeof(占用空间最大的成员)，这里就是等于sizeof(int)
-    e1.i = 4;
-    e2.c ='a';
-    e2.i = 0xDEADBEEF;
+    e1.i = 1234;//转为16进制是0x04D2 即理应输出 00 00 04 D2
+    e2.c[0] ='a';
+    
+    //x86结构 小端存储，遵循“低位在前”的存放方式，所以最低位D2将出现在第一位
     /*
-    c
-    EF BE AD DE
-
+    |c[0]|   |c[1]|   |c[2]|    |c[3]|
+     D2        04       00        00
+    |               i               |  
     */
+    printf("e1[0]=%02hhX\n",e1.c[0]);//D2,若%02hhx则输出d2(大小写区别)
+    for(int i=0;i<sizeof(int);++i){
+        printf("%02hhX",e1.c[i]);//D2040000
+    }
+    printf("\n");
+
+    printf("e2.c[0]=%02hhX\n",e2.c[0]);//61, 'a'对应整数97，转换为16进制即61
+    e2.i = 0xDEADBEEF;
+    printf("e2.c[0]=%02hhX\n",e2.c[0]);//EF,说明e2.c[]和e2.i共用同一个内存空间
 
 
+    //联合用途：
+    //联合常用于需要取一个数内部的字节，如把一个数以二进制等写入一个文件时，一个数以十六进制的形式输出时，对一个数以某进制形式的指定字节进行修改或读取时···
 
-
-
+    //大小端各自优势
+    //1.小端：计算机电路先处理低位字节，效率比较高，因为计算都是从低位开始的。所以，计算机的内部处理都是小端字节序。
+    //2.大端：人类习惯读写大端字节序。所以，除了计算机的内部处理，其他的场合几乎都是大端字节序，比如网络传输和文件储存。
+    //java属于 大端 储存模式
 //=======================================================================================================================================================
 
 //类型定义：
@@ -237,7 +341,7 @@ int numberofdays(struct DATE d){
 }
 
 printf("请输入今天日期(dd mm yyyy)：");
-scanf("%i %i %i",&today_.day,&today_.month,&today_.year);
+//scanf("%i %i %i",&today_.day,&today_.month,&today_.year);
 
 if(today_.day != numberofdays(today_))
     tomorrow_=(struct DATE){++today_.day,today_.month,today_.year};
@@ -247,9 +351,6 @@ else
     tomorrow_=(struct DATE){1,++today_.month,today_.year};
 
 printf("tomorrow is %i-%i-%i.\n",tomorrow_.year,tomorrow_.month,tomorrow_.day);
-
-
-
 
 
 

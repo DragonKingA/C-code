@@ -2117,6 +2117,452 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
+// #include <stdio.h>
+// int main(){
+//     int n,num,index=-1;
+//     int arr[10001];
+//     scanf("%d",&n);
+//     for(int i=0;i<n;i++){
+//         scanf("%d",&arr[i]);
+//     }
+//     scanf("%d",&num);
+//     for(int i=0;i<n;i++){
+//         if(arr[i] == num){
+//             index = i+1;
+//             break;
+//         }
+//     }
+//     printf("%d\n",index);
+//     return 0;
+// }
+
+
+
+//a1+a2+a3最大
+// #include <stdio.h>
+// int main(){
+//     int n,a1,a2,a3,sum;
+//     scanf("%d",&n);
+//     for(int i=0,time=0;i<=n;i++){
+//         for(int j=0;j<=n;j++){
+//             for(int z=0;z<=n;z++){
+//                 if((i+j)%2==0 && (j+z)%3==0 && (i+j+z)%5==0)
+//                     if(time == 0){
+//                         sum = i+j+z;
+//                         time++;
+//                     }else{
+//                         if((i+j+z) > sum)
+//                             sum = i+j+z;
+//                     }
+//             }
+//         }        
+//     }
+//     printf("%d\n",sum);
+//     return 0;
+// }
+
+
+
+//
+// #include <stdio.h>
+// int main(){
+//     int n,min=0,max=0,sum=0;
+//     scanf("%d",&n);
+//     if(n % 2 ==0){
+//         while(1){
+//             if(n-sum >= 4){
+//                 sum+=4;
+//                 min++;
+//             }else if(n-sum>=2){
+//                 sum+=2;
+//                 min++;
+//             }else{
+//                 break;
+//             }
+//         }
+//         max = n/2;
+//     }
+    
+//     if(min == 0 || max ==0){
+//         printf("0 0\n");
+//     }else
+//         printf("%d %d\n",min,max);
+//     return 0;
+// }
+
+
+
+//
+// #include <stdio.h>
+// int main(){
+//     int num[16];
+//     int n=0,length=0,count=0;
+//     for(int i=0;i<16;i++){
+//         scanf("%d",&n);
+//         if(n==0){
+//             length = i;
+//             break;
+//         }else{
+//             num[i] = n;
+//         }
+//     }
+//     for(int i=0;i<length-1;i++){
+//         for(int j=i+1;j<length;j++){
+//             if(num[i]*2==num[j] || num[j]*2==num[i]){
+//                 count++;
+//             }
+//         }
+//     }
+//     printf("%d\n",count);
+//     return 0;
+// }
+
+
+
+//
+// #include <stdio.h>
+// int main(){
+//     int n;
+//     scanf("%d",&n);
+//     for(long long int i=2;i<=n;i++){
+//         for(long long int j=2;j<i;j++){
+//             for(long long int k=j;k<i;k++){
+//                 for(long long int z=k;z<i;z++){
+//                     if(i*i*i == j*j*j + k*k*k + z*z*z){
+//                         printf("Cube = %lld, Triple = (%lld,%lld,%lld)\n",i,j,k,z);
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     return 0;
+// }
+
+
+
+//*
+//1.
+// #include <stdio.h>
+// #include <string.h>
+// int main(){
+//     char str[505];
+//     int s[505]={0};
+//     int len;
+//     gets(str);
+//     for(int i=0;i<505;i++){
+//         s[i] = 0;
+//     }
+//     //和右，和连续两边拓展
+//     for(int i=0;i<strlen(str)-1;i++){
+//         if(str[i] == str[i+1]){
+//             printf("%c%c\n",str[i],str[i+1]);
+//             s[i]=1;
+//         }
+//     }
+   
+//         for(int i=0;i<strlen(str);i++){
+//             if(s[i] == 1){
+//                 if(i<=strlen(str)){
+//                     len=i;
+//                 }else{
+//                     len=strlen(str)-1-i;
+//                 }
+//                 //222，111，22222等
+//                 for(int j=1;j<=len;j++){
+//                     if(str[i-j] == str[i+j]){
+//                         for(int n=i-j;n<=i+j;n++){
+//                             printf("%c",str[n]);
+//                         }
+//                         printf("\n");
+//                     }else{
+//                         break;
+//                     }
+//                 }
+//                 //1221,123321对半分的蔓延
+//                 for(int j=1;j<=len;j++){
+//                     if(str[i-j] == str[i+1+j]){
+//                         for(int n=i-j;n<=i+j+1;n++){
+//                             printf("%c",str[n]);
+//                         }
+//                         printf("\n");
+//                     }
+//                 }
+//             }
+//         }
+    
+//     return 0;
+// }
+
+//2.
+
+
+
+
+
+//G - 生理周期
+// #include <stdio.h>
+// int main(){
+//     int p,e,i,d,sum=0;
+//     scanf("%d %d %d %d",&p,&e,&i,&d);
+//     for(int m=0;sum-d<=21252;m++){
+//         sum=p+23*m;
+//         if(sum > d && sum%28 == e && sum%33 == i){
+//             printf("%d\n",sum-d);
+//             break;
+//         }
+//     }
+//     return 0;
+// }
+
+
+
+//
+#include <stdio.h>
+int main(){
+    int n,arr[101],sum[100000];
+    int count=0;
+    scanf("%d",&n);
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    int k = 0;
+    for(int i=0;i<n-1;i++){
+        for(int j=i+1;j<n;j++){
+            sum[k] = arr[i] + arr[j];
+            k++;      
+        }
+    }
+    for(int i=0;i<=k;i++){
+        for(int j=0;j<n;j++){
+            if(sum[i] == arr[j])
+                count++;
+        }
+    }
+    // for(int i=0;i<n-1;i++){
+    //     for(int j=i+1;j<n;j++){
+    //         for(int z=0;z<n;z++){
+    //             if(z!=i && z!=j && arr[z] == arr[i]+arr[j]){
+    //                 count++;
+    //             }
+    //         }          
+    //     }
+    // }
+    printf("%d\n",count);
+    return 0;
+}
+
+
+
+//
+// #include <stdio.h>
+// #include <math.h>
+// int ifPrime(int x,int y){
+//     int ret=1;
+//     if(x < y){
+//         int t = x;
+//         x = y;
+//         y = t;
+//     }
+//     for(int i=2;i<=y;i++){
+//         if(y % i == 0 && x % i == 0){
+//             ret = 0;
+//             break;
+//         }
+//     }
+//     return ret;
+// }
+// int main(){
+//     int n,arr[605],count=0;
+//     scanf("%d",&n);
+//     for(int i=0;i<n;i++){
+//         scanf("%d",&arr[i]);
+//     }
+    // for(int i=0;i<n-1;i++){
+    //     for(int j=i+1;j<n;j++){
+    //         if(ifPrime(arr[i],arr[j])){
+    //             count++;
+    //         }
+    //     }
+    // }
+//     printf("%d\n",count);
+//     return 0;
+// }
+
+
+
+//
+// #include<stdio.h>
+// int main(){
+//     int n,k,arr[1001],ifornot=0;
+//     scanf("%d %d",&n,&k);
+//     for(int i=0;i<n;i++){
+//         scanf("%d",&arr[i]);
+//     }
+//     for(int i=0;i<n-1;i++){
+//         for(int j=i+1;j<n;j++){
+//             if(arr[i]+arr[j] == k){
+//                 ifornot = 1;
+//             }
+//         }
+//     }
+//     if(ifornot){
+//         printf("yes\n");
+//     }else{
+//         printf("no\n");
+//     }
+//     return 0;
+// }
+
+
+
+//
+// #include<stdio.h>
+// int main(){
+//     long long int a,b,c,x;
+//     scanf("%lld %lld %lld",&a,&b,&c);
+//     for(long long int i=2;i <= 1000000;i++){
+//         if(((a % i) == (b % i)) && ((b % i) == (c % i))){
+//             x = i;
+//             break;
+//         }
+//     }
+//     printf("%lld\n",x);
+//     return 0;
+// }
+
+
+
+//L - 不定方程求解
+// #include <stdio.h>
+// int main(){
+//     int a,b,c,count=0;
+//     scanf("%d %d %d",&a,&b,&c);
+//     for(int x=0;x<=c/a;x++){
+//         for(int y=0;y<=c/b;y++){
+//             if(a*x+b*y==c){
+//                 count++;
+//             }
+//         }
+//     }
+//     printf("%d",count);
+//     return 0;
+// }
+
+
+
+//M - 质数的和与积
+// #include <stdio.h>
+// #include <math.h>
+// int ifPrime(int x){
+//     int ret = 1;
+//     for(int i=2;i<=sqrt(x);i++){
+//         if(x % i == 0){
+//             ret = 0;
+//             break;
+//         }
+//     }
+//     return ret;
+// }
+// int main(){
+//     int s;
+//     long long int p,p_max;
+//     scanf("%d",&s);
+//     for(int i=2;i<=s/2;i++){
+//         p = i*(s-i);
+//         if(i-1 == 1){
+//             p_max = p;
+//         }
+//         if(ifPrime(i) && ifPrime(s-i)){
+//             if(p > p_max){
+//                 p_max = p;
+//             }
+//         }
+//     }
+//     printf("%lld\n",p_max);
+//     return 0;
+// }
+
+
+
+//N - 求满足条件的3位数
+// #include <stdio.h>
+// #include <math.h>
+// int main(){
+//     int n,a,b,c;
+//     scanf("%d",&n);
+//     for(int i=100,count=0;i<=999;i++){
+//         a = i/100;
+//         b = i/10%10;
+//         c = i%10;
+//         if((int)sqrt(i)*(int)sqrt(i) == 1.0*i && (a==b || a==c || b==c)){
+//             count++;
+//             if(count == n){
+//                 printf("%d\n",i);
+//                 break;
+//             }
+//         }
+//     }
+//     return 0;
+// }
+
+
+
+//O - 输出满足条件的所有数
+// #include <stdio.h>
+// int main(){
+//     int n;
+//     while(scanf("%d",&n)!=EOF,n){
+//         for(int i=1;i<n;i++){
+//             if(i%7!=0){
+//                 if(i==1){
+//                     printf("%d",i);
+//                 }else{
+//                     printf(" %d",i);
+//                 }
+//             }
+//         }
+//         printf("\n");
+//     }
+//     return 0;
+// }
+
+
+
+//P - 三点共线
+// #include <stdio.h>
+// #include <math.h>
+// int main(){
+//     int n,ifnot=0;
+//     double point[101][2];
+//     scanf("%d",&n);
+//     for(int i=0;i<n;i++){
+//         scanf("%lf %lf",&point[i][0],&point[i][1]);
+//     }
+//     for(int i=0;i<n-2;i++){
+//         for(int j=i+1;j<n-i-1;j++){
+//             for(int z=j+1;z<n;z++){
+//                 if( (fabs(point[i][1] - point[j][1])/fabs(point[i][0] - point[j][0])) == (fabs(point[i][1] - point[z][1])/fabs(point[i][0] - point[z][0]))){
+//                     ifnot = 1;
+//                     break;
+//                 }
+//             }
+//         }
+//     }
+//     if(ifnot){
+//         printf("YES\n");
+//     }else{
+//         printf("NO\n");
+//     }
+//     return 0;
+// }
+
+
+
+
+
+
+
+
 
 
 

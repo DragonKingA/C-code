@@ -153,33 +153,33 @@
 //         //fflush(stdin);
 //         p = &x;
 //         //printf("%d",*p);
-//         // if(x < 0 || x > 100){
-//         //     printf("Score is error!\n");
-//         //     continue;
-//         // }
-//         // switch(x/10){
-//         //     case 10:
-//         //     case 9:
-//                 // printf("A\n");
-//                 // break;
-//         //     case 8:
-//         //         printf("B\n");
-//         //         break;
-//         //     case 7:
-//         //         printf("C\n");
-//         //         break;
-//         //     case 6:
-//         //         printf("D\n");
-//         //         break;
-//         //     case 5:
-//         //     case 4:
-//         //     case 3:
-//         //     case 2:
-//         //     case 1:
-//         //     case 0:
-//         //         printf("E\n");
-//         //         break;
-//         // }
+        // if(x < 0 || x > 100){
+        //     printf("Score is error!\n");
+        //     continue;
+        // }
+        // switch(x/10){
+        //     case 10:
+        //     case 9:
+        //         printf("A\n");
+        //         break;
+        //     case 8:
+        //         printf("B\n");
+        //         break;
+        //     case 7:
+        //         printf("C\n");
+        //         break;
+        //     case 6:
+        //         printf("D\n");
+        //         break;
+        //     case 5:
+        //     case 4:
+        //     case 3:
+        //     case 2:
+        //     case 1:
+        //     case 0:
+        //         printf("E\n");
+        //         break;
+        // }
         
 //         // if(x >= 0 && x <= 100){
 //         //     if(x >= 90 && x <= 100){
@@ -2299,57 +2299,65 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
+
+
+
 //G - 生理周期
-// #include <stdio.h>
-// int main(){
-//     int p,e,i,d,sum=0;
-//     scanf("%d %d %d %d",&p,&e,&i,&d);
-//     for(int m=0;sum-d<=21252;m++){
-//         sum=p+23*m;
-//         if(sum > d && sum%28 == e && sum%33 == i){
-//             printf("%d\n",sum-d);
-//             break;
-//         }
-//     }
-//     return 0;
-// }
-
-
-
-//
 #include <stdio.h>
 int main(){
-    int n,arr[101],sum[100000];
-    int count=0;
-    scanf("%d",&n);
-    for(int i=0;i<n;i++){
-        scanf("%d",&arr[i]);
-    }
-    int k = 0;
-    for(int i=0;i<n-1;i++){
-        for(int j=i+1;j<n;j++){
-            sum[k] = arr[i] + arr[j];
-            k++;      
+    int p,e,i,d,sum=0;
+    scanf("%d %d %d %d",&p,&e,&i,&d);
+    for(int m=0;sum-d<=21252;m++){
+        sum=p+23*m;
+        if(sum > d && sum%28 == e && sum%33 == i){
+            printf("%d\n",sum-d);
+            break;
         }
     }
-    for(int i=0;i<=k;i++){
-        for(int j=0;j<n;j++){
-            if(sum[i] == arr[j])
-                count++;
-        }
-    }
-    // for(int i=0;i<n-1;i++){
-    //     for(int j=i+1;j<n;j++){
-    //         for(int z=0;z<n;z++){
-    //             if(z!=i && z!=j && arr[z] == arr[i]+arr[j]){
-    //                 count++;
-    //             }
-    //         }          
-    //     }
-    // }
-    printf("%d\n",count);
     return 0;
 }
+#include <stdio.h>
+int main(){
+    int p,e,i,d,sum=0;
+    scanf("%d %d %d %d",&p,&e,&i,&d);
+    for(int m=0;sum-d<=21252;m++){
+        sum=p+23*m;
+        if(sum > d && sum%28 == e && sum%33 == i){
+            printf("%d\n",sum-d);
+            break;
+        }
+    }
+    return 0;
+}
+
+
+
+//H - 和数  --输出数列中等于其他两个数之和的数的个数
+// #include <stdio.h>
+// int main(){
+//     int n,arr[101],sum[99999];
+//     int count=0,k = 0;
+//     scanf("%d",&n);
+//     for(int i=0;i<n;i++){
+//         scanf("%d",&arr[i]);
+//     }
+//     for(int i=0;i<n-1;i++){
+//         for(int j=i+1;j<n;j++){
+//             sum[k] = arr[i] + arr[j];
+//             k++;      
+//         }
+//     }
+//     for(int i=0;i<n;i++){
+//         for(int j=0;j<k;j++){
+//             if(sum[j] == arr[i]){
+//                 count++;
+//                 break;
+//             }
+//         }
+//     }
+//     printf("%d\n",count);
+//     return 0;
+// }
 
 
 
@@ -2555,6 +2563,344 @@ int main(){
 //     }
 //     return 0;
 // }
+
+
+
+//
+// #include<stdio.h>
+// int main(){
+//     int n,sign;
+//     scanf("%d",&n);
+//     if(n<0){    
+//         sign = -1;
+//     }else if(n==0){
+//         sign = 0;
+//     }else{
+//         sign = 1;
+//     }
+//     printf("sign(%d) = %d\n",n,sign);
+//     return 0;
+// }
+
+
+
+//实验3-7 统计学生成绩
+// #include<stdio.h>
+// int judge(int x){
+//     int ret = -1;
+//         switch(x/10){
+//             case 10:
+//             case 9:
+//                 ret =0;
+//                 break;
+//             case 8:
+//                 ret =1;
+//                 break;
+//             case 7:
+//                 ret =2;
+//                 break;
+//             case 6:
+//                 ret =3;
+//                 break;
+//             case 5:
+//             case 4:
+//             case 3:
+//             case 2:
+//             case 1:
+//             case 0:
+//                 ret =4;
+//                 break;
+//         }
+//     return ret;
+// }
+// int main(){
+//     int n,arr[1001],count[5];
+//     scanf("%d",&n);
+//     for(int i=0;i<5;i++){
+//         count[i]=0;
+//     }
+//     for(int i=0;i<n;i++){
+//         scanf("%d",&arr[i]);
+//         count[judge(arr[i])]++;
+//     }
+//     printf("%d %d %d %d %d\n",count[0],count[1],count[2],count[3],count[4]);
+//     return 0;
+// }
+
+
+
+//实验3-3 比较大小
+// #include<stdio.h>
+// int main(){
+//     int a,b,c,t=0;//3 2  1
+//     scanf("%d %d %d",&a,&b,&c);
+    // if(a>b){
+    //     t=b;
+    //     b=a;
+    //     a=t;
+    //     if(b>c){
+    //         t=c;
+    //         c=b;
+    //         b=t;
+    //         if(a>b){
+    //             t=b;
+    //             b=a;
+    //             a=t;
+    //         }
+    //     }
+    // }
+//     printf("%d->%d->%d\n",a,b,c);
+//     return 0;
+// }
+
+
+
+//
+// #include<stdio.h>
+// int main(){
+//     int n,ifnot=0;
+//     scanf("%d",&n);
+//     int t=n;
+//     if(n>5){
+//         n%=5;
+//         if(n<=3)
+//             ifnot=1;
+//     }else{
+//         if(n<=3)
+//             ifnot=1;
+//     }
+//     if(ifnot){
+//         printf("Fishing in day %d",t);
+//     }else{
+//         printf("Drying in day %d",t);
+//     }
+//     return 0;
+// }
+
+
+
+//
+// #include<stdio.h>
+// #include<math.h>
+// int main(){
+//     double a,b,c,t=0;
+//     scanf("%lf %lf %lf",&a,&b,&c);
+//     if(a>b){
+//         t=b;
+//         b=a;
+//         a=t;
+//         if(b>c){
+//             t=c;
+//             c=b;
+//             b=t;
+//             if(a>b){
+//                 t=b;
+//                 b=a;
+//                 a=t;
+//             }
+//         }
+//     }
+//     if(a+b>c){
+//         double s=(a+b+c)/2.0;
+//         printf("area = %.2f; perimeter = %.2f\n",sqrt(s*(s-a)*(s-b)*(s-c)),a+b+c);
+//     }else
+//         printf("These sides do not correspond to a valid triangle\n");
+//     return 0;
+// }
+// #include<stdio.h>
+// #include<math.h>
+// int main()
+// {
+// 	int a,b,c;
+// 	float area,perimeter,s;
+// 	scanf("%d %d %d",&a,&b,&c);
+// 	if(a+b>c&&a+c>b&&b+c>a)
+// 	{
+// 		s=(a+b+c)/2.0;
+// 		area=sqrt(s*(s-a)*(s-b)*(s-c));
+// 		printf("area = %.2f; perimeter = %.2f",area,s*2);
+// 	}
+// 	else
+// 	{
+// 		printf("These sides do not correspond to a valid triangle");
+// 	}
+// 	return 0;
+// }
+
+
+
+//F. 箱子匹配
+//1.WA
+// #include<stdio.h>
+// int main(){
+//     int n,ifnot=1,box1[2][3],box2[2][3];
+//     scanf("%d",&n);
+//     for(int i=0;i<n;i++){
+//         scanf("%d %d %d",&box1[0][0],&box1[0][1],&box1[0][2]);
+//         scanf("%d %d %d",&box2[0][0],&box2[0][1],&box2[0][2]);
+//         for(int j=0,m=0;j<2;j++){
+//             for(int z=j+1;z<3;z++,m++){
+//                 box1[1][m]=box1[0][j]*box1[0][z];
+//                 box2[1][m]=box2[0][j]*box2[0][z];
+//             }
+//         }
+//         for(int j=0,m=2;j<3;j++,m--){
+//             for(int z=0,k=2;z<3;z++,k--){
+//                 if(box1[1][j] <= box2[1][z] && box1[0][m] <= box2[0][k]){
+//                     printf("yes\n");
+//                     ifnot = 0;
+//                     goto AB;
+//                 }
+//             }
+//         }
+//         AB:
+//             if(ifnot){
+//                 printf("no\n");
+//             }
+//         ifnot=1;
+//     }
+//     return 0;
+// }
+//2.AC
+// #include <stdio.h>
+// struct box{
+//     int len;
+//     int wid;
+//     int hei;
+// }A,B; 
+// struct box letInturn(struct box b){
+//     if(b.len > b.wid){
+//         int t=b.wid;
+//         b.wid = b.len;
+//         b.len = t;
+//     }
+//     if(b.len > b.hei){
+//         int t=b.hei;
+//         b.hei = b.len;
+//         b.len = t;
+//     }
+//     if(b.wid > b.hei){
+//         int t=b.hei;
+//         b.hei = b.wid;
+//         b.wid = t;
+//     }
+//     return b;
+// }
+// int main(){
+//     int T;
+//     scanf("%d",&T);
+//     while(T--){
+//         scanf("%d %d %d",&A.len,&A.wid,&A.hei);
+//         scanf("%d %d %d",&B.len,&B.wid,&B.hei);
+//         A = letInturn(A);
+//         B = letInturn(B);
+//         if((A.len<=B.len && A.wid<=B.wid && A.hei<=B.hei) || (B.len<=A.len && B.wid<=A.wid && B.hei<=A.hei)){
+//             printf("yes\n");
+//         }else
+//             printf("no\n");
+//     }
+//     return 0;
+// }
+
+
+
+//将x的平方赋值给y
+// #include<stdio.h>
+// int main(){
+//     int x,y;
+//     scanf("%d",&x);
+//     y = x*x;
+//     printf("%d = %d * %d\n",y,x,x);
+//     printf("%d * %d = %d\n",x,x,y);
+//     return 0;
+// }
+
+
+
+//计算火车运行时间
+// #include<stdio.h>
+// #include<math.h>
+// int main(){
+//     int x,y,hour,minute;
+//     scanf("%d %d",&x,&y);
+//     x = (x/100)*60 + x%100;
+//     y = (y/100)*60 + y%100;
+//     printf("%02d:%02d\n",(y-x)/60,(y-x)%60);
+//     return 0;
+// }
+
+
+
+//
+// #include<stdio.h>
+// int main(){
+//     int x;
+//     double sum = 1.000;
+//     scanf("%d",&x);
+//     for(int i=2;i<=x;i++){
+//         if(i % 2 == 0){
+//             sum -= 1.0/(3*(i-1)+1);
+//         }else{
+//             sum += 1.0/(3*(i-1)+1);
+//         }
+//     }
+//     printf("sum = %.3f\n",sum);
+//     return 0;
+// }
+
+
+
+//
+// #include<stdio.h>
+// int main(){
+//     int m,n;
+//     double sum = 0.000000;
+//     scanf("%d %d",&m,&n);
+//     if(n<m){
+//         int t=n;
+//         n = m;
+//         m = t;
+//     }
+//     for(int i=m;i<=n;i++){
+//         sum += i*i + 1.0/i;
+//     }
+//     printf("sum = %.6f\n",sum);
+//     return 0;
+// }
+
+
+
+//求组合数
+// #include<stdio.h>
+// double fact(int n){
+//     int num = n;
+//     double ret = 1.0;
+//     while(num>0){
+//         ret*=num;
+//         num--;
+//     }
+//     return ret;
+// }
+// int main(){
+//     int m,n;
+//     scanf("%d %d",&m,&n);
+//     if(n<m){
+//         int t=n;
+//         n = m;
+//         m = t;
+//     }
+//     printf("result = %.0f\n",fact(n)/(fact(m)*fact(n-m)));
+//     return 0;
+// }
+
+
+
+
+
+
+
+
+
 
 
 

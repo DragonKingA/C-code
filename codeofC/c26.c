@@ -213,6 +213,8 @@ void main(){
     printf("sizeof(struct B_)=%lu\n",sizeof(struct B_));//56 = 8 + 8[1+4](3) + 8[4+4] * 5
     printf("sizeof(struct C)=%lu\n",sizeof(struct C));//32  =  8(6) + 16[8 + 8] + 8(7) //共浪费13个字节
     printf("sizeof(struct C_)=%lu\n",sizeof(struct C_));//48？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？
+    //理应当是 32
+    
     //printf("sizeof(long double)=%lu\n",sizeof());
 
 

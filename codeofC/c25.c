@@ -229,7 +229,7 @@ void main(){
 
     //7.strstr(s1,s2) -- char *strstr(const char *s1,const char *s2)
     //区分大小写
-    //strcase(s1,s2) -- char *strcasestr(const char *s1,const char *s2)
+    //strcasestr(s1,s2) -- char *strcasestr(const char *s1,const char *s2)
     //忽略大小写
 
 

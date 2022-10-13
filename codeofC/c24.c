@@ -1727,10 +1727,10 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 //按1的个数排序
+//1.WA
 // #include <stdio.h>
 // #include <string.h>
 // int main(){
-
 //     char str[100][201];
 //     int count[100];
 //     int count_t[100];
@@ -1745,7 +1745,6 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //     for(int i=0;i<n;i++){
 //         count[i]=0;
 //     }
-
 //     for(int i=0;i<n;i++){
 //         for(int j=0;j<strlen(str[i]);j++){
 //             if(str[i][j] == '1'){
@@ -1753,16 +1752,12 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //             }
 //         }
 //     }
-
 //     for(int i=0;i<n;i++){
 //         count_t[i] = count[i];
 //     }
-
 //     for(int i=0;i<n;i++){
 //         printf("count=%d\n",count[i]);
 //     }
-
-
 //     int minindex=0;
 //     for(int i=0;i<n-1;i++){
 //         for(int j=0;j<n-1-i;j++){
@@ -1786,7 +1781,6 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //     for(int i=0;i<n;i++){
 //         printf("count_t=%d\n",count_t[i]);
 //     }
-
 //     for(int i=0,temp=-1;i<n;i++){
 //         for(int j=0;j<n;j++){
 //             if(count_t[j] == temp){
@@ -1796,22 +1790,55 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //                 index[j]=i;
 //                 temp = count_t[j];
 //             }
-
 //         }
-        
 //     }
-
 //     for(int i=0;i<n;i++){
 //         printf("index[%d]=%d\n",i,index[i]);
 //     }
-
-
 //     for(int i=0;i<n;i++){
 //         printf("%s\n",str[index[i]]);
 //     }
-
 //     return 0;
 // }
+//2.AC 结构体方法
+// #include<stdio.h>
+// #include<string.h>
+// struct str{
+//     char c[220];
+//     int num;
+// };
+// int count(struct str s){
+//     int cout = 0;
+//     for(int i=0;i<strlen(s.c);i++)
+//         cout += (s.c[i] == '1');
+//     return cout;
+// }
+// struct str strArray[110];
+// struct str strArray_result[110];
+// int main(){
+//     int n,num_max,ifnot=1;
+//     scanf("%d",&n);
+//     for(int m=0;m<n;m++){
+//         scanf("%s",strArray[m].c);
+//         strArray[m].num = count(strArray[m]);
+//         if(ifnot++ == 1) num_max = strArray[0].num;
+//         if(strArray[m].num > num_max) num_max = strArray[m].num;
+//     }
+//     for(int i=0,index=0;i<=num_max;i++){
+//         for(int j=0;j<n;j++){
+//             if(strArray[j].num == i)
+//                 strArray_result[index++]=strArray[j];  
+//         }
+//     }
+//     for(int i=0;i<n;i++)
+//         printf("%s\n",strArray_result[i].c);
+//     return 0;
+// }
+
+
+
+
+
 
 
 
@@ -2163,7 +2190,8 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//
+//C - 鸡兔同笼
+//1.AC
 // #include <stdio.h>
 // int main(){
 //     int n,min=0,max=0,sum=0;
@@ -2189,6 +2217,21 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //         printf("%d %d\n",min,max);
 //     return 0;
 // }
+//2.simplified
+// #include<stdio.h>
+// int main(){
+//     int n;
+//     scanf("%d",&n);
+//     if(n & 1) printf("0 0\n");
+//     else printf("%d %d\n",n/4+n%4/2,n/2);
+//     return 0;
+// }
+//1. n & 1 可以判断n是否为奇数  n&1 等效于 n%2==1
+// n为奇数时，n的最低位为1 ; n为偶数时，n的最低位为0
+// 如果是偶数，n&1返回0；否则返回1
+//2. 1 & n
+// 检查二进制n的最低位，若为1，则1&n的结果就是1，
+// 若不为1，则1&n的结果就是0
 
 
 
@@ -2240,8 +2283,8 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//*
-//1.
+//*F - 回文子串
+//1.WA
 // #include <stdio.h>
 // #include <string.h>
 // int main(){
@@ -2289,47 +2332,74 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //                 }
 //             }
 //         }
-    
 //     return 0;
 // }
-
-//2.
-
-
-
-
-
+//2.master code
+// #include<stdio.h>
+// #include<string.h>
+// char str[505];//123321125775165561
+// int judge(int index_start,int length){
+//     int i = index_start , j = index_start + length - 1;
+//     for(;i<j && str[i]==str[j];i++,j--);//一遇到不一样的字符就终止循环，或者i，j已经定位到同一个字符了才停（说明这之前字符都一样）。所以若 i >= j 为真 说明字符都一样
+//     return i>=j;
+// }
+// int main(){
+//     scanf("%s",str);
+//     int OriLen = strlen(str);
+//     for(int len=2;len<=OriLen;len++){
+//         for(int i=0;i<=OriLen-len;i++){
+//             if(judge(i,len)){
+//                 for(int k=i;k<len+i;k++){
+//                     printf("%c",str[k]);
+//                 }
+//                 printf("\n");
+//             }
+//         }
+//     }
+//     return 0;
+// }
 
 
 
 //G - 生理周期
-#include <stdio.h>
-int main(){
-    int p,e,i,d,sum=0;
-    scanf("%d %d %d %d",&p,&e,&i,&d);
-    for(int m=0;sum-d<=21252;m++){
-        sum=p+23*m;
-        if(sum > d && sum%28 == e && sum%33 == i){
-            printf("%d\n",sum-d);
-            break;
-        }
-    }
-    return 0;
-}
-#include <stdio.h>
-int main(){
-    int p,e,i,d,sum=0;
-    scanf("%d %d %d %d",&p,&e,&i,&d);
-    for(int m=0;sum-d<=21252;m++){
-        sum=p+23*m;
-        if(sum > d && sum%28 == e && sum%33 == i){
-            printf("%d\n",sum-d);
-            break;
-        }
-    }
-    return 0;
-}
-
+//1.WA
+// #include <stdio.h>
+// int main(){
+//     int p,e,i,d,sum=0;
+//     scanf("%d %d %d %d",&p,&e,&i,&d);
+//     for(int m=0;sum-d<=21252;m++){
+//         sum=p+23*m;
+//         if(sum > d && sum%28 == e && sum%33 == i){
+//             printf("%d\n",sum-d);
+//             break;
+//         }
+//     }
+//     return 0;
+// }
+//2.AC
+// #include <stdio.h>
+// int main(){
+//     int p,e,i,d;
+//     scanf("%d %d %d %d",&p,&e,&i,&d);
+//     p%=23;e%=28;i%=33;
+//     for(int m=21252;m>=d;m--){
+//         if((m-p)%23==0 && (m-e)%28==0 && (m-i)%33==0){
+//             printf("%d\n",m-d);
+//             break;
+//         }
+//     }
+//     return 0;
+// }
+//3.master's code
+// #include <stdio.h>
+// int main(){
+//     int p,e,i,d,t;
+//     scanf("%d%d%d%d",&p,&e,&i,&d);
+//     p%=23;e%=28;i%=33;t=d;
+//     for(;(t-p)%23 || (t-e)%28 || (t-i)%33;t++); //非0情况为真，此时整体为0，当都为0时才整体为0
+//     printf("%d\n",t-d);
+//     return 0;
+// }
 
 
 //H - 和数  --输出数列中等于其他两个数之和的数的个数
@@ -2895,7 +2965,7 @@ int main(){
 
 
 
-
+//
 
 
 

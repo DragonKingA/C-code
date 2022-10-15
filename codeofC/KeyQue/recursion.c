@@ -110,25 +110,25 @@ Output
 // π”√µ›πÈ°§°§°§°§
 
 
-#include<stdio.h>
-int year,year_temp;
-int GetCows(int y){
+// #include<stdio.h>
+// int year,year_temp;
+// int GetCows(int y){
 
 
 
 
-    if(y > 0)GetCows(y-1)   ;
-}
+//     if(y > 0)GetCows(y-1)   ;
+// }
 
-int main(){
+// int main(){
     
-    while(scanf("%d",&year) != EOF){
-        year_temp = year;
-        GetCows(year_temp);
-    }
+//     while(scanf("%d",&year) != EOF){
+//         year_temp = year;
+//         GetCows(year_temp);
+//     }
 
-    return 0;
-}
+//     return 0;
+//}
 
 
 

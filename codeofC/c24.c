@@ -1,3 +1,6 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓零碎小题↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+/*1*/
 // int main(){
 //     int num;
 //     scanf("%d",&num);
@@ -6,6 +9,9 @@
 //     return 0;
 // }
 
+
+
+/*2*/
 // int main(){
 //     printf("        ********\n");
 //     printf("       ************\n");
@@ -24,6 +30,9 @@
 // }
 
 
+
+
+/*3*/
 // int main(){
 //     int a1,a2,n;
 //     scanf("%d %d %d",&a1,&a2,&n);//d=a2-a1,an=a1+(n-1)(a2-a1)
@@ -31,6 +40,9 @@
 //     return 0;
 // }
 
+
+
+/*4*/
 // int main(){
 //     int num;
 //     scanf("%d",&num);
@@ -40,6 +52,9 @@
 //     return 0;
 // }
 
+
+
+/*5*/
 // *****************注意题目数值范围   1 <= A,B <= 50000 ,
 // 则A*B <= 2500000000已经超过int类型数据范围 -2147483648～+2147483647 即 [-2^31 , 2^31 - 1]
 // #include <stdio.h>
@@ -50,6 +65,9 @@
 //     return 0;
 // }
 
+
+
+/*6*/
 // int main(){
 //     int n1,n2,n3;
 //     scanf("%d %d %d",&n1,&n2,&n3);
@@ -57,8 +75,10 @@
 //     return 0;
 // }
 
-// c语言printf()用%f输出double型，而scanf却用%lf
 
+
+/*7*/
+// 一般printf()用%f输出小数，而scanf要用%lf
 // int main(){
 //     double num;
 //     scanf("%lf",&num);
@@ -66,6 +86,9 @@
 //     return 0;
 // }
 
+
+
+/*8*/
 // int main(){
 //     double num;
 //     scanf("%lf",&num);
@@ -74,6 +97,8 @@
 // }
 
 
+
+/*9*/
 // #include <stdio.h>
 // int main(){
 //   int F;
@@ -85,6 +110,7 @@
 
 
 
+/*10*/
 // #include <stdio.h>
 // int main(){
 //   int x;
@@ -97,6 +123,9 @@
 //   return 0;
 // }
 
+
+
+/*11*/
 // #include <stdio.h>
 // int main(){
 //   int num;
@@ -109,6 +138,9 @@
 //   return 0;
 // }
 
+
+
+/*12*/
 // #include <stdio.h>
 // int main(){
 //     int getill,death;
@@ -117,106 +149,9 @@
 //     return 0;
 // }
 
-// #include <stdio.h>
-// int *p;
-// void f(int *x){
-//     if(*x >= 0 && *x <= 100){
-//             if(*x >= 90 && *x <= 100){
-//                 printf("A\n");
-//                 //continue;
-//             }else if(*x >= 80 && *x <= 89){
-//                 printf("B\n");
-//                 //continue;
-//             }else if(*x >= 70 && *x <= 79){
-//                 printf("C\n");
-//                 //continue;
-//             }else if(*x >= 60 && *x <= 69){
-//                 printf("D\n");
-//                 //continue;
-//             }else{
-//                 printf("E\n");
-//                 //continue;
-//             }
-//         }else{
-//             printf("Score is error!\n");
-//             //continue;
-//         }
-// }
-// int main(){
-//     //????
-//     int x;
-//     //char key;
-//     while(1){
-        
-//         //rewind(stdin);
-//         scanf("%d",&x);
-//         //fflush(stdin);
-//         p = &x;
-//         //printf("%d",*p);
-        // if(x < 0 || x > 100){
-        //     printf("Score is error!\n");
-        //     continue;
-        // }
-        // switch(x/10){
-        //     case 10:
-        //     case 9:
-        //         printf("A\n");
-        //         break;
-        //     case 8:
-        //         printf("B\n");
-        //         break;
-        //     case 7:
-        //         printf("C\n");
-        //         break;
-        //     case 6:
-        //         printf("D\n");
-        //         break;
-        //     case 5:
-        //     case 4:
-        //     case 3:
-        //     case 2:
-        //     case 1:
-        //     case 0:
-        //         printf("E\n");
-        //         break;
-        // }
-        
-//         // if(x >= 0 && x <= 100){
-//         //     if(x >= 90 && x <= 100){
-//         //         printf("A\n");
-//         //         continue;
-//         //     }else if(x >= 80 && x <= 89){
-//         //         printf("B\n");
-//         //         continue;
-//         //     }else if(x >= 70 && x <= 79){
-//         //         printf("C\n");
-//         //         continue;
-//         //     }else if(x >= 60 && x <= 69){
-//         //         printf("D\n");
-//         //         continue;
-//         //     }else{
-//         //         printf("E\n");
-//         //         continue;
-//         //     }
-//         // }else{
-//         //     printf("Score is error!\n");
-//         //     continue;
-//         // }
 
 
-//     f(p);
-
-//         //while (getchar() != '\n');
-//         // if(key =='\n'){
-//         //     break;
-//         // }
-//         //rewind(stdin);
-        
-//     }
-//     return 0;
-// }
-
-
+/*13*/
 // #include <stdio.h>
 // int main(){
 //     int n,num=1;
@@ -230,32 +165,26 @@
 
 
 
-// 水仙花数
+/*14*/
 // #include <stdio.h>
 // int main(){
-//     int a,b,c,min,max,count=0;
-//     while(scanf("%d %d",&min,&max) != EOF){
-//         for(int i=min;i<=max;i++){
-//             a = i/100;
-//             b = i/10%10;
-//             c = i%10;
-//             if(i == a*a*a + b*b*b + c*c*c){
-//                 if(count++ > 0){
-//                     printf(" %d",i);
-//                 }else{
-//                     printf("%d",i);
-//                 }
-//             }
-//         }
-//         if(count == 0){printf("no\n");}else{printf("\n");}
-//         count = 0;
+//     char *a,*b,*c;
+//     char j,k,l;
+//     char temp;
+//     int ch;
+//     while(scanf("%c%c%c",&j,&k,&l) != EOF){   
+//         a=&j;
+//         b=&k;
+//         c=&l;
+//         printf("%c %c %c\n",*a,*b,*c);
+//         while((ch = getchar()) != '\n' && ch != EOF);
 //     }
 //     return 0;
 // }
 
 
 
-// 求奇数的乘积
+/*15 求奇数的乘积*/
 // #include <stdio.h>
 // int n,m=1;
 // int main(){
@@ -275,75 +204,7 @@
 
 
 
-// ASCII码排序
-// #include <stdio.h>
-// int main(){
-//     char arr[3];
-//     char temp;
-//     int ch;
-//     while(scanf("%c%c%c",&arr[0],&arr[1],&arr[2]) != EOF){   
-//         for(int i=0;i<2;i++){   
-//             if(arr[i] > arr[i+1]){
-//                 temp = arr[i+1];
-//                 arr[i+1]=arr[i];
-//                 arr[i]=temp;
-//             }
-//         }
-//         if(arr[0]>arr[1]){
-//             temp = arr[1];
-//             arr[1]=arr[0];
-//             arr[0]=temp;
-//         }
-//         printf("%c %c %c\n",arr[0],arr[1],arr[2]);
-//         while((ch = getchar()) != '\n' && ch != EOF);
-//         //出现程序不按输入的东西来执行时要这样清理缓存区，将以前缓存的东西清除才能接收下次循环scanf接收的变量或值
-//     }
-//     return 0;
-// }
-
-// #include <stdio.h>
-// int main(){
-//     char *a,*b,*c;
-//     char j,k,l;
-//     char temp;
-//     int ch;
-//     while(scanf("%c%c%c",&j,&k,&l) != EOF){   
-//         a=&j;
-//         b=&k;
-//         c=&l;
-//         printf("%c %c %c\n",*a,*b,*c);
-//         while((ch = getchar()) != '\n' && ch != EOF);
-//     }
-//     return 0;
-// }
-
-
-
-// 1.以下是简单的多组输入所用的模板：*********************************************************************************************************************************************************
-// #include <stdio.h>
-// int main(){
-//     while(scanf("",) != EOF){   
-
-//     }
-//     return 0;
-// }
-// *****************************************************************************************************************************************************************************************
-// 2.以下是清空缓存区模板(当模板1出问题时才用)：***********************************************************************************************************************************************
-// #include <stdio.h>
-// int main(){
-  
-//     int ch;
-//     while(scanf("",) != EOF){   
-        
-//         while((ch = getchar()) != '\n' && ch != EOF);//该句可能会导致mmit Failed!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//     }
-//     return 0;
-// }
-// *****************************************************************************************************************************************************************************************
-
-
-
-// 求两点间距离
+/*16 求两点间距离*/
 // #include <stdio.h>
 // #include <math.h>
 // int main(){
@@ -358,7 +219,7 @@
 
 
 
-// 求球的体积
+/*17 求球的体积*/
 // #define PI 3.1415927
 // #include <stdio.h>
 // int main(){
@@ -373,7 +234,7 @@
 
 
 
-// 求实数（含小数，不能用abs函数）的绝对值
+/*18 求实数（含小数，不能用abs函数）的绝对值*/
 // #include <stdio.h>
 // int main(){
 //     double num;
@@ -390,137 +251,7 @@
 
 
 
-// YYYY/MM/DD日期 转 总天数
-// #include <stdio.h>
-// int main(){
-//     int year,month,day,m=0,Feburary=0;
-//     int ch;
-//     while(scanf("%d/%d/%d",&year,&month,&day) != EOF){   
-//         if((year%4==0 && year%100!=0) || year%400==0){
-//             Feburary = 29;
-//         }else{
-//             Feburary = 28;
-//         }
-//         switch(month-1){
-//             case 12:m+=31;
-//             case 11:m+=30;
-//             case 10:m+=31;
-//             case 9:m+=30;
-//             case 8:m+=31;
-//             case 7:m+=31;
-//             case 6:m+=30;
-//             case 5:m+=31;
-//             case 4:m+=30;
-//             case 3:m+=31;
-//             case 2:m+=Feburary;
-//             case 1:m+=31;
-//         }
-//         printf("%d\n",m+day);
-//         m = 0;
-//         while((ch = getchar()) != '\n' && ch != EOF);
-//     }
-//     return 0;
-// }
-
-
-
-//范围内奇数求立方求和，偶数求平方求和
-// #include <stdio.h>
-// int main(){
-//     int m,n,x=0,y=0,t;
-//     int ch;
-//     while(scanf("%d %d",&m,&n) != EOF){
-//         //题目：输入数据包含多组测试实例，每组测试实例包含一行，由两个整数m和n组成。
-//         //故没有规定m>n或n>m，只说了是由两个整数组成而不一定是有序的，所以需要自行判断，防止循环出错
-//         //注意审题！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
-//         if(m>n){
-//             t = n;
-//             n = m;
-//             m = t;
-//         }
-//         for(int i=m;i<=n;i++){
-//             if(i % 2 == 0){
-//                 x += i*i;
-//             }else{
-//                 y += i*i*i;
-//             }
-//         }
-//         printf("%d %d\n",x,y);
-//         x=0;
-//         y=0;
-//         while((ch = getchar()) != '\n' && ch != EOF);
-//     }
-//     return 0;
-// }
-
-
-
-// 求数据中负数、零和正数的个数
-// #include <stdio.h>
-// int main(){
-//     double num=0;
-//     int ch,n=0;
-//     while(scanf("%d",&n) != EOF,n){
-//         // if(n==0){
-//         //     continue;
-//         // }
-//         int a=0,b=0,c=0;
-//         for(int i=0;i<n;i++){
-//             scanf("%lf",&num);
-//             if(num < 0){
-//                 a++;
-//             }else if(num == 0){
-//                 b++;
-//             }else{
-//                 c++;
-//             }
-//             num=0;
-//         }
-//         printf("%d %d %d\n",a,b,c);
-//         //while((ch = getchar()) != '\n' && ch != EOF);//该句可能会导致mmit Failed!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//     }
-//     return 0;
-// }
-// 以上为submit failed
-// 以下为Accepted：
-// #include <stdio.h>
-// int main(){
-//     double num=0;
-//     int a,b,c,n=0;
-//     while(scanf("%d",&n) != EOF,n){
-//         a=0,b=0,c=0;
-//         for(int i=0;i<n;i++){
-//             scanf("%lf",&num);
-//             if(num < 0){
-//                 a++;
-//             }else if(num == 0){
-//                 b++;
-//             }else{
-//                 c++;
-//             }
-//             num=0;
-//         }
-//         printf("%d %d %d\n",a,b,c);
-//     }
-//     return 0;
-// }
-
-
-
-/*
-多组数据输入的循环小知识：
-
-while(scanf("%d",&n),n）	当n为0时中止循环
-while(scanf("%d",&n))	    无输入时，终止循环
-while(scanf("%d",&n)！=EOF)	读到文件结尾时中止循环
-while(~scanf("%d",&n)）	    读到文件结尾时中止循环
-while(scanf("%d",&n)==1)	赋值失败，跳出循环
-
-*/
-
-
-
-// 平方根数列的求和
+/*19 平方根数列的求和*/
 // #include <stdio.h>
 // #include <math.h>
 // int main(){
@@ -542,7 +273,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-// 求和1-1/2+1/3-…………
+/*20 求和1-1/2+1/3-…………*/
 // #include <stdio.h>
 // int main(){
 //     double m = 0;
@@ -564,48 +295,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-// 判断一个范围内取值的函数值是否全为素数
-// #include <stdio.h>
-// #include <math.h>
-// int isPrime(int num){//1为素数，0为非素数
-//     int ret = 1;
-//     if(num % 2 != 0){
-//         for(int j=3;j<sqrt(num);j++){
-//             if(num % j == 0){
-//                 ret = 0;
-//             }
-//         }
-//     }else{
-//         ret = 0;
-//     }
-//     return ret;
-// }
-// int main(){
-//     int x,y,t,f;
-//     while(scanf("%d %d",&x,&y) != EOF && (x != 0 || y != 0)){   
-//         int ifall=1;
-//         if(x>y){
-//             t = y;
-//             y = x;
-//             x = t;
-//         }
-//         for(int i=x;i<=y;i++){
-//             f = i*i + i + 41;  
-//             if(isPrime(f) == 0){
-//                 printf("Sorry\n");
-//                 ifall = 0;
-//                 break;
-//             }
-//         }
-//         if(ifall){
-//             printf("OK\n");
-//         }
-//     }
-//     return 0;
-// }
-
-
-
+/*21 */
 // 猴吃蟠桃
 // #include <stdio.h>
 // int main(){
@@ -622,7 +312,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-// 除去一组数最大和最小值，并取其余数平均值
+/*22 除去一组数最大和最小值，并取其余数平均值*/
 // #include <stdio.h>
 // int main(){
 //     int n;//m-= min+max
@@ -655,106 +345,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-// #include <stdio.h>
-// int main(){//判断m<=n？？？？？？？？？？？？？？？？？？？？？？？？？？？？？
-//     int n,m,average;
-//     int arr[100];
-//     while(scanf("%d %d",&n,&m) != EOF){ 
-//         int m=0;
-//         //输入n个偶数
-//         for(int i=0;i<n;i++){
-//             arr[i] = (i+1)*2;
-//         }
-//         for(int i=1,j=0;i<=n/m;i++){//3次
-//             if(i == n/m){
-//                 for(;j<n;j++){//j=4
-//                 m+=arr[j];
-                
-//                 }
-//                 average = m/(n-m*i);
-//             }else{
-//                 for(;j<m*i;j++){
-//                 m+=arr[j];
-//                 }
-//                 average = m/m;
-//             }           
-//             if(i==1){
-//                 printf("%d",average);
-//                 m=0;
-//             }else{
-//                 printf(" %d",average);
-//                 m=0;
-//             }
-//         }
-//         // for(int i=0;i<n/m;i++){
-//         //     for(int j=0;j<m;j++){
-//         //         m+=arr[j];
-//         //     }
-//         //     if(i==0){
-//         //         printf("%d",m/m);
-//         //     }else{
-//         //         printf(" %d",m/m);
-//         //     }
-//         //     if(n%2 != 0 && i == n/m - 1){
-//         //         for(int z=(i+1)*m + 1;z<n;z++){
-//         //             m+=arr[z];
-//         //         }
-//         //         printf(" %d",m/(n-(i+1)*m));
-//         //     }     
-//         // }
-//         //初始化数组,需要吗
-//         for(int i=0;i<n;i++){
-//             arr[i]=0;
-//         }
-//         printf("\n");
-//     }
-//     return 0;
-// }
-// WA
-
-
-
-// 偶数数列求局部平均
-// #include <stdio.h>
-// int main(){
-//     int arr[100];
-//     int len,m,average=0,m=0,times=0;
-//     while(scanf("%d %d",&len,&m) != EOF){ 
-//         average = 0;
-//         for(int i=0;i<len;i++){
-//             arr[i]=2*(i+1);
-//         }
-//         if(len % m != 0){
-//             times = len/m + 1;
-//         }else{
-//             times = len/m;
-//         }
-//         for(int i=0;i<times;i++){
-//             if(len%m != 0 && i==times - 1){
-//                 for(int j=0;j<len%m;j++){
-//                     m += arr[j+m*i];
-//                 }
-//                 average = m/(len%m);
-//             }else{
-//                 for(int z=0;z<m;z++){
-//                     m+=arr[z+m*i];
-//                 }
-//                 average = m/m;           
-//             }
-//             m = 0;
-//             if(i==times - 1 ){
-//                     printf("%d\n",average);
-//             }else{
-//                     printf("%d ",average);
-//             }
-//         }
-//     }
-//     return 0;
-// }
-
-
-
-// 一组数据最小者与最前面的数交换
+/*23 一组数据最小者与最前面的数交换*/
 // #include <stdio.h>
 // int main(){
 //     int n,num,min,temp;
@@ -791,9 +382,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //             }else{
 //                 printf("%d ",arr[i]);
 //             }
-            
 //         }
-
 //         printf("\n");
 //     }
 //     return 0;
@@ -802,56 +391,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//将一个数插入定长的有序数列
-// #include <stdio.h>
-// int main(){
-//     int n,m,index,g;
-//     int num;
-//     int arr1[100];
-//     int arr2[101];
-//     while(scanf("%d %d",&n,&m) != EOF && (n>0 || m!=0)){   
-//         index=n;
-//         g=0;
-//         for(int i=0;i<n;i++){
-//             scanf("%d",&num);
-//             arr1[i]=num;
-//         }
-//         for(int i=0;i<n;i++){
-//             if(m < arr1[i]){
-//                 arr2[i]=m;
-//                 index=i;
-//                 break;
-//             }else if(i==n-1){
-//                 arr2[n]=m;
-//                 break;
-//             }
-//         }
-//         for(int i=0;i<n+1;i++){
-//             if(i == index){
-//                 g = 1;
-//                 i++;
-//             }
-//             if(g==1){
-//                 arr2[i]=arr1[i-1];
-//             }else{
-//                 arr2[i]=arr1[i];
-//             }        
-//         }
-//         for(int i=0;i<n+1;i++){
-//             if(i==0){
-//                 printf("%d",arr2[i]);
-//             }else{
-//                 printf(" %d",arr2[i]);
-//             }
-//         }
-//         printf("\n");
-//     }
-//     return 0;
-// }
-
-
-
-//字符串内数字个数的统计
+/*24 字符串内数字个数的统计*/
 // char c = '1';
 // char b = 1;
 // printf("c=%d\n",c);//49
@@ -912,8 +452,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 // }
 
 
-
-//绝对值由大到小排序
+/*25 绝对值由大到小排序*/
 // #include <stdio.h>
 // #include <math.h>
 // int main(){
@@ -941,8 +480,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //                 printf("%d",arr[i]);
 //             }else{
 //                 printf("%d ",arr[i]);
-//             }
-            
+//             }   
 //         }
 //         printf("\n");
 //     }
@@ -951,423 +489,24 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//母牛的故事
-/*
-下标 0 1 2 3 4 5 6 7 8 9 ···
-牛否 1 1 0 0 0 0 0 0 0 0
-年龄 4 1 0 0 0 0 0 0 0 0
-
-总牛数可以用 年龄叠加 推出
-第一只牛的年龄需要减去？
-
-直接用年龄数组？
-下标 0 1 2 3 4 5 6 7 8 9 ···
-年龄 4 1 0 0 0 0 0 0 0 0 ···
-
-年龄为0就是没牛，大于0就是有牛，对于 非0元素 - 4 即该牛总共生产牛数
-年龄超过4后，每加1就某个下标的年龄从0变成1
-第一头牛产牛数特别计算即可，从第二头牛年龄算起
-//生下来，3年后，第4年就生另一头
-第一年 1 牛  3-3 + 1 = 1
-下标 0 1 2 3 4 5 6 7 8 9 ···
-年龄 3 0 0 0 0 0 0 0 0 0 ···
-
-第二年 2 牛  4-3 + 1 = 2
-下标 0 1 2 3 4 5 6 7 8 9 ···
-年龄 4 1 0 0 0 0 0 0 0 0 ···
-
-第三年 3 牛  5-3 + 1 = 3
-下标 0 1 2 3 4 5 6 7 8 9 ···
-年龄 5 2 1 0 0 0 0 0 0 0 ···
-
-第四年 4 牛  6-3 + 1 = 4
-下标 0 1 2 3 4 5 6 7 8 9 ···
-年龄 6 3 2 1 0 0 0 0 0 0 ···
-
-第五年 6 牛  7-3 + 4-3 + 1 = 6
-下标 0 1 2 3 4 5 6 7 8 9 ···
-年龄 7 4 3 2 1 1 0 0 0 0 ···
-
-第六年 9 牛  8-3 + 5-3 + 4-3 + 1 = 9
-下标 0 1 2 3 4 5 6 7 8 9 ···
-年龄 8 5 4 3 2 2 1 1 1 0 ···
-
-第七年 13 牛  
-下标 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18···
-年龄 9 6 5 4 3 3 2 2 2 1  1  1  1
-
-第八年 19 牛  
-下标 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18···
-年龄10 7 6 5 4 4 3 3 3 2  2  2  2  1  1  1  1  1  1
-
-第九年 28 牛  
-下标 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18···
-年龄11 8 7 6 5 5 4 4 4 3  3  3  3  2  2  2  2  2  2···
-*/
-// #include <stdio.h>
-// int main(){
-//     int year;
-//     long long int m;
-//     long long int temp;
-//     long long int AgeOfCow[10000];
-//     //cowIndex用于记录下次产的牛于数组的索引
-//     while(scanf("%d",&year) != EOF,year){   
-        
-//         m=1;
-//         temp=m=1;
-//         AgeOfCow[0]= 3;
-//         for(long long int i=1;i<10000;i++){
-//             AgeOfCow[i]=0;
-//         }
-
-//         for(long long int i=1;i<year;i++){//除去第一年
-// //year = 2 -- >m=2 
-// //year = 3 -- >m=3
-// //year = 4 -- >m=4
-// //year = 5 -- >m=
-// //···
-//             for(long long int j=0;j<m;j++){
-//                 AgeOfCow[j]++;
-//                 if(AgeOfCow[j] > 3){
-//                     AgeOfCow[temp]++;
-//                     temp++;
-//                 }
-//             }
-//             m = temp;
-//         }
-        
-//         //计算到第year年总牛数m
-//         // for(int i=0;i<cowIndex;i++){
-//         //     if(AgeOfCow[i]>3){
-//         //         m += AgeOfCow[i] - 3;
-//         //     }
-//         // }
-//         printf("%lld\n",m);
-
-//     }
-//     return 0;
-// }
-//为什么输出溢出（0<year<55）不能覆盖全部year
-//使用递归····
-
-// #include<stdio.h>
-// int year,year_temp;
-// int GetCows(int y){
-
-
-
-
-//     if(y > 0)GetCows(y-1)   ;
-// }
-
-// int main(){
-    
-//     while(scanf("%d",&year) != EOF){
-//         year_temp = year;
-//         GetCows(year_temp);
-//     }
-
-//     return 0;
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-//发工资
-//1.普通If方法：
-// #include <stdio.h>
-// int main(){
-//     int n,amount=0;
-//     int arr[100] = {0};
-//     int money[6] = {0};
-//     //0 1 2 3  4  5
-//     //1 2 5 10 50 100
-//     unsigned int m;
-//     while(scanf("%d",&n) != EOF,n){
-//         for(int i=0;i<6;i++){
-//             money[i]=0;
-//         }
-//         for(int i=0;i<n;i++){
-//             scanf("%u",&m);
-//             if(m >= 100){
-//                 money[5] += m / 100;
-//                 m %= 100;
-//             }
-//             if(m >= 50){
-//                 money[4]++;
-//                 m %= 50;
-//             }
-//             if(m >= 10){
-//                 money[3] += m/10;
-//                 m %= 10;
-//             }
-//             if(m >= 5){
-//                 money[2] += m/5;
-//                 m %= 5;
-//             }
-//             if(m >= 2){
-//                 money[1] += m/2;
-//                 m %= 2;
-//             }
-//             if(m >= 1){
-//                 money[0] += m;
-//                 m = 0;
-//             }
-//         }
-        
-//         for(int i=0;i<6;i++){
-//             amount += money[i];
-//         }
-//         printf("%d\n",amount);
-//         amount = 0;
-//         //m = 0;
-//     }
-//     return 0;
-// }
-//
-//2.递归方法：
-// #include <stdio.h>
-// int n,amount=0;
-// int money[6] = {1,2,5,10,50,100};
-// unsigned int m;
-// void GetAccount(unsigned int money_,int k){
-//     if(k < 0){
-//         return;
-//     }else if(money_ >= money[k]){
-//         amount += money_ / money[k];
-//         money_ %= money[k];
-//     }
-//     GetAccount(money_,--k);
-// }
-// int main(){
-//     while(scanf("%d",&n) != EOF,n){
-//         for(int i=0;i<n;i++){
-//             scanf("%u",&m);
-//             GetAccount(m,5);
-//         }
-//         printf("%d\n",amount);
-//         amount = 0;
-//     }
-//     return 0;
-// }
-
-
-
-//海选女主角
-// #include <stdio.h>
-// #include <math.h>
-// int main(){
-//     int m,n;//m行，n列
-//     int score,score_temp,max_m,max_n;
-//     while(scanf("%d %d",&m,&n) != EOF){  
-//         max_m=1;
-//         max_n=1;
-//         scanf("%d",&score);
-//         score_temp = score;
-//         for(int i=1;i<=m;i++){
-//             for(int j=1;j<=n;j++){
-//                 if(i==1 && j==1){
-//                     continue;
-//                 }
-//                 scanf("%d",&score);
-//                 if(abs(score) >abs(score_temp)){
-//                     score_temp = score;
-//                     max_m = i;
-//                     max_n = j;
-//                 }
-//             }
-//         }
-//         printf("%d %d %d\n",max_m,max_n,score_temp);
-//     }
-//     return 0;
-// }
-
-
-
-//求平均成绩 并输出各科均大于等于平均成绩的人数
-// #include <stdio.h>
-// int main(){
-//     int m,n,score,sum1,sum2,count;
-//     double sj_average[5];
-//     int arr[50][5];
-//     while(scanf("%d %d",&n,&m) != EOF){
-//         count = n;
-//         for(int i=0;i<50;i++){
-//             for(int j=0;j<5;j++){
-//                 arr[i][j] = 0;
-//             }
-//         }
-//         for(int i=0;i<n;i++){
-//             for(int j=0;j<m;j++){
-//                 scanf("%d",&score);
-//                 arr[i][j]=score;
-//             }
-//         }   
-//         for(int i=0;i<n;i++){
-//             sum1 = 0;
-//             for(int j=0;j<m;j++){
-//                 sum1 += arr[i][j];  
-//             }
-//             if(i == n-1){
-//                 printf("%.2f",1.0*sum1/m);
-//             }else{
-//                 printf("%.2f ",1.0*sum1/m);
-//             }
-//         }
-//         printf("\n");
-//         for(int j=0;j<m;j++){
-//             sum2 = 0;
-//             for(int z=0;z<n;z++){
-//                 sum2 += arr[z][j];
-//             }
-//             sj_average[j] = 1.0*sum2/n;
-//             if(j == m-1){
-//                 printf("%.2f",sj_average[j]);
-//             }else{
-//                 printf("%.2f ",sj_average[j]);
-//             }
-//         }
-//         printf("\n");
-//         for(int i=0;i<n;i++){
-//             for(int j=0;j<m;j++){
-//                 if(arr[i][j] < sj_average[j]){
-//                     count--;
-//                     break;
-//                 }
-//             }
-//         }
-//         printf("%d\n\n",count);
-//     }
-//     return 0;
-// }
-
-
-
-//判断字符串是否是C语言合法标识符
-//所有位数包括第一位不能有空格,不能有除了数字,大小写字母和"_"的任何字符
-//第一位不能是数字或空格，或者说只能是什么
+/*26 */
 // #include <stdio.h>
 // #include <string.h>
-// int main(){    
+// int main(){
+//     char num[12];
 //     int n;
-//     char str[50];
-//     unsigned int len;
+    
 //     scanf("%d",&n);
-//     getchar();
-//     for(int i=0;i<n;i++){
-//         gets(str);
-//         len = strlen(str);
-//         if((str[0] >= 65 && str[0] <= 90) || str[0] == '_' || (str[0] >= 97 && str[0] <= 122)){
-//             for(int j=0;j<len;j++){
-//                 if((str[j] >= 65 && str[j] <= 90) || str[j] == '_' || (str[j] >= 97 && str[j] <= 122) || (str[j] >= 48 && str[j] <= 57)){
-//                     if(j==len-1){
-//                         printf("yes\n");
-//                         break;
-//                     }
-//                 }else{
-//                     printf("no\n");
-//                     break;
-//                 }
-//             }
-//         }else{
-//             printf("no\n");
-//         }
-//         memset(str,'\0',50);
+//     sprintf(num,"%x",n);
+//     for(int i=0;i<strlen(num);i++){
+//         printf("%c ",num[i]);
 //     }
 //     return 0;
 // }
 
 
 
-//查找最大字母
-// #include <stdio.h>
-// #include <string.h>
-// char str[100];
-// int main(){
-//     unsigned int len;
-//     int index[100];
-//     char max;
-//     while(gets(str) != NULL){   
-//         for(int i=0;i<100;i++){
-//             index[i]=0;
-//         }
-//         len = strlen(str);
-//         for(int i=0;str[i] != '\0';i++){
-            
-//                 if(i == 0){
-//                     max = str[0];
-//                 }else if(str[i] > max){
-//                     max = str[i];
-//                 }
-//         } 
-//         for(int i=0;str[i] != '\0';i++){
-//             if(str[i] == max){
-//                 index[i]=1;
-//             }
-//         }
-//         for(int i=0;str[i] != '\0';i++){
-//             if(index[i] == 1){
-//                 printf("%c(max)",str[i]);
-//             }else{
-//                 printf("%c",str[i]);
-//             }
-//         }
-//         printf("\n");
-//         memset(str,'\0',100);
-//     }
-//     return 0;
-// }
-
-
-
-//求斐波那契数列的第num项
-//1.
-// #include <stdio.h>
-// int GetFib(int n){
-//     if(n <= 2){
-//         return 1;
-//     }else{
-//         return GetFib(n-1) + GetFib(n-2);
-//     }
-// }
-// int main(){
-//     int num;
-//     scanf("%d",&num);
-//     printf("%d\n",GetFib(num));
-//     return 0;
-// }
-//2.
-// #include <stdio.h>
-// int GetFib(int n){
-//     long long int a,b,c;
-//     a=b=c=1;
-//     while(n>2){
-//         c=a+b;
-//         b=a;
-//         a=c;
-//         n--;
-//     }
-//     return c;
-// }
-// int main(){
-//     int num;
-//     scanf("%d",&num);
-//     printf("%lld\n",GetFib(num));
-//     return 0;
-// }
-
-
-
-
+/*27 */
 // #include <stdio.h>
 // int ifqin(int number){
 //     int sum1=0;
@@ -1392,27 +531,10 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //     }
 //     return 0;
 // }
+ 
 
 
-
-//
-// #include <stdio.h>
-// #include <string.h>
-// int main(){
-//     char num[12];
-//     int n;
-    
-//     scanf("%d",&n);
-//     sprintf(num,"%x",n);
-//     for(int i=0;i<strlen(num);i++){
-//         printf("%c ",num[i]);
-//     }
-//     return 0;
-// }
-
-
-
-//
+/*28 */
 // #include <stdio.h>
 // int main(){
 //     int n,m;
@@ -1444,7 +566,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-
+/*29 */
 // #include <stdio.h>
 // int main(){
 //     int n;
@@ -1466,6 +588,8 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 // }
 
 
+
+/*30 */
 // #include <stdio.h>
 // #include <string.h>
 // int main(){
@@ -1486,7 +610,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//
+/*31 */
 // #include <stdio.h>
 // #include <string.h>
 // int main(){
@@ -1496,34 +620,12 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //     for(int i=0;i<n;i++){
 //         scanf("%s",str);
 //     }
-    
 //     return 0;
 // }
 
 
 
-//sky
-// #include <stdio.h>
-// #include <string.h>
-// int main(){
-//     int n,a,b,c,d;
-//     while(scanf("%d",&n) != EOF,n){
-//         a=n/1000;
-//         b=n%1000/100;
-//         c=n%100/10;
-//         d=n%10;
-//         if(a+b+c+d == 22){
-//             printf("%d is a Sky Number.\n",n);
-//         }else{
-//             printf("%d is not a Sky Number.\n",n);
-//         }
-//     }
-//     return 0;
-// }
-
-
-
-//
+/*32 */
 // #include <stdio.h>
 // #include <string.h>
 // int main(){
@@ -1558,7 +660,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//
+/*33 */
 // #include <stdio.h>
 // #include <string.h>
 // int main(){
@@ -1574,7 +676,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//
+/*34 石头剪刀布*/
 // #include <stdio.h>
 // #include <string.h>
 // int main(){
@@ -1611,7 +713,6 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //             }
 //         }
 //     }
-
 //     for(int i=0;i<n;i++){
 //         if(count[i]==0){
 //             printf("Tie\n");
@@ -1626,7 +727,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//
+/*35 */
 // #include <stdio.h>
 // #include <string.h>
 // int main(){
@@ -1647,7 +748,8 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//+21
+/*36 */
+//译码
 // #include <stdio.h>
 // #include <string.h>
 // int main(){
@@ -1666,8 +768,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-
-//
+/*37 */
 // #include <stdio.h>
 // #include <string.h>
 // int main(){
@@ -1698,7 +799,6 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //                 hei[0][j]=temp;
 //             }
 //         }
-        
 //     }
 //     for(int i=0;i<women;i++){
 //         for(int j=0;j<women-1-i;j++){
@@ -1719,190 +819,13 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //         }else{
 //             printf(" %.2f",hei[1][i-man]);
 //         }
-
 //     }
 //     return 0;
 // }
 
 
 
-//按1的个数排序
-//1.WA
-// #include <stdio.h>
-// #include <string.h>
-// int main(){
-//     char str[100][201];
-//     int count[100];
-//     int count_t[100];
-//     int n;
-//     int index[100];
-//     scanf("%d",&n);
-//     for(int i=0;i<n;i++){
-//         //gets(str[i]);
-//         scanf("%s",&str[i]);
-//         getchar();
-//     }
-//     for(int i=0;i<n;i++){
-//         count[i]=0;
-//     }
-//     for(int i=0;i<n;i++){
-//         for(int j=0;j<strlen(str[i]);j++){
-//             if(str[i][j] == '1'){
-//                 count[i]++;
-//             }
-//         }
-//     }
-//     for(int i=0;i<n;i++){
-//         count_t[i] = count[i];
-//     }
-//     for(int i=0;i<n;i++){
-//         printf("count=%d\n",count[i]);
-//     }
-//     int minindex=0;
-//     for(int i=0;i<n-1;i++){
-//         for(int j=0;j<n-1-i;j++){
-//             if(count_t[j+1]<count_t[j]){
-//                 int temp = count_t[j+1];
-//                 count_t[j+1]=count_t[j];
-//                 count_t[j]=temp;
-//             }
-//         }
-//         //index[i]=minindex;
-//     }
-//     // for(int i=0;i<n-1;i++){
-//     //     for(int j=0;j<n-1-i;j++){
-//     //         if(count[j]>count[j+1]){
-//     //             int temp = str[j+1];
-//     //             str[j+1] = str[j];
-//     //             str[j]=temp; 
-//     //         }
-//     //     }
-//     // }
-//     for(int i=0;i<n;i++){
-//         printf("count_t=%d\n",count_t[i]);
-//     }
-//     for(int i=0,temp=-1;i<n;i++){
-//         for(int j=0;j<n;j++){
-//             if(count_t[j] == temp){
-//                 index[j-1]=i-1;
-//                 temp=-1;
-//             }else if(count[i]==count_t[j]){
-//                 index[j]=i;
-//                 temp = count_t[j];
-//             }
-//         }
-//     }
-//     for(int i=0;i<n;i++){
-//         printf("index[%d]=%d\n",i,index[i]);
-//     }
-//     for(int i=0;i<n;i++){
-//         printf("%s\n",str[index[i]]);
-//     }
-//     return 0;
-// }
-//2.AC 结构体方法
-// #include<stdio.h>
-// #include<string.h>
-// struct str{
-//     char c[220];
-//     int num;
-// };
-// int count(struct str s){
-//     int cout = 0;
-//     for(int i=0;i<strlen(s.c);i++)
-//         cout += (s.c[i] == '1');
-//     return cout;
-// }
-// struct str strArray[110];
-// struct str strArray_result[110];
-// int main(){
-//     int n,num_max,ifnot=1;
-//     scanf("%d",&n);
-//     for(int m=0;m<n;m++){
-//         scanf("%s",strArray[m].c);
-//         strArray[m].num = count(strArray[m]);
-//         if(ifnot++ == 1) num_max = strArray[0].num;
-//         if(strArray[m].num > num_max) num_max = strArray[m].num;
-//     }
-//     for(int i=0,index=0;i<=num_max;i++){
-//         for(int j=0;j<n;j++){
-//             if(strArray[j].num == i)
-//                 strArray_result[index++]=strArray[j];  
-//         }
-//     }
-//     for(int i=0;i<n;i++)
-//         printf("%s\n",strArray_result[i].c);
-//     return 0;
-// }
-
-
-
-
-
-
-
-
-// #include <stdio.h>
-// #include <string.h>
-// char str[100][205];
-// int count[100];
-// int index1[100];
-// char str_temp[100][205];
-// int main(){
-//     int n;
-//     scanf("%d",&n);
-//     for(int i=0;i<n;i++){
-//         scanf("%s",&str[i]);
-//     }
-//     for(int i=0;i<n;i++){
-//         index1[i]=0;
-//     }
-//     for(int i=0;i<n;i++){
-//         for(int j=0;str[i][j] != '\0';j++){
-//             if(str[i][j]=='1'){
-//                 count[i]++;
-//                 index1[i]++;
-//             }
-//         }
-//     }
-//     for(int i=0;i<n-1;i++){
-//         for(int j=0;j<n-1-i;j++){
-//             if(count[j]>count[j+1]){
-//                 int temp=count[j+1];
-//                 count[j+1]=count[j];
-//                 count[j]=temp;
-//             }
-//         }
-//     } 
-//     int temp=-1;
-//     for(int i=0,z=0;i<n;){
-//         for(int j=0;j<n;j++){
-//             if(index1[j] == temp && strcmp(str_temp[z-1],str[j])==0){
-//                 continue;
-//             }else if(count[i]==index1[j]){
-//                 printf("%s\n",str[j]);
-//                 temp=index1[j];
-//                 strcpy(str_temp[z++],str[j]);
-//                 i++;
-//                 break;
-//             }
-//         }
-//     }
-//     //如果1的个数相同，按ascii码大小排序strcmp(s1,s2)>0  大的s1在后
-//     return 0;
-// }
-
-//用结构体方法写
-
-
-
-
-
-
-
-
-
-//
+/*38 */
 // #include <stdio.h>
 // #include <math.h>
 // int main(){
@@ -1927,6 +850,9 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //     return 0;
 // }
 
+
+
+/*39 */
 // #include <stdio.h>
 // int main(){
 //     int a;
@@ -1941,6 +867,9 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //     return 0;
 // }
 
+
+
+/*40 */
 // #include <stdio.h>
 // int main(){
 //     int a,b;
@@ -1957,6 +886,9 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //     return 0;
 // }
 
+
+
+/*41 */
 // #include <stdio.h>
 // int main(){
 //     int a,m;
@@ -1975,6 +907,8 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 // }
 
 
+
+/*42 */
 // #include <stdio.h>
 // int main(){
 //     int a,b,j,k,l;
@@ -1996,8 +930,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-
-
+/*43 */
 //空格
 // #include<stdio.h>
 // #include<string.h>
@@ -2028,122 +961,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//sky数
-// #include <stdio.h>
-// int sum=0;
-// int f(int n,int d){
-//     int temp,r;
-//     if(n!=0){
-//         r=n%d;
-//         n/=d;
-//         sum+=r;
-//         f(n,d);
-//     }else{
-//         temp=sum;
-//         sum=0;
-//         return temp;
-//     }
-// }
-// int main(){
-//     int num;
-//     while(scanf("%d",&num) != EOF,num){
-//         if(f(num,16)==f(num,12) && f(num,10)==f(num,16)){
-//             printf("%d is a Sky Number.\n",num);
-//         }else{
-//             printf("%d is not a Sky Number.\n",num);
-//         }
-//     }
-//     return 0;
-// }
-
-
-
-//a(n)=a(n-1)*a(n-2)*a(n-3) - 1 , 其中a1=1,a2=2,a3=3
-//求第20221006项的a(n)值
-// #include <stdio.h>
-// long long int a1=1,a2=2,a3=3,a4=5;
-// long long int f(long long int n){
-//     while(n>3){
-//         a4=a1*a2*a3-1;
-//         a1=a2;
-//         a2=a3;
-//         a3=a4%1000000;
-//         n--;
-//     }
-//     return a4;
-//     //递归（算法复杂度O(n)过大）：
-//     // if(n > 3)
-//     //     return (f(n-1)%1000)*(f(n-2)%1000)*(f(n-3)%1000) - 1;
-//     // else
-//     //     return arr[n-1];
-// }
-// int main(){
-//     int num;
-//     scanf("%d",&num);//
-//     printf("%lld\n",f(num));
-//     return 0;
-// }
-//a7=62929 a8=792024393
-
-
-
-//数集中有几个数是等于数集中另外两个不同的数之和
-// #include <stdio.h>
-// int main(){
-//     int arr[101][101];
-//     int n,count=0;
-//     scanf("%d",&n);
-//     //录入表格的表头行和表头列
-//     /*若输入1 2 3 4 5，则二维数组图像化：
-//   i 0 1 2 3 4 5
-// j  
-// 0     1 2 3 4 5
-// 1   1
-// 2   2
-// 3   3
-// 4   4
-// 5   5
-//     */
-//     //arr[0][0]不具有意义
-//     for(int i=1;i<=n;i++){
-//         scanf("%d",&arr[0][i]);
-//         arr[i][0] = arr[0][i];
-//     }
-//     //录入两数和
-//     /*二维数组图像化：
-//   i 0 1 2 3 4 5
-// j  
-// 0     1 2 3 4 5
-// 1   1 X 3 4 5 6
-// 2   2 X X 5 6 7
-// 3   3 X X X 7 8
-// 4   4 X X X X 9
-// 5   5 X X X X X
-//     */
-//     for(int i=1;i<=n;i++){
-//         for(int j=i;j<=n;j++){
-//             if(i != j)
-//                 arr[i][j] = arr[0][j] + arr[i][0];
-//         }
-//     }
-//     //判断，并对已计数项废除（赋予值-1）
-//     for(int m=1;m<=n;m++){
-//         for(int i=1;i<=n;i++){
-//             for(int j=i;j<=n;j++){
-//                 if(i != j && arr[i][j] == arr[0][m]){
-//                     count++;
-//                     arr[0][m] = -1;
-//                 }
-//             }
-//         }
-//     }
-//     printf("%d\n",count);
-//     return 0;
-// }
-
-
-
-
+/*44 */
 // #include <stdio.h>
 // int main(){
 //     int n,num,index=-1;
@@ -2165,6 +983,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
+/*45 */
 //a1+a2+a3最大
 // #include <stdio.h>
 // int main(){
@@ -2190,6 +1009,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
+/*46 */
 //C - 鸡兔同笼
 //1.AC
 // #include <stdio.h>
@@ -2210,7 +1030,6 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //         }
 //         max = n/2;
 //     }
-    
 //     if(min == 0 || max ==0){
 //         printf("0 0\n");
 //     }else
@@ -2235,7 +1054,8 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//
+/*47 两倍*/
+//给定 22 到 1515 个不同的正整数，你的任务是计算这些数里面有多少个数对满足：数对中一个数是另一个数的两倍
 // #include <stdio.h>
 // int main(){
 //     int num[16];
@@ -2262,7 +1082,8 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//
+/*48 完美立方*/
+//形如 a^3= b^3 + c^3 + d^3 的等式被称为完美立方等式
 // #include <stdio.h>
 // int main(){
 //     int n;
@@ -2283,126 +1104,8 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//*F - 回文子串
-//1.WA
-// #include <stdio.h>
-// #include <string.h>
-// int main(){
-//     char str[505];
-//     int s[505]={0};
-//     int len;
-//     gets(str);
-//     for(int i=0;i<505;i++){
-//         s[i] = 0;
-//     }
-//     //和右，和连续两边拓展
-//     for(int i=0;i<strlen(str)-1;i++){
-//         if(str[i] == str[i+1]){
-//             printf("%c%c\n",str[i],str[i+1]);
-//             s[i]=1;
-//         }
-//     }
-   
-//         for(int i=0;i<strlen(str);i++){
-//             if(s[i] == 1){
-//                 if(i<=strlen(str)){
-//                     len=i;
-//                 }else{
-//                     len=strlen(str)-1-i;
-//                 }
-//                 //222，111，22222等
-//                 for(int j=1;j<=len;j++){
-//                     if(str[i-j] == str[i+j]){
-//                         for(int n=i-j;n<=i+j;n++){
-//                             printf("%c",str[n]);
-//                         }
-//                         printf("\n");
-//                     }else{
-//                         break;
-//                     }
-//                 }
-//                 //1221,123321对半分的蔓延
-//                 for(int j=1;j<=len;j++){
-//                     if(str[i-j] == str[i+1+j]){
-//                         for(int n=i-j;n<=i+j+1;n++){
-//                             printf("%c",str[n]);
-//                         }
-//                         printf("\n");
-//                     }
-//                 }
-//             }
-//         }
-//     return 0;
-// }
-//2.master code
-// #include<stdio.h>
-// #include<string.h>
-// char str[505];//123321125775165561
-// int judge(int index_start,int length){
-//     int i = index_start , j = index_start + length - 1;
-//     for(;i<j && str[i]==str[j];i++,j--);//一遇到不一样的字符就终止循环，或者i，j已经定位到同一个字符了才停（说明这之前字符都一样）。所以若 i >= j 为真 说明字符都一样
-//     return i>=j;
-// }
-// int main(){
-//     scanf("%s",str);
-//     int OriLen = strlen(str);
-//     for(int len=2;len<=OriLen;len++){
-//         for(int i=0;i<=OriLen-len;i++){
-//             if(judge(i,len)){
-//                 for(int k=i;k<len+i;k++){
-//                     printf("%c",str[k]);
-//                 }
-//                 printf("\n");
-//             }
-//         }
-//     }
-//     return 0;
-// }
-
-
-
-//G - 生理周期
-//1.WA
-// #include <stdio.h>
-// int main(){
-//     int p,e,i,d,sum=0;
-//     scanf("%d %d %d %d",&p,&e,&i,&d);
-//     for(int m=0;sum-d<=21252;m++){
-//         sum=p+23*m;
-//         if(sum > d && sum%28 == e && sum%33 == i){
-//             printf("%d\n",sum-d);
-//             break;
-//         }
-//     }
-//     return 0;
-// }
-//2.AC
-// #include <stdio.h>
-// int main(){
-//     int p,e,i,d;
-//     scanf("%d %d %d %d",&p,&e,&i,&d);
-//     p%=23;e%=28;i%=33;
-//     for(int m=21252;m>=d;m--){
-//         if((m-p)%23==0 && (m-e)%28==0 && (m-i)%33==0){
-//             printf("%d\n",m-d);
-//             break;
-//         }
-//     }
-//     return 0;
-// }
-//3.master's code
-// #include <stdio.h>
-// int main(){
-//     int p,e,i,d,t;
-//     scanf("%d%d%d%d",&p,&e,&i,&d);
-//     p%=23;e%=28;i%=33;t=d;
-//     for(;(t-p)%23 || (t-e)%28 || (t-i)%33;t++); //非0情况为真，此时整体为0，当都为0时才整体为0
-//     printf("%d\n",t-d);
-//     return 0;
-// }
-
-
-//H - 和数  --输出数列中等于其他两个数之和的数的个数
+/*49 和数*/
+//输出数列中等于其他两个数之和的数的个数
 // #include <stdio.h>
 // int main(){
 //     int n,arr[101],sum[99999];
@@ -2431,7 +1134,8 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//
+/*50 */
+//互质数
 // #include <stdio.h>
 // #include <math.h>
 // int ifPrime(int x,int y){
@@ -2468,7 +1172,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//
+/*51 找和为K的两个元素*/
 // #include<stdio.h>
 // int main(){
 //     int n,k,arr[1001],ifornot=0;
@@ -2493,7 +1197,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//
+/*52 余数相同问题*/
 // #include<stdio.h>
 // int main(){
 //     long long int a,b,c,x;
@@ -2510,7 +1214,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//L - 不定方程求解
+/*53 不定方程求解*/
 // #include <stdio.h>
 // int main(){
 //     int a,b,c,count=0;
@@ -2528,7 +1232,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//M - 质数的和与积
+/*54 质数的和与积*/
 // #include <stdio.h>
 // #include <math.h>
 // int ifPrime(int x){
@@ -2562,7 +1266,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//N - 求满足条件的3位数
+/*55 求满足条件的3位数*/
 // #include <stdio.h>
 // #include <math.h>
 // int main(){
@@ -2585,7 +1289,8 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//O - 输出满足条件的所有数
+/*56 输出满足条件的所有数*/
+//余数不为7
 // #include <stdio.h>
 // int main(){
 //     int n;
@@ -2606,37 +1311,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//P - 三点共线
-// #include <stdio.h>
-// #include <math.h>
-// int main(){
-//     int n,ifnot=0;
-//     double point[101][2];
-//     scanf("%d",&n);
-//     for(int i=0;i<n;i++){
-//         scanf("%lf %lf",&point[i][0],&point[i][1]);
-//     }
-//     for(int i=0;i<n-2;i++){
-//         for(int j=i+1;j<n-i-1;j++){
-//             for(int z=j+1;z<n;z++){
-//                 if( (fabs(point[i][1] - point[j][1])/fabs(point[i][0] - point[j][0])) == (fabs(point[i][1] - point[z][1])/fabs(point[i][0] - point[z][0]))){
-//                     ifnot = 1;
-//                     break;
-//                 }
-//             }
-//         }
-//     }
-//     if(ifnot){
-//         printf("YES\n");
-//     }else{
-//         printf("NO\n");
-//     }
-//     return 0;
-// }
-
-
-
-//
+/*57 */
 // #include<stdio.h>
 // int main(){
 //     int n,sign;
@@ -2654,6 +1329,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
+/*58 */
 //实验3-7 统计学生成绩
 // #include<stdio.h>
 // int judge(int x){
@@ -2699,6 +1375,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
+/*59 */
 //实验3-3 比较大小
 // #include<stdio.h>
 // int main(){
@@ -2725,7 +1402,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//
+/*60 */
 // #include<stdio.h>
 // int main(){
 //     int n,ifnot=0;
@@ -2749,35 +1426,8 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//
-// #include<stdio.h>
-// #include<math.h>
-// int main(){
-//     double a,b,c,t=0;
-//     scanf("%lf %lf %lf",&a,&b,&c);
-//     if(a>b){
-//         t=b;
-//         b=a;
-//         a=t;
-//         if(b>c){
-//             t=c;
-//             c=b;
-//             b=t;
-//             if(a>b){
-//                 t=b;
-//                 b=a;
-//                 a=t;
-//             }
-//         }
-//     }
-//     if(a+b>c){
-//         double s=(a+b+c)/2.0;
-//         printf("area = %.2f; perimeter = %.2f\n",sqrt(s*(s-a)*(s-b)*(s-c)),a+b+c);
-//     }else
-//         printf("These sides do not correspond to a valid triangle\n");
-//     return 0;
-// }
-// #include<stdio.h>
+/*61 求三角形周长和面积*/
+//#include<stdio.h>
 // #include<math.h>
 // int main()
 // {
@@ -2799,7 +1449,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//F. 箱子匹配
+/*62 箱子匹配*/
 //1.WA
 // #include<stdio.h>
 // int main(){
@@ -2874,20 +1524,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//将x的平方赋值给y
-// #include<stdio.h>
-// int main(){
-//     int x,y;
-//     scanf("%d",&x);
-//     y = x*x;
-//     printf("%d = %d * %d\n",y,x,x);
-//     printf("%d * %d = %d\n",x,x,y);
-//     return 0;
-// }
-
-
-
-//计算火车运行时间
+/*63 计算火车运行时间*/
 // #include<stdio.h>
 // #include<math.h>
 // int main(){
@@ -2901,46 +1538,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//
-// #include<stdio.h>
-// int main(){
-//     int x;
-//     double sum = 1.000;
-//     scanf("%d",&x);
-//     for(int i=2;i<=x;i++){
-//         if(i % 2 == 0){
-//             sum -= 1.0/(3*(i-1)+1);
-//         }else{
-//             sum += 1.0/(3*(i-1)+1);
-//         }
-//     }
-//     printf("sum = %.3f\n",sum);
-//     return 0;
-// }
-
-
-
-//
-// #include<stdio.h>
-// int main(){
-//     int m,n;
-//     double sum = 0.000000;
-//     scanf("%d %d",&m,&n);
-//     if(n<m){
-//         int t=n;
-//         n = m;
-//         m = t;
-//     }
-//     for(int i=m;i<=n;i++){
-//         sum += i*i + 1.0/i;
-//     }
-//     printf("sum = %.6f\n",sum);
-//     return 0;
-// }
-
-
-
-//求组合数
+/*64 求组合数*/
 // #include<stdio.h>
 // double fact(int n){
 //     int num = n;
@@ -2965,7 +1563,1491 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
+/*65 */
+
+
+/*66 */
+
+
+
+/*67 */
+
+
+
+/*68 */
+
+
+
+
+
+
+
+
+
+
+/*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑零碎小题↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓简单题(普及-)↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+/*1 成绩等级转换*/
+// #include <stdio.h>
+// int *p;
+// void f(int *x){
+//     if(*x >= 0 && *x <= 100){
+//             if(*x >= 90 && *x <= 100){
+//                 printf("A\n");
+//                 //continue;
+//             }else if(*x >= 80 && *x <= 89){
+//                 printf("B\n");
+//                 //continue;
+//             }else if(*x >= 70 && *x <= 79){
+//                 printf("C\n");
+//                 //continue;
+//             }else if(*x >= 60 && *x <= 69){
+//                 printf("D\n");
+//                 //continue;
+//             }else{
+//                 printf("E\n");
+//                 //continue;
+//             }
+//         }else{
+//             printf("Score is error!\n");
+//             //continue;
+//         }
+// }
+// int main(){
+//     //????
+//     int x;
+//     //char key;
+//     while(1){
+//         //rewind(stdin);
+//         scanf("%d",&x);
+//         //fflush(stdin);
+//         p = &x;
+//         //printf("%d",*p);
+        // if(x < 0 || x > 100){
+        //     printf("Score is error!\n");
+        //     continue;
+        // }
+        // switch(x/10){
+        //     case 10:
+        //     case 9:
+        //         printf("A\n");
+        //         break;
+        //     case 8:
+        //         printf("B\n");
+        //         break;
+        //     case 7:
+        //         printf("C\n");
+        //         break;
+        //     case 6:
+        //         printf("D\n");
+        //         break;
+        //     case 5:
+        //     case 4:
+        //     case 3:
+        //     case 2:
+        //     case 1:
+        //     case 0:
+        //         printf("E\n");
+        //         break;
+        // }
+//         // if(x >= 0 && x <= 100){
+//         //     if(x >= 90 && x <= 100){
+//         //         printf("A\n");
+//         //         continue;
+//         //     }else if(x >= 80 && x <= 89){
+//         //         printf("B\n");
+//         //         continue;
+//         //     }else if(x >= 70 && x <= 79){
+//         //         printf("C\n");
+//         //         continue;
+//         //     }else if(x >= 60 && x <= 69){
+//         //         printf("D\n");
+//         //         continue;
+//         //     }else{
+//         //         printf("E\n");
+//         //         continue;
+//         //     }
+//         // }else{
+//         //     printf("Score is error!\n");
+//         //     continue;
+//         // }
+//     f(p);
+//         //while (getchar() != '\n');
+//         // if(key =='\n'){
+//         //     break;
+//         // }
+//         //rewind(stdin); 
+//     }
+//     return 0;
+// }
+
+
+
+/*2 水仙花数*/
+// #include <stdio.h>
+// int main(){
+//     int a,b,c,min,max,count=0;
+//     while(scanf("%d %d",&min,&max) != EOF){
+//         for(int i=min;i<=max;i++){
+//             a = i/100;
+//             b = i/10%10;
+//             c = i%10;
+//             if(i == a*a*a + b*b*b + c*c*c){
+//                 if(count++ > 0){
+//                     printf(" %d",i);
+//                 }else{
+//                     printf("%d",i);
+//                 }
+//             }
+//         }
+//         if(count == 0){printf("no\n");}else{printf("\n");}
+//         count = 0;
+//     }
+//     return 0;
+// }
+
+
+
+/*3 ASCII码排序*/
+// #include <stdio.h>
+// int main(){
+//     char arr[3];
+//     char temp;
+//     int ch;
+//     while(scanf("%c%c%c",&arr[0],&arr[1],&arr[2]) != EOF){   
+//         for(int i=0;i<2;i++){   
+//             if(arr[i] > arr[i+1]){
+//                 temp = arr[i+1];
+//                 arr[i+1]=arr[i];
+//                 arr[i]=temp;
+//             }
+//         }
+//         if(arr[0]>arr[1]){
+//             temp = arr[1];
+//             arr[1]=arr[0];
+//             arr[0]=temp;
+//         }
+//         printf("%c %c %c\n",arr[0],arr[1],arr[2]);
+//         while((ch = getchar()) != '\n' && ch != EOF);
+//         //出现程序不按输入的东西来执行时要这样清理缓存区，将以前缓存的东西清除才能接收下次循环scanf接收的变量或值
+//     }
+//     return 0;
+// }
+
+
+
+/*4 YYYY/MM/DD日期 转 总天数*/
+// #include <stdio.h>
+// int main(){
+//     int year,month,day,m=0,Feburary=0;
+//     int ch;
+//     while(scanf("%d/%d/%d",&year,&month,&day) != EOF){   
+//         if((year%4==0 && year%100!=0) || year%400==0){
+//             Feburary = 29;
+//         }else{
+//             Feburary = 28;
+//         }
+//         switch(month-1){
+//             case 12:m+=31;
+//             case 11:m+=30;
+//             case 10:m+=31;
+//             case 9:m+=30;
+//             case 8:m+=31;
+//             case 7:m+=31;
+//             case 6:m+=30;
+//             case 5:m+=31;
+//             case 4:m+=30;
+//             case 3:m+=31;
+//             case 2:m+=Feburary;
+//             case 1:m+=31;
+//         }
+//         printf("%d\n",m+day);
+//         m = 0;
+//         while((ch = getchar()) != '\n' && ch != EOF);
+//     }
+//     return 0;
+// }
+
+
+
+/*5 */
+//范围内奇数求立方求和，偶数求平方求和
+// #include <stdio.h>
+// int main(){
+//     int m,n,x=0,y=0,t;
+//     int ch;
+//     while(scanf("%d %d",&m,&n) != EOF){
+//         //题目：输入数据包含多组测试实例，每组测试实例包含一行，由两个整数m和n组成。
+//         //故没有规定m>n或n>m，只说了是由两个整数组成而不一定是有序的，所以需要自行判断，防止循环出错
+//         //注意审题！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+//         if(m>n){
+//             t = n;
+//             n = m;
+//             m = t;
+//         }
+//         for(int i=m;i<=n;i++){
+//             if(i % 2 == 0){
+//                 x += i*i;
+//             }else{
+//                 y += i*i*i;
+//             }
+//         }
+//         printf("%d %d\n",x,y);
+//         x=0;
+//         y=0;
+//         while((ch = getchar()) != '\n' && ch != EOF);
+//     }
+//     return 0;
+// }
+
+
+
+/*6 求数据中负数、零和正数的个数*/
+// #include <stdio.h>
+// int main(){
+//     double num=0;
+//     int ch,n=0;
+//     while(scanf("%d",&n) != EOF,n){
+//         // if(n==0){
+//         //     continue;
+//         // }
+//         int a=0,b=0,c=0;
+//         for(int i=0;i<n;i++){
+//             scanf("%lf",&num);
+//             if(num < 0){
+//                 a++;
+//             }else if(num == 0){
+//                 b++;
+//             }else{
+//                 c++;
+//             }
+//             num=0;
+//         }
+//         printf("%d %d %d\n",a,b,c);
+//         //while((ch = getchar()) != '\n' && ch != EOF);//该句可能会导致mmit Failed!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//     }
+//     return 0;
+// }
+// 以上为submit failed
+// 以下为Accepted：
+// #include <stdio.h>
+// int main(){
+//     double num=0;
+//     int a,b,c,n=0;
+//     while(scanf("%d",&n) != EOF,n){
+//         a=0,b=0,c=0;
+//         for(int i=0;i<n;i++){
+//             scanf("%lf",&num);
+//             if(num < 0){
+//                 a++;
+//             }else if(num == 0){
+//                 b++;
+//             }else{
+//                 c++;
+//             }
+//             num=0;
+//         }
+//         printf("%d %d %d\n",a,b,c);
+//     }
+//     return 0;
+// }
+
+
+
+/*7 判断一个范围内取值的函数值是否全为素数*/
+// #include <stdio.h>
+// #include <math.h>
+// int isPrime(int num){//1为素数，0为非素数
+//     int ret = 1;
+//     if(num % 2 != 0){
+//         for(int j=3;j<sqrt(num);j++){
+//             if(num % j == 0){
+//                 ret = 0;
+//             }
+//         }
+//     }else{
+//         ret = 0;
+//     }
+//     return ret;
+// }
+// int main(){
+//     int x,y,t,f;
+//     while(scanf("%d %d",&x,&y) != EOF && (x != 0 || y != 0)){   
+//         int ifall=1;
+//         if(x>y){
+//             t = y;
+//             y = x;
+//             x = t;
+//         }
+//         for(int i=x;i<=y;i++){
+//             f = i*i + i + 41;  
+//             if(isPrime(f) == 0){
+//                 printf("Sorry\n");
+//                 ifall = 0;
+//                 break;
+//             }
+//         }
+//         if(ifall){
+//             printf("OK\n");
+//         }
+//     }
+//     return 0;
+// }
+
+
+
+/*8 偶数数列求局部平均*/
+// #include <stdio.h>
+// int main(){
+//     int arr[100];
+//     int len,m,average=0,m=0,times=0;
+//     while(scanf("%d %d",&len,&m) != EOF){ 
+//         average = 0;
+//         for(int i=0;i<len;i++){
+//             arr[i]=2*(i+1);
+//         }
+//         if(len % m != 0){
+//             times = len/m + 1;
+//         }else{
+//             times = len/m;
+//         }
+//         for(int i=0;i<times;i++){
+//             if(len%m != 0 && i==times - 1){
+//                 for(int j=0;j<len%m;j++){
+//                     m += arr[j+m*i];
+//                 }
+//                 average = m/(len%m);
+//             }else{
+//                 for(int z=0;z<m;z++){
+//                     m+=arr[z+m*i];
+//                 }
+//                 average = m/m;           
+//             }
+//             m = 0;
+//             if(i==times - 1 ){
+//                     printf("%d\n",average);
+//             }else{
+//                     printf("%d ",average);
+//             }
+//         }
+//     }
+//     return 0;
+// }
+
+
+
+/*9 将一个数插入定长的有序数列*/
+// #include <stdio.h>
+// int main(){
+//     int n,m,index,g;
+//     int num;
+//     int arr1[100];
+//     int arr2[101];
+//     while(scanf("%d %d",&n,&m) != EOF && (n>0 || m!=0)){   
+//         index=n;
+//         g=0;
+//         for(int i=0;i<n;i++){
+//             scanf("%d",&num);
+//             arr1[i]=num;
+//         }
+//         for(int i=0;i<n;i++){
+//             if(m < arr1[i]){
+//                 arr2[i]=m;
+//                 index=i;
+//                 break;
+//             }else if(i==n-1){
+//                 arr2[n]=m;
+//                 break;
+//             }
+//         }
+//         for(int i=0;i<n+1;i++){
+//             if(i == index){
+//                 g = 1;
+//                 i++;
+//             }
+//             if(g==1){
+//                 arr2[i]=arr1[i-1];
+//             }else{
+//                 arr2[i]=arr1[i];
+//             }        
+//         }
+//         for(int i=0;i<n+1;i++){
+//             if(i==0){
+//                 printf("%d",arr2[i]);
+//             }else{
+//                 printf(" %d",arr2[i]);
+//             }
+//         }
+//         printf("\n");
+//     }
+//     return 0;
+// }
+
+
+
+/*10 母牛的故事*/
+/*
+下标 0 1 2 3 4 5 6 7 8 9 ···
+牛否 1 1 0 0 0 0 0 0 0 0
+年龄 4 1 0 0 0 0 0 0 0 0
+
+总牛数可以用 年龄叠加 推出
+第一只牛的年龄需要减去？
+
+直接用年龄数组？
+下标 0 1 2 3 4 5 6 7 8 9 ···
+年龄 4 1 0 0 0 0 0 0 0 0 ···
+
+年龄为0就是没牛，大于0就是有牛，对于 非0元素 - 4 即该牛总共生产牛数
+年龄超过4后，每加1就某个下标的年龄从0变成1
+第一头牛产牛数特别计算即可，从第二头牛年龄算起
+//生下来，3年后，第4年就生另一头
+第一年 1 牛  3-3 + 1 = 1
+下标 0 1 2 3 4 5 6 7 8 9 ···
+年龄 3 0 0 0 0 0 0 0 0 0 ···
+
+第二年 2 牛  4-3 + 1 = 2
+下标 0 1 2 3 4 5 6 7 8 9 ···
+年龄 4 1 0 0 0 0 0 0 0 0 ···
+
+第三年 3 牛  5-3 + 1 = 3
+下标 0 1 2 3 4 5 6 7 8 9 ···
+年龄 5 2 1 0 0 0 0 0 0 0 ···
+
+第四年 4 牛  6-3 + 1 = 4
+下标 0 1 2 3 4 5 6 7 8 9 ···
+年龄 6 3 2 1 0 0 0 0 0 0 ···
+
+第五年 6 牛  7-3 + 4-3 + 1 = 6
+下标 0 1 2 3 4 5 6 7 8 9 ···
+年龄 7 4 3 2 1 1 0 0 0 0 ···
+
+第六年 9 牛  8-3 + 5-3 + 4-3 + 1 = 9
+下标 0 1 2 3 4 5 6 7 8 9 ···
+年龄 8 5 4 3 2 2 1 1 1 0 ···
+
+第七年 13 牛  
+下标 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18···
+年龄 9 6 5 4 3 3 2 2 2 1  1  1  1
+
+第八年 19 牛  
+下标 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18···
+年龄10 7 6 5 4 4 3 3 3 2  2  2  2  1  1  1  1  1  1
+
+第九年 28 牛  
+下标 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18···
+年龄11 8 7 6 5 5 4 4 4 3  3  3  3  2  2  2  2  2  2···
+*/
+//1.WA
+// #include <stdio.h>
+// int main(){
+//     int year;
+//     long long int m;
+//     long long int temp;
+//     long long int AgeOfCow[10000];
+//     //cowIndex用于记录下次产的牛于数组的索引
+//     while(scanf("%d",&year) != EOF,year){   
+//         m=1;
+//         temp=m=1;
+//         AgeOfCow[0]= 3;
+//         for(long long int i=1;i<10000;i++){
+//             AgeOfCow[i]=0;
+//         }
+//         for(long long int i=1;i<year;i++){//除去第一年
+// //year = 2 -- >m=2 
+// //year = 3 -- >m=3
+// //year = 4 -- >m=4
+// //year = 5 -- >m=
+// //···
+//             for(long long int j=0;j<m;j++){
+//                 AgeOfCow[j]++;
+//                 if(AgeOfCow[j] > 3){
+//                     AgeOfCow[temp]++;
+//                     temp++;
+//                 }
+//             }
+//             m = temp;
+//         }
+//         //计算到第year年总牛数m
+//         // for(int i=0;i<cowIndex;i++){
+//         //     if(AgeOfCow[i]>3){
+//         //         m += AgeOfCow[i] - 3;
+//         //     }
+//         // }
+//         printf("%lld\n",m);
+//     }
+//     return 0;
+// }
+//为什么输出溢出（0<year<55）不能覆盖全部year
+//2.AC 使用递归
+// #include <stdio.h>
+// int sum[56] = { 0,1,2,3,4,6 };//
+// void cow(int n)
+// {
+//  if (sum[n - 1] != 0 && sum[n - 3] != 0)
+//  {
+//   sum[n] = sum[n - 1] + sum[n - 3];
+//  }
+//  else
+//  {
+//   if (sum[n - 1] == 0)
+//    cow(n - 1);
+//   if (sum[n - 3] == 0)
+//    cow(n - 3);
+//   sum[n] = sum[n - 1] + sum[n - 3];
+//  }
+// }
+// int main()
+// {
+//  int n;
+//  while (scanf("%d", &n) != EOF)
+//  {
+//   if (n == 0)
+//    break;
+//   if (sum[n] == 0)
+//    cow(n);
+//   printf("%d\n", sum[n]);
+//  }
+//  return 0;
+// }
+
+
+
+/*11 发工资*/
+//1.普通If方法：
+// #include <stdio.h>
+// int main(){
+//     int n,amount=0;
+//     int arr[100] = {0};
+//     int money[6] = {0};
+//     //0 1 2 3  4  5
+//     //1 2 5 10 50 100
+//     unsigned int m;
+//     while(scanf("%d",&n) != EOF,n){
+//         for(int i=0;i<6;i++){
+//             money[i]=0;
+//         }
+//         for(int i=0;i<n;i++){
+//             scanf("%u",&m);
+//             if(m >= 100){
+//                 money[5] += m / 100;
+//                 m %= 100;
+//             }
+//             if(m >= 50){
+//                 money[4]++;
+//                 m %= 50;
+//             }
+//             if(m >= 10){
+//                 money[3] += m/10;
+//                 m %= 10;
+//             }
+//             if(m >= 5){
+//                 money[2] += m/5;
+//                 m %= 5;
+//             }
+//             if(m >= 2){
+//                 money[1] += m/2;
+//                 m %= 2;
+//             }
+//             if(m >= 1){
+//                 money[0] += m;
+//                 m = 0;
+//             }
+//         }
+//         for(int i=0;i<6;i++){
+//             amount += money[i];
+//         }
+//         printf("%d\n",amount);
+//         amount = 0;
+//         //m = 0;
+//     }
+//     return 0;
+// }
 //
+//2.递归方法：
+// #include <stdio.h>
+// int n,amount=0;
+// int money[6] = {1,2,5,10,50,100};
+// unsigned int m;
+// void GetAccount(unsigned int money_,int k){
+//     if(k < 0){
+//         return;
+//     }else if(money_ >= money[k]){
+//         amount += money_ / money[k];
+//         money_ %= money[k];
+//     }
+//     GetAccount(money_,--k);
+// }
+// int main(){
+//     while(scanf("%d",&n) != EOF,n){
+//         for(int i=0;i<n;i++){
+//             scanf("%u",&m);
+//             GetAccount(m,5);
+//         }
+//         printf("%d\n",amount);
+//         amount = 0;
+//     }
+//     return 0;
+// }
+
+
+
+/*12 海选女主角*/
+// #include <stdio.h>
+// #include <math.h>
+// int main(){
+//     int m,n;//m行，n列
+//     int score,score_temp,max_m,max_n;
+//     while(scanf("%d %d",&m,&n) != EOF){  
+//         max_m=1;
+//         max_n=1;
+//         scanf("%d",&score);
+//         score_temp = score;
+//         for(int i=1;i<=m;i++){
+//             for(int j=1;j<=n;j++){
+//                 if(i==1 && j==1){
+//                     continue;
+//                 }
+//                 scanf("%d",&score);
+//                 if(abs(score) >abs(score_temp)){
+//                     score_temp = score;
+//                     max_m = i;
+//                     max_n = j;
+//                 }
+//             }
+//         }
+//         printf("%d %d %d\n",max_m,max_n,score_temp);
+//     }
+//     return 0;
+// }
+
+
+
+/*13 求平均成绩 并输出各科均大于等于平均成绩的人数*/
+// #include <stdio.h>
+// int main(){
+//     int m,n,score,sum1,sum2,count;
+//     double sj_average[5];
+//     int arr[50][5];
+//     while(scanf("%d %d",&n,&m) != EOF){
+//         count = n;
+//         for(int i=0;i<50;i++){
+//             for(int j=0;j<5;j++){
+//                 arr[i][j] = 0;
+//             }
+//         }
+//         for(int i=0;i<n;i++){
+//             for(int j=0;j<m;j++){
+//                 scanf("%d",&score);
+//                 arr[i][j]=score;
+//             }
+//         }   
+//         for(int i=0;i<n;i++){
+//             sum1 = 0;
+//             for(int j=0;j<m;j++){
+//                 sum1 += arr[i][j];  
+//             }
+//             if(i == n-1){
+//                 printf("%.2f",1.0*sum1/m);
+//             }else{
+//                 printf("%.2f ",1.0*sum1/m);
+//             }
+//         }
+//         printf("\n");
+//         for(int j=0;j<m;j++){
+//             sum2 = 0;
+//             for(int z=0;z<n;z++){
+//                 sum2 += arr[z][j];
+//             }
+//             sj_average[j] = 1.0*sum2/n;
+//             if(j == m-1){
+//                 printf("%.2f",sj_average[j]);
+//             }else{
+//                 printf("%.2f ",sj_average[j]);
+//             }
+//         }
+//         printf("\n");
+//         for(int i=0;i<n;i++){
+//             for(int j=0;j<m;j++){
+//                 if(arr[i][j] < sj_average[j]){
+//                     count--;
+//                     break;
+//                 }
+//             }
+//         }
+//         printf("%d\n\n",count);
+//     }
+//     return 0;
+// }
+
+
+
+/*14 判断字符串是否是C语言合法标识符*/
+//所有位数包括第一位不能有空格,不能有除了数字,大小写字母和"_"的任何字符
+//第一位不能是数字或空格，或者说只能是什么
+// #include <stdio.h>
+// #include <string.h>
+// int main(){    
+//     int n;
+//     char str[50];
+//     unsigned int len;
+//     scanf("%d",&n);
+//     getchar();
+//     for(int i=0;i<n;i++){
+//         gets(str);
+//         len = strlen(str);
+//         if((str[0] >= 65 && str[0] <= 90) || str[0] == '_' || (str[0] >= 97 && str[0] <= 122)){
+//             for(int j=0;j<len;j++){
+//                 if((str[j] >= 65 && str[j] <= 90) || str[j] == '_' || (str[j] >= 97 && str[j] <= 122) || (str[j] >= 48 && str[j] <= 57)){
+//                     if(j==len-1){
+//                         printf("yes\n");
+//                         break;
+//                     }
+//                 }else{
+//                     printf("no\n");
+//                     break;
+//                 }
+//             }
+//         }else{
+//             printf("no\n");
+//         }
+//         memset(str,'\0',50);
+//     }
+//     return 0;
+// }
+
+
+
+/*15 查找最大字母*/
+// #include <stdio.h>
+// #include <string.h>
+// char str[100];
+// int main(){
+//     unsigned int len;
+//     int index[100];
+//     char max;
+//     while(gets(str) != NULL){   
+//         for(int i=0;i<100;i++){
+//             index[i]=0;
+//         }
+//         len = strlen(str);
+//         for(int i=0;str[i] != '\0';i++){ 
+//                 if(i == 0){
+//                     max = str[0];
+//                 }else if(str[i] > max){
+//                     max = str[i];
+//                 }
+//         } 
+//         for(int i=0;str[i] != '\0';i++){
+//             if(str[i] == max){
+//                 index[i]=1;
+//             }
+//         }
+//         for(int i=0;str[i] != '\0';i++){
+//             if(index[i] == 1){
+//                 printf("%c(max)",str[i]);
+//             }else{
+//                 printf("%c",str[i]);
+//             }
+//         }
+//         printf("\n");
+//         memset(str,'\0',100);
+//     }
+//     return 0;
+// }
+
+
+
+/*16 求斐波那契数列的第num项*/
+//1.递归，只能算低项
+// #include <stdio.h>
+// int GetFib(int n){
+//     if(n <= 2){
+//         return 1;
+//     }else{
+//         return GetFib(n-1) + GetFib(n-2);
+//     }
+// }
+// int main(){
+//     int num;
+//     scanf("%d",&num);
+//     printf("%d\n",GetFib(num));
+//     return 0;
+// }
+//2.交换数法可以求高项
+// #include <stdio.h>
+// int GetFib(int n){
+//     long long int a,b,c;
+//     a=b=c=1;
+//     while(n>2){
+//         c=a+b;
+//         b=a;
+//         a=c;
+//         n--;
+//     }
+//     return c;
+// }
+// int main(){
+//     int num;
+//     scanf("%d",&num);
+//     printf("%lld\n",GetFib(num));
+//     return 0;
+// }
+
+
+
+/*17 sky数*/
+//1.WA
+// #include <stdio.h>
+// #include <string.h>
+// int main(){
+//     int n,a,b,c,d;
+//     while(scanf("%d",&n) != EOF,n){
+//         a=n/1000;
+//         b=n%1000/100;
+//         c=n%100/10;
+//         d=n%10;
+//         if(a+b+c+d == 22){
+//             printf("%d is a Sky Number.\n",n);
+//         }else{
+//             printf("%d is not a Sky Number.\n",n);
+//         }
+//     }
+//     return 0;
+// }
+//2.AC
+//#include <stdio.h>
+// int sum=0;
+// int f(int n,int d){
+//     int temp,r;
+//     if(n!=0){
+//         r=n%d;
+//         n/=d;
+//         sum+=r;
+//         f(n,d);
+//     }else{
+//         temp=sum;
+//         sum=0;
+//         return temp;
+//     }
+// }
+// int main(){
+//     int num;
+//     while(scanf("%d",&num) != EOF,num){
+//         if(f(num,16)==f(num,12) && f(num,10)==f(num,16)){
+//             printf("%d is a Sky Number.\n",num);
+//         }else{
+//             printf("%d is not a Sky Number.\n",num);
+//         }
+//     }
+//     return 0;
+// }
+//3.master's code
+// #include<cstdio>
+// #include<cstring>
+// #include<cstdlib>
+// int Cal(int x, int base)
+// {
+//     int res = 0;
+//     for(; x; x /= base)
+//         res += x % base;
+//     return res;
+// }
+// int main()
+// {
+//     int n;
+//     while(scanf("%d", &n) != EOF && n)
+//     {
+//         int res = Cal(n, 10);
+//         if(Cal(n, 12) == res && Cal(n, 16) == res) printf("%d is a Sky Number.\n", n);
+//         else printf("%d is not a Sky Number.\n", n);
+//     }
+//     return 0;
+// }
+
+
+
+/*18 海龟移动*/
+//1.判断海龟是否是否移动到x = 100~120 位置
+// #include <stdio.h>
+// #include <string.h>
+// int main(){
+//     char cmd[10];
+//     char cmd_t[10];
+//     int sum = 0;
+//     int x = 0 , x_t = 0;
+//     int cmd_int_temp = 0; 
+//     while(scanf("%s",cmd) != EOF && strcmp(cmd,"STOP") != 0){
+//         int cmd_int=0;
+//         if(strcmp(cmd,"REPEAT")!=0) scanf("%d",&x); 
+//         //计算ASCII值
+//         for(int i=0;i<strlen(cmd);i++){
+//             cmd_int += cmd[i];
+//         }
+//         switch(cmd_int){
+//             case 'F'+'D':
+//                 sum += x;
+//                 x_t = x;
+//                 cmd_int_temp = cmd_int;
+//                 break;
+//             case 'B'+'K':
+//                 sum -= x;
+//                 if(sum <= 0) sum = 0;
+//                 x_t = x;
+//                 cmd_int_temp = cmd_int;
+//                 break;
+//             case 'R'+'E'+'P'+'E'+'A'+'T':
+//                 switch(cmd_int_temp){
+//                     case 'F'+'D':
+//                         sum += x_t;
+//                         break;
+//                     case 'B'+'K':
+//                         sum -= x_t;
+//                         if(sum <= 0) sum = 0;
+//                         break;
+//                 }
+//         }
+//     }
+//     printf("sum=%d\n",sum);
+//     if(sum >= 100 && sum <= 120) printf("YES\n");
+//     else printf("NO\n");
+//     return 0;
+// }
+//2.输出移动后海龟x,y坐标
+// #include <stdio.h>
+// #include <string.h>
+// #include <math.h>
+// #define PI 3.1415926535898
+// #define K (PI/180)
+// //因为c语言的三角函数参数为弧度，要从角度转换成弧度才能算出
+// int main(){
+//     char cmd[10];
+//     char cmd_t[10];
+//     int angle = 0;
+//     int s = 0 , s_t = 0;
+//     double x=0.0 , y=0.0;
+//     int cmd_int_temp = 0; 
+//     while(scanf("%s",cmd) != EOF && strcmp(cmd,"STOP") != 0){
+//         int cmd_int=0;
+//         if(strcmp(cmd,"REPEAT")!=0) scanf("%d",&s);//s可以 为角度 
+//         //计算ASCII值
+//         for(int i=0;i<strlen(cmd);i++){
+//             cmd_int += cmd[i];
+//         }
+//         switch(cmd_int){
+//             case 'F'+'D':
+//                 x += s * cos(angle * K);
+//                 y += s * sin(angle * K);
+//                 s_t = s;
+//                 cmd_int_temp = cmd_int;
+//                 break;
+//             case 'B'+'K':
+//                 x += s * cos(angle * K);
+//                 y += s * sin(angle * K);
+//                 s_t = s;
+//                 cmd_int_temp = cmd_int;
+//                 break;
+//             case 'L'+'E'+'F'+'T':
+//                 angle += s;
+//                 cmd_int_temp = cmd_int;
+//                 break;
+//             case 'R'+'I'+'G'+'H'+'T':
+//                 angle -= s;
+//                 cmd_int_temp = cmd_int;
+//                 break;
+//             case 'R'+'E'+'P'+'E'+'A'+'T':
+//                 switch(cmd_int_temp){
+//                     case 'F'+'D':
+//                         x += s * cos(angle * K);
+//                         y += s * sin(angle * K);
+//                         break;
+//                     case 'B'+'K':
+//                         x += s * cos(angle * K);
+//                         y += s * sin(angle * K);
+//                         break;
+//                     case 'L'+'E'+'F'+'T':
+//                         angle += s;
+//                         break;
+//                     case 'R'+'I'+'G'+'H'+'T':
+//                         angle -= s;
+//                         break;
+//                 }
+//         }
+//     }
+//     printf("x = %.2f\ny = %.2f\n",x,y);
+//     return 0;
+// }
+
+
+
+/*19 按1的个数排序 01串*/
+//1.WA
+// #include <stdio.h>
+// #include <string.h>
+// int main(){
+//     char str[100][201];
+//     int count[100];
+//     int count_t[100];
+//     int n;
+//     int index[100];
+//     scanf("%d",&n);
+//     for(int i=0;i<n;i++){
+//         //gets(str[i]);
+//         scanf("%s",&str[i]);
+//         getchar();
+//     }
+//     for(int i=0;i<n;i++){
+//         count[i]=0;
+//     }
+//     for(int i=0;i<n;i++){
+//         for(int j=0;j<strlen(str[i]);j++){
+//             if(str[i][j] == '1'){
+//                 count[i]++;
+//             }
+//         }
+//     }
+//     for(int i=0;i<n;i++){
+//         count_t[i] = count[i];
+//     }
+//     for(int i=0;i<n;i++){
+//         printf("count=%d\n",count[i]);
+//     }
+//     int minindex=0;
+//     for(int i=0;i<n-1;i++){
+//         for(int j=0;j<n-1-i;j++){
+//             if(count_t[j+1]<count_t[j]){
+//                 int temp = count_t[j+1];
+//                 count_t[j+1]=count_t[j];
+//                 count_t[j]=temp;
+//             }
+//         }
+//         //index[i]=minindex;
+//     }
+//     // for(int i=0;i<n-1;i++){
+//     //     for(int j=0;j<n-1-i;j++){
+//     //         if(count[j]>count[j+1]){
+//     //             int temp = str[j+1];
+//     //             str[j+1] = str[j];
+//     //             str[j]=temp; 
+//     //         }
+//     //     }
+//     // }
+//     for(int i=0;i<n;i++){
+//         printf("count_t=%d\n",count_t[i]);
+//     }
+//     for(int i=0,temp=-1;i<n;i++){
+//         for(int j=0;j<n;j++){
+//             if(count_t[j] == temp){
+//                 index[j-1]=i-1;
+//                 temp=-1;
+//             }else if(count[i]==count_t[j]){
+//                 index[j]=i;
+//                 temp = count_t[j];
+//             }
+//         }
+//     }
+//     for(int i=0;i<n;i++){
+//         printf("index[%d]=%d\n",i,index[i]);
+//     }
+//     for(int i=0;i<n;i++){
+//         printf("%s\n",str[index[i]]);
+//     }
+//     return 0;
+// }
+//2.WA
+// #include <stdio.h>
+// #include <string.h>
+// char str[100][205];
+// int count[100];
+// int index1[100];
+// char str_temp[100][205];
+// int main(){
+//     int n;
+//     scanf("%d",&n);
+//     for(int i=0;i<n;i++){
+//         scanf("%s",&str[i]);
+//     }
+//     for(int i=0;i<n;i++){
+//         index1[i]=0;
+//     }
+//     for(int i=0;i<n;i++){
+//         for(int j=0;str[i][j] != '\0';j++){
+//             if(str[i][j]=='1'){
+//                 count[i]++;
+//                 index1[i]++;
+//             }
+//         }
+//     }
+//     for(int i=0;i<n-1;i++){
+//         for(int j=0;j<n-1-i;j++){
+//             if(count[j]>count[j+1]){
+//                 int temp=count[j+1];
+//                 count[j+1]=count[j];
+//                 count[j]=temp;
+//             }
+//         }
+//     } 
+//     int temp=-1;
+//     for(int i=0,z=0;i<n;){
+//         for(int j=0;j<n;j++){
+//             if(index1[j] == temp && strcmp(str_temp[z-1],str[j])==0){
+//                 continue;
+//             }else if(count[i]==index1[j]){
+//                 printf("%s\n",str[j]);
+//                 temp=index1[j];
+//                 strcpy(str_temp[z++],str[j]);
+//                 i++;
+//                 break;
+//             }
+//         }
+//     }
+//     //如果1的个数相同，按ascii码大小排序strcmp(s1,s2)>0  大的s1在后
+//     return 0;
+// }
+//3.AC 结构体方法
+// #include<stdio.h>
+// #include<string.h>
+// struct str{
+//     char c[220];
+//     int num;
+// };
+// int count(struct str s){
+//     int cout = 0;
+//     for(int i=0;i<strlen(s.c);i++)
+//         cout += (s.c[i] == '1');
+//     return cout;
+// }
+// struct str strArray[110];
+// struct str strArray_result[110];
+// int main(){
+//     int n,num_max,ifnot=1;
+//     scanf("%d",&n);
+//     for(int m=0;m<n;m++){
+//         scanf("%s",strArray[m].c);
+//         strArray[m].num = count(strArray[m]);
+//         if(ifnot++ == 1) num_max = strArray[0].num;
+//         if(strArray[m].num > num_max) num_max = strArray[m].num;
+//     }
+//     for(int i=0,index=0;i<=num_max;i++){
+//         for(int j=0;j<n;j++){
+//             if(strArray[j].num == i)
+//                 strArray_result[index++]=strArray[j];  
+//         }
+//     }
+//     for(int i=0;i<n;i++)
+//         printf("%s\n",strArray_result[i].c);
+//     return 0;
+// }
+
+
+
+/*20 求第n项的a(n)=a(n-1)*a(n-2)*a(n-3) - 1*/
+//其中a1=1,a2=2,a3=3
+//求第20221006项的a(n)值
+// #include <stdio.h>
+// long long int a1=1,a2=2,a3=3,a4=5;
+// long long int f(long long int n){
+//     while(n>3){
+//         a4=a1*a2*a3-1;
+//         a1=a2;
+//         a2=a3;
+//         a3=a4%1000000;
+//         n--;
+//     }
+//     return a4;
+//     //递归（算法复杂度O(n)过大）：
+//     // if(n > 3)
+//     //     return (f(n-1)%1000)*(f(n-2)%1000)*(f(n-3)%1000) - 1;
+//     // else
+//     //     return arr[n-1];
+// }
+// int main(){
+//     int num;
+//     scanf("%d",&num);//
+//     printf("%lld\n",f(num));
+//     return 0;
+// }
+//a7=62929 a8=792024393
+
+
+
+/*21 数集中有几个数是等于数集中另外两个不同的数之和*/
+// #include <stdio.h>
+// int main(){
+//     int arr[101][101];
+//     int n,count=0;
+//     scanf("%d",&n);
+//     //录入表格的表头行和表头列
+//     /*若输入1 2 3 4 5，则二维数组图像化：
+//   i 0 1 2 3 4 5
+// j  
+// 0     1 2 3 4 5
+// 1   1
+// 2   2
+// 3   3
+// 4   4
+// 5   5
+//     */
+//     //arr[0][0]不具有意义
+//     for(int i=1;i<=n;i++){
+//         scanf("%d",&arr[0][i]);
+//         arr[i][0] = arr[0][i];
+//     }
+//     //录入两数和
+//     /*二维数组图像化：
+//   i 0 1 2 3 4 5
+// j  
+// 0     1 2 3 4 5
+// 1   1 X 3 4 5 6
+// 2   2 X X 5 6 7
+// 3   3 X X X 7 8
+// 4   4 X X X X 9
+// 5   5 X X X X X
+//     */
+//     for(int i=1;i<=n;i++){
+//         for(int j=i;j<=n;j++){
+//             if(i != j)
+//                 arr[i][j] = arr[0][j] + arr[i][0];
+//         }
+//     }
+//     //判断，并对已计数项废除（赋予值-1）
+//     for(int m=1;m<=n;m++){
+//         for(int i=1;i<=n;i++){
+//             for(int j=i;j<=n;j++){
+//                 if(i != j && arr[i][j] == arr[0][m]){
+//                     count++;
+//                     arr[0][m] = -1;
+//                 }
+//             }
+//         }
+//     }
+//     printf("%d\n",count);
+//     return 0;
+// }
+
+
+
+/*22 回文子串*/
+//1.WA
+// #include <stdio.h>
+// #include <string.h>
+// int main(){
+//     char str[505];
+//     int s[505]={0};
+//     int len;
+//     gets(str);
+//     for(int i=0;i<505;i++){
+//         s[i] = 0;
+//     }
+//     //和右，和连续两边拓展
+//     for(int i=0;i<strlen(str)-1;i++){
+//         if(str[i] == str[i+1]){
+//             printf("%c%c\n",str[i],str[i+1]);
+//             s[i]=1;
+//         }
+//     }
+//         for(int i=0;i<strlen(str);i++){
+//             if(s[i] == 1){
+//                 if(i<=strlen(str)){
+//                     len=i;
+//                 }else{
+//                     len=strlen(str)-1-i;
+//                 }
+//                 //222，111，22222等
+//                 for(int j=1;j<=len;j++){
+//                     if(str[i-j] == str[i+j]){
+//                         for(int n=i-j;n<=i+j;n++){
+//                             printf("%c",str[n]);
+//                         }
+//                         printf("\n");
+//                     }else{
+//                         break;
+//                     }
+//                 }
+//                 //1221,123321对半分的蔓延
+//                 for(int j=1;j<=len;j++){
+//                     if(str[i-j] == str[i+1+j]){
+//                         for(int n=i-j;n<=i+j+1;n++){
+//                             printf("%c",str[n]);
+//                         }
+//                         printf("\n");
+//                     }
+//                 }
+//             }
+//         }
+//     return 0;
+// }
+//2.master code
+// #include<stdio.h>
+// #include<string.h>
+// char str[505];//123321125775165561
+// int judge(int index_start,int length){
+//     int i = index_start , j = index_start + length - 1;
+//     for(;i<j && str[i]==str[j];i++,j--);//一遇到不一样的字符就终止循环，或者i，j已经定位到同一个字符了才停（说明这之前字符都一样）。所以若 i >= j 为真 说明字符都一样
+//     return i>=j;
+// }
+// int main(){
+//     scanf("%s",str);
+//     int OriLen = strlen(str);
+//     for(int len=2;len<=OriLen;len++){
+//         for(int i=0;i<=OriLen-len;i++){
+//             if(judge(i,len)){
+//                 for(int k=i;k<len+i;k++){
+//                     printf("%c",str[k]);
+//                 }
+//                 printf("\n");
+//             }
+//         }
+//     }
+//     return 0;
+// }
+
+
+
+/*23 G - 生理周期*/
+//1.WA
+// #include <stdio.h>
+// int main(){
+//     int p,e,i,d,sum=0;
+//     scanf("%d %d %d %d",&p,&e,&i,&d);
+//     for(int m=0;sum-d<=21252;m++){
+//         sum=p+23*m;
+//         if(sum > d && sum%28 == e && sum%33 == i){
+//             printf("%d\n",sum-d);
+//             break;
+//         }
+//     }
+//     return 0;
+// }
+//2.AC
+// #include <stdio.h>
+// int main(){
+//     int p,e,i,d;
+//     scanf("%d %d %d %d",&p,&e,&i,&d);
+//     p%=23;e%=28;i%=33;
+//     for(int m=21252;m>=d;m--){
+//         if((m-p)%23==0 && (m-e)%28==0 && (m-i)%33==0){
+//             printf("%d\n",m-d);
+//             break;
+//         }
+//     }
+//     return 0;
+// }
+//3.master's code
+// #include <stdio.h>
+// int main(){
+//     int p,e,i,d,t;
+//     scanf("%d%d%d%d",&p,&e,&i,&d);
+//     p%=23;e%=28;i%=33;t=d;
+//     for(;(t-p)%23 || (t-e)%28 || (t-i)%33;t++); //非0情况为真，此时整体为0，当都为0时才整体为0
+//     printf("%d\n",t-d);
+//     return 0;
+// }
+
+
+/*24 三点共线*/
+// #include <stdio.h>
+// #include <math.h>
+// int main(){
+//     int n,ifnot=0;
+//     double point[101][2];
+//     scanf("%d",&n);
+//     for(int i=0;i<n;i++){
+//         scanf("%lf %lf",&point[i][0],&point[i][1]);
+//     }
+//     for(int i=0;i<n-2;i++){
+//         for(int j=i+1;j<n-i-1;j++){
+//             for(int z=j+1;z<n;z++){
+//                 if( (fabs(point[i][1] - point[j][1])/fabs(point[i][0] - point[j][0])) == (fabs(point[i][1] - point[z][1])/fabs(point[i][0] - point[z][0]))){
+//                     ifnot = 1;
+//                     break;
+//                 }
+//             }
+//         }
+//     }
+//     if(ifnot){
+//         printf("YES\n");
+//     }else{
+//         printf("NO\n");
+//     }
+//     return 0;
+// }
+//另类解法：判断是否 AC == AB + BC 即算3段长度，以此判断是否三点共线
+
+
+
+/*25 */
+//学生绩点统计系统（含学生信息）简单实现：
+// #include <stdio.h>
+// #include <string.h>
+// //一维结构数组 相当于 可以存有不同类型数据的二维数组
+// struct stu{//每个学生信息
+//     char name[4];//3个字母定义长度4为4的数组
+//     char id[11];//10位学号定义长度为11的数组，因为字符串标识符'\0'占一个字节的数组空间
+//     double grade[6];//A~F科成绩
+//     double grade_average;
+// };
+// struct stu students[9999];//该结构数组可以存9999个stu结构体，即9999个学生信息
+// int main(){
+//     //将n位学生的信息录入结构数组
+//     int n;
+//     scanf("%d",&n);
+//     getchar();//必须用这个吸收回车！,一般只需要在scanf输入字符串前使用
+//     for(int i = 0 ; i < n ; i++){
+//         scanf("%s %s %lf%lf%lf%lf%lf%lf",students[i].name,students[i].id,
+//         &students[i].grade[0],
+//         &students[i].grade[1],
+//         &students[i].grade[2],
+//         &students[i].grade[3],
+//         &students[i].grade[4],
+//         &students[i].grade[5]);
+//         //求 绩点和 并 计数学科数 以及 求平均绩点
+//         double sum = 0;
+//         int count = 0;
+//         for(int j = 0 ; j < 6 ; j++){
+//             if(students[i].grade[j] != -1){
+//                 sum += students[i].grade[j];
+//                 count++;
+//             }
+//         }
+//         students[i].grade_average = sum / count;
+//     }
+//     //查询k位学生
+//     char id_temp[11];
+//     int k;
+//     scanf("%d",&k);
+//     for(int i = 0 ; i < k;i++){
+//         scanf("%s",id_temp);
+//         for(int j = 0 ; j < n ; j++){
+//             if(strcmp(id_temp , students[j].id) == 0){
+//                 printf("%s %.2f\n",students[j].name,students[j].grade_average);
+//                 break;
+//             }
+//         }
+//     }
+//     return 0;
+// }
+
+
+
+/*26 */
+
+
+/*27 */
+
+
+
+/*28 */
+
+
+/*29 */
+
+
+/*30 */
+
+
+/*31 */
 
 
 
@@ -2975,6 +3057,85 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
+
+
+
+
+
+
+
+/*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑简单题(普及-)↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+// 1.以下是简单的多组输入所用的模板：*********************************************************************************************************************************************************
+// #include <stdio.h>
+// int main(){
+//     while(scanf("",) != EOF){   
+
+//     }
+//     return 0;
+// }
+// *****************************************************************************************************************************************************************************************
+// 2.以下是清空缓存区模板(当模板1出问题时才用)：***********************************************************************************************************************************************
+// #include <stdio.h>
+// int main(){
+  
+//     int ch;
+//     while(scanf("",) != EOF){   
+        
+//         while((ch = getchar()) != '\n' && ch != EOF);//该句可能会导致mmit Failed!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//     }
+//     return 0;
+// }
+// *****************************************************************************************************************************************************************************************
+/*
+多组数据输入的循环小知识：
+
+while(scanf("%d",&n),n）	当n为0时中止循环
+while(scanf("%d",&n))	    无输入时，终止循环
+while(scanf("%d",&n)！=EOF)	读到文件结尾时中止循环
+while(~scanf("%d",&n)）	    读到文件结尾时中止循环
+while(scanf("%d",&n)==1)	赋值失败，跳出循环
+
+*/
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓百练题单↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+//1.
+// #include<stdio.h>
+// int main(){
+//     int x;
+//     scanf("%d",&x);
+//     if((x % 4 == 0 && x % 100 != 0) || (x % 400 == 0 && x % 3200 != 0) ) printf("Y\n");
+//     else printf("N\n");
+//     return 0;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑百练题单↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 

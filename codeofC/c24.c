@@ -2390,8 +2390,12 @@
 // }
 // int main(){
 //     int num;
-//     scanf("%d",&num);
-//     printf("%lld\n",GetFib(num));
+//     int T;
+//     scanf("%d",&T);
+//     for(int i=0;i<T;i++){
+//         scanf("%d",&num);
+//         printf("%lld\n",GetFib(num));
+//     }
 //     return 0;
 // }
 
@@ -3108,7 +3112,69 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓百练题单↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
-//1.
+/*2 约瑟夫问题*/
+// #include <stdio.h>
+// int main(){
+//     int n,m,cnt=0,out=0;
+//     int monkeys[330];
+//     while(scanf("%d %d",&n,&m) != EOF && m != 0 && n != 0){
+//         for(int i=0;i<n;monkeys[i++]=1);
+//         for(int i=0,cnt=0,out=0 ; i < n && out != n-1 ; i++){
+//             if(monkeys[i]==1)cnt++;
+//             if(cnt == m){
+//                 monkeys[i]--;
+//                 out++;
+//                 cnt=0;
+//             }
+//             if(i == n-1) i=-1;
+//         }
+//         for(int i=0;i<n; i++){
+//             if(monkeys[i] == 1) printf("%d\n",i+1);
+//         }
+//     }
+//     return 0;
+// }
+
+
+
+/*3 校门外的树*/
+// #include <stdio.h>
+// int main(){
+//     int L,M;
+//     int cut[10001]={0};
+//     int a,b;
+//     scanf("%d %d",&L,&M);
+//     int cnt=L+1;
+//     for(int i=0;i<=L;cut[i++]=0);
+//     for(int i=0;i<M;i++){
+//         scanf("%d %d",&a,&b);
+//         for(int j=a;j<=b;j++) cut[j]=1;
+//     }
+//     for(int i=0;i<=L;i++){
+//         if(cut[i]==1) cnt--;
+//     }
+//     printf("%d\n",cnt);
+//     return 0;
+// }
+
+
+
+/*5 Financial Management*/
+// #include <stdio.h>
+// int main(){
+//     double sum=0.00;
+//     double num;
+//     for(int i=0;i<12;i++){
+//         scanf("%lf",&num);
+//         sum+=num;
+//     }
+//     printf("$%.2f\n",sum/12);
+//     return 0;
+// }
+
+
+
+/*6 判断闰年*/
 // #include<stdio.h>
 // int main(){
 //     int x;
@@ -3120,7 +3186,285 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
+/*7 求平均年龄*/
+// #include <stdio.h>
+// int main(){
+//     int age;
+//     int sum=0;
+//     int n,n_t;
+//     scanf("%d",&n);
+//     for(int i=0;i<n;i++){
+//         scanf("%d",&age);
+//         sum+=age;
+//     }
+//     printf("%.2f\n",1.0*sum/n);
+//     return 0;
+// }
 
+
+
+/*8 数字求和*/
+// #include <stdio.h>
+// int main(){
+//     int num[5];
+//     int a,sum=0;
+//     scanf("%d",&a);
+//     for(int i=0;i<5;i++)scanf("%d",&num[i]);
+//     for(int i=0;i<5;i++){
+//         if(num[i]<a){
+//             sum+=num[i];
+//         }
+//     }
+//     printf("%d\n",sum);
+//     return 0;
+// }
+
+
+
+/*9 十进制到八进制(输出即可)*/
+// #include <stdio.h>
+// int main(){
+//     unsigned int a;
+//     scanf("%u",&a);
+//     printf("%o",a);
+//     return 0;
+// }
+
+
+
+/*10 Placing apples*/
+// #include <stdio.h>
+// #include <string.h>
+// int place(int m,int n){
+//     if(m==1 || n==1){
+//         return 1;//只要是只剩一个苹果或是只用一个盘子装，都只产生1种方法
+//     }else if(m < n){
+//         return place(m,m);//盘子数更多时，必然剩下(n-m)个盘子，此时就相当于苹果数等于盘子数时的方法数，即只用考虑m个盘子
+//     }else if(m > n){
+//         return place(m,n-1) + place(m-n,n);
+//     }else if(m == n){
+//         return 1 + place(m,n-1);
+//         //苹果数等于盘子数时，分两种情况：
+//         //1.每个盘子放一个苹果，即用完盘子数，仅产生1种方法
+//         //2.至少有一个空盘，直到只用一个盘子装
+//     }
+// }
+// int main(){
+//     int t=0,m,n;
+//     scanf("%d",&t);
+//     while(t--){
+//         scanf("%d %d",&m,&n);//m个苹果,n个盘子      
+//         printf("%d\n",place(m,n));
+//     }
+//     return 0;
+// }
+
+
+
+/*11 与7无关的数*/
+// #include<stdio.h>
+// int relateof7(int number){
+//     int ret=0;
+//     int a=number/10;
+//     int b=number%10;
+//     if(number % 7 == 0 || a == 7 || b == 7) ret=1;
+//     return ret;
+// }
+// int main(){
+//     unsigned int num,sum=0;
+//     scanf("%d",&num);
+//     for(int i=1;i<=num;i++){
+//         if(relateof7(i)==0) sum+=i*i;
+//     }
+//     printf("%u",sum);
+//     return 0;
+// }
+
+
+
+/*12 整数的个数*/
+// #include<stdio.h>
+// int main(){
+//     int k=0,num,sum[3];
+//     for(int i=0;i<3;sum[i++]=0);
+//     scanf("%d",&k);
+//     for(int i=0;i<k;i++){
+//         scanf("%d",&num);
+//         if(num == 1) sum[0]++;
+//         else if(num == 5) sum[1]++;
+//         else if(num == 10) sum[2]++;
+//     }
+//     printf("%d\n%d\n%d\n",sum[0],sum[1],sum[2]);
+//     return 0;
+// }
+
+
+
+/*13 细菌繁殖*/
+// #include<stdio.h>
+// #include<math.h>
+// int days(int mon,int day){
+//     int day_s=0;
+//     switch(mon-1){
+//         case 12:day_s+=31;
+//         case 11:day_s+=30;
+//         case 10:day_s+=31;
+//         case 9:day_s+=30;
+//         case 8:day_s+=31;
+//         case 7:day_s+=31;
+//         case 6:day_s+=30;
+//         case 5:day_s+=31;
+//         case 4:day_s+=30;
+//         case 3:day_s+=31;
+//         case 2:day_s+=28;
+//         case 1:day_s+=31;
+//     }
+//     return day_s+day;
+// }
+// int main(){
+//     int k,mon1,mon2,day1,day2,total=0;
+//     long long int num,sum=0;
+//     scanf("%d",&k);
+//     for(int i=0;i<k;i++){
+//         scanf("%d %d %lld %d %d",&mon1,&day1,&num,&mon2,&day2);
+//         total = days(mon2,day2) - days(mon1,day1);
+//         printf("%lld\n",num*(int)pow(2,total));
+//     }
+//     return 0;
+// }
+
+
+
+/*15 最长上升子序列*/
+//1.WA 该程序用于处理 字符串 最大子序列长度
+// #include<stdio.h>
+// #include<string.h>
+// //先得到正序数列
+// int arr[1100],arrPos[1100],c[1100][1100];
+// void arr_sort(int arr[],int n){
+//     for(int i=0;i<n-1;i++){
+//         int ifPos=1;
+//         for(int j=0;j<n-1-i;j++){
+//             if(arr[j]>arr[j+1]){
+//                 int t=arr[j];
+//                 arr[j]=arr[j+1];
+//                 arr[j+1]=t;
+//                 ifPos=0;
+//             }
+//         }
+//         if(ifPos) break;
+//     }
+// }
+// int max(int n1,int n2){
+//     return n1>n2 ? n1:n2;
+// }
+// int main(){
+    // int N;
+    // scanf("%d",&N);
+    // memset(c,0,N);
+    // for(int i=0;i<N;i++){
+    //     scanf("%d",&arr[i]);
+    //     arrPos[i]=arr[i];
+    // }
+//     arr_sort(arrPos,N);
+//     for(int i=1;i<=N;i++){
+//         for(int j=1;j<=N;j++){
+//             if(arr[i-1]==arrPos[j-1]){
+//                 c[i][j]=c[i-1][j-1]+1;
+//             }else{
+//                 c[i][j]=max(c[i-1][j],c[i][j-1]);
+//             }
+//         }
+//     }
+//     for(int i=1;i<=N;i++)
+//     {
+//         for(int j=1;j<=N;j++)
+//             printf("%d  ",c[i][j]);
+//         printf("\n");
+//     }
+//     printf("%d\n",c[N][N]);
+//     return 0;
+// }
+//2.AC
+// #include<stdio.h>
+// int w[1100],f[1100];
+// int max(int n1,int n2){
+//     return n1>n2 ? n1:n2;
+// }
+// int main(){
+//     int N;
+//     scanf("%d",&N);
+//     for(int i=0;i<N;i++){
+//         scanf("%d",&w[i]);
+//     }
+//     int res=0;
+//     //f[i]表示以第i个数结尾的上升子序列的长度
+//     for(int i=0;i<N;i++){
+//         f[i]=1;//对于数列中每个数起始都是以自己为结尾，且长度为1的上升子序列（即只包含自身）
+//         for(int j=0;j<i;j++){
+//             if(w[i]>w[j]){
+//                 f[i]=max(f[i],f[j]+1);//使得i范围内的数严格大于j范围内的数
+//             }
+//         }
+//         res=max(res,f[i]);//获得f[i]上最大数
+//     }
+//     printf("%d\n",res);
+//     return 0;
+// }
+
+
+
+/*16 Distance on Chessboard*/
+#include <stdio.h>
+int main(){
+    
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*17 整数的立方和*/
+// #include<stdio.h>
+// int main(){
+//     int k;
+//     int sum=0;
+//     scanf("%d",&k);
+//     for(int i=1;i<=k;i++){
+//         sum+=i*i*i;
+//     }
+//     printf("%d\n",sum);
+//     return 0;
+// }
+
+
+
+/*19 计算书费*/
+// #include <stdio.h>
+// int main(){
+//     int k;
+//     double sum=0.00;
+//     double book[10] = {28.9 , 32.7 , 45.6 , 78 , 35 , 86.2 , 27.8 , 43 , 56 , 65};
+//     scanf("%d",&k);
+//     while(k--){
+//         sum = 0.00;
+//         for(int i=0;i<10;i++){
+//             int amount;
+//             scanf("%d",&amount);
+//             sum += amount*book[i];
+//         }
+//         printf("%.2f\n",sum);
+//     }
+//     return 0;
+// }
 
 
 

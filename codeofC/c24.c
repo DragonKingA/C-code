@@ -3415,20 +3415,58 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 /*16 Distance on Chessboard*/
-#include <stdio.h>
-int main(){
-    
-
-    return 0;
-}
-
-
-
-
-
-
-
-
+// #include <stdio.h>
+// #include <math.h>
+// #include <string.h>
+// char pos_c[30][4];
+// int pos[30][3];
+// char ret1[10],ret2[10],ret3[10],ret4[10],inf[4]="Inf";
+// int max(int a,int b) {return a>b ? a:b;}
+// char* King(int x1,int y1,int x2,int y2){
+//     int length=0;
+//     if(!(x1==x2 && y1==y2)) length=max(abs(x1-x2),abs(y1-y2));
+//     ret1[0]= '0' + length;
+//     return ret1;
+// }
+// char* Queen(int x1,int y1,int x2,int y2){
+//     int length = 0;
+//     if(x1==x2 && y1==y2);
+//     else if(abs(x1-x2)==0 || abs(y1-y2)==0 || abs(x1-x2)==abs(y1-y2)) length = 1;
+//     else length = 2;
+//     ret2[0]='0' + length;
+//     return ret2;
+// }
+// char* Car(int x1,int y1,int x2,int y2){
+//     int length = 0;
+//     if(x1==x2 && y1==y2);
+//     else if(x1 == x2 || y1 == y2) length = 1;
+//     else length = 2;
+//     ret3[0]='0'+ length;
+//     return ret3;
+// }
+// char* Elep(int x1,int y1,int x2,int y2){
+//     int length=0;
+//     if(x1==x2 && y1==y2);
+//     else if(abs(x1-x2)==abs(y1-y2)) length= 1;
+//     else if((abs(x1-x2)%2!=0 && abs(y1-y2)%2!=0) || (abs(x1-x2)==0 && abs(y1-y2)%2==0) || (abs(y1-y2)==0 && abs(x1-x2)%2==0)) length= 2;
+//     else return  inf;
+//     ret4[0]='0'+length;
+//     return ret4;
+// }
+// int main(){
+//     int T,index=0;
+//     scanf("%d",&T);
+//     getchar();
+//     for(int i=0;i<T;i++){
+//         scanf("%s %s",pos_c[index++],pos_c[index++]);
+//         pos[index-2][0]=pos_c[index-2][0] - 96;
+//         pos[index-2][1]=pos_c[index-2][1] - 48;
+//         pos[index-1][0]=pos_c[index-1][0] - 96;
+//         pos[index-1][1]=pos_c[index-1][1] - 48;
+//         printf("%s %s %s %s\n",King(pos[index-2][0] , pos[index-2][1],pos[index-1][0],pos[index-1][1]),Queen(pos[index-2][0] , pos[index-2][1],pos[index-1][0],pos[index-1][1]),Car(pos[index-2][0] , pos[index-2][1],pos[index-1][0],pos[index-1][1]),Elep(pos[index-2][0] , pos[index-2][1],pos[index-1][0],pos[index-1][1]));
+//     }
+//     return 0;
+// }
 
 
 
@@ -3465,6 +3503,82 @@ int main(){
 //     }
 //     return 0;
 // }
+
+
+
+/*20 肿瘤检测*/
+// #include <stdio.h>
+// #include <string.h>
+// #define MAXN 110*110
+// int arr[110][110];
+// int point[MAXN][3];
+// int main(){
+//     int N,index=0;
+//     scanf("%d",&N);
+//     for(int i=0;i<=N+1;i++)
+//         for(int j=0;j<=N+1;j++) arr[i][j]=99;
+//     for(int i=1;i<=N;i++){
+//         for(int j=1;j<=N;j++){
+//             scanf("%d",&arr[i][j]);
+//             if(arr[i][j]<=50){
+//                 point[index][0]=i;
+//                 point[index++][1]=j;
+//             }
+//         }
+//     }
+//     int count = index;
+//     if(index != 1){
+//         for(int i=0;i<index;i++){
+//             if(arr[ point[i][0]-1 ][ point[i][1] ]<=50 && arr[ point[i][0] ][ point[i][1]-1 ]<=50  && arr[ point[i][0]+1 ][ point[i][1] ]<=50  && arr[ point[i][0] ][ point[i][1]+1 ]<=50 )
+//                 count--;
+//         }
+//     }
+//     printf("%d %d",index,count);
+//     return 0;
+// }
+
+
+
+/*21 求12以内n的阶乘*/
+// #include <stdio.h>
+// long long int sum=1;
+// long long int GetP(int n){
+//     if(n>=2){
+//         sum*=n--;
+//         GetP(n);
+//     }
+//     return sum;
+// }
+// int main(){
+//     int n;
+//     scanf("%d",&n);
+//     printf("%lld\n",GetP(n));
+//     return 0;
+// }
+
+
+
+/*22 城堡问题*/
+#include<stdio.h>
+int main(){
+    
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

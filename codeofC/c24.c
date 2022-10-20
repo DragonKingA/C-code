@@ -1055,7 +1055,7 @@
 
 
 /*47 两倍*/
-//给定 22 到 1515 个不同的正整数，你的任务是计算这些数里面有多少个数对满足：数对中一个数是另一个数的两倍
+//给定 2 到 15 个不同的正整数，你的任务是计算这些数里面有多少个数对满足：数对中一个数是另一个数的两倍
 // #include <stdio.h>
 // int main(){
 //     int num[16];
@@ -1563,18 +1563,201 @@
 
 
 
-/*65 */
+/*65 统计字符*/
+// #include<stdio.h>
+// int main(){
+//     int N,let=0,bla=0,dig=0,oth=0;
+//     char str[100];
+//     scanf("%d",&N);
+//     getchar();
+//     for(int i=0;i<N;i++) scanf("%c",&str[i]);
+//     for(int i=0;i<N;i++){
+//         char c = str[i];
+//         if((c>='a' && c<='z') || (c>='A' && c<='Z')) let++;
+//         else if(c==32 || c==13 || c==10) bla++;
+//         else if(c>='0' && c<='9') dig++;
+//         else oth++;
+//     }
+//     printf("letter = %d, blank = %d, digit = %d, other = %d\n",let,bla,dig,oth);
+//     return 0;
+// }
 
 
-/*66 */
+
+/*66 输出范围内闰年*/
+// #include<stdio.h>
+// int main(){
+//     int year,cnt=1;
+//     scanf("%d",&year);
+//     if(year>=2001 && year<=2100){
+//         for(int x=2001;x<=year;x++){
+//             if((x % 4 == 0 && x % 100 != 0) || x % 400 == 0 ) {
+//                 printf("%d\n",x);
+//                 cnt=0;
+//             }
+//         }
+//         if(cnt){
+//             printf("None\n");
+//         }
+//     }else{
+//         printf("Invalid year!\n");
+//     }
+//     return 0;
+// }
 
 
 
-/*67 */
+/*67 查询水果价格*/
+// #include<stdio.h>
+// int main(){
+//     int n;
+//     double arr[]={0 ,3.00 ,2.50 ,4.10 ,10.20};
+//     printf("[1] apple\n[2] pear\n[3] orange\n[4] grape\n[0] exit\n");
+//     for(int i=0;i<5;i++){
+//         scanf("%d",&n);
+//         if(n!=0){
+//             if(n<0||n>4){
+//                 printf("price = 0.00\n");
+//             }else{
+//                 printf("price = %.2f\n",arr[n]);
+//             }
+//         }else{
+//             break;
+//         }
+//     }
+//     return 0;
+// }
 
 
 
 /*68 */
+// #include<stdio.h>
+// int main(){
+//     int a,b;
+//     char c;
+//     double cost = 0.00;
+//     scanf("%d %d %c",&a,&b,&c);
+//     int numofc=c;
+//     switch(b){
+//         case 90:
+//             cost=6.95;
+//             break;
+//         case 93:
+//             cost=7.44;
+//             break;
+//         case 97:
+//             cost=7.93;
+//             break;
+//     }
+//     switch(numofc){
+//         case 'm':
+//             cost*=0.95;
+//             break;
+//         case 'e':
+//             cost*=0.97;
+//             break;
+//     }
+//     printf("%.2f\n",cost*a);
+//     return 0;
+// }
+
+
+
+/*69 还有多少天过年*/
+// #include <stdio.h>
+// int main(){
+//     int year,month,day,m=0,Feburary=0;
+//     scanf("%d %d %d",&year,&month,&day);
+//     int yearofWhole=0;
+//     if((year%4==0 && year%100!=0) || year%400==0){
+//         Feburary = 29;
+//         yearofWhole=366;
+//     }else{
+//         Feburary = 28;
+//         yearofWhole=365;
+//     }
+//     switch(month-1){
+//         case 12:m+=31;
+//         case 11:m+=30;
+//         case 10:m+=31;
+//         case 9:m+=30;
+//         case 8:m+=31;
+//         case 7:m+=31;
+//         case 6:m+=30;
+//         case 5:m+=31;
+//         case 4:m+=30;
+//         case 3:m+=31;
+//         case 2:m+=Feburary;
+//         case 1:m+=31;
+//     }
+//     printf("%d\n",yearofWhole-(m+day));
+//     return 0;
+// }
+
+
+
+/*70 二元一次方程求两根（包括复数根）*/
+// #include <stdio.h>
+// #include <math.h>
+// int main(){
+//     double a,b,c,r1=0,r2=0;
+//     scanf("%lf %lf %lf",&a,&b,&c);
+//     if(a==0){
+//         if(b==0){
+//             if(c==0)    printf("Zero Equation\n");
+//             else    printf("Not An Equation\n");
+//         }else if(c!=0)
+//             printf("%.2f\n",-c/b);
+//     }else{
+//         r1=(-b-sqrt(b*b-4*a*c))/(2*a);
+//         r2=(-b+sqrt(b*b-4*a*c))/(2*a);
+//         if(b*b-4*a*c == 0)  printf("%.2f\n",r2);
+//         else if(b*b-4*a*c > 0){
+//             printf("%.2f\n",r2);
+//             printf("%.2f\n",r1);
+//         }else{
+//             printf("%.2f+%.2fi\n",-b/(2*a),sqrt(4*a*c-b*b)/(2*a));
+//             printf("%.2f-%.2fi\n",-b/(2*a),sqrt(4*a*c-b*b)/(2*a));
+//         }
+//     }
+//     return 0;
+// }
+
+
+/*71 */
+
+
+/*72 */
+
+
+
+/*73 */
+
+
+
+/*74 */
+
+
+
+/*75 */
+
+
+
+/*76 */
+
+
+
+/*77 */
+
+
+
+/*78 */
+
+
+
+
+
+
 
 
 
@@ -3559,15 +3742,79 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 /*22 城堡问题*/
-#include<stdio.h>
-int main(){
-    
+//sum=
+//一堵墙    1 2 4 8
+//两堵墙    3 5 9 6 10 12
+//三堵墙    7 14 11 13
+//四堵墙    15
+// #include<stdio.h>
+// #include<string.h>
+// int wall[100][100]; 
+// int main(){
+//     int ver,hor;
+//     memset(wall,0,sizeof(wall));
+//     scanf("%d",&ver);   
+//     scanf("%d",&hor);
+//     for(int i=0;i<ver;i++){
+//         for(int j=0;j<ver;j++){
+//             scanf("%d",&wall[i][j]);
 
+//         }
+
+
+//     }
+
+
+//     return 0;
+// }
+
+
+
+/*23 城堡问题*/
+
+
+/*24 城堡问题*/
+
+
+
+/*25 城堡问题*/
+
+
+/*26 波兰表达式*/
+#include<stdio.h>
+#include<math.h>
+#include<string.h>
+#define MAX 9999
+char str[MAX][MAX];
+double f(){
+
+}
+int main(){
+    char res[]="* + 11.0 12.0 + 24.0 35.0";
+    int index1=0,index2=0;
+    for(int i=0;i<strlen(res);i++){
+        char c = res[i];
+        if(c!=10&&c!=13){
+            if(c==32){
+                index1++;
+                index2=0;
+            }else{
+                str[index1][index2++]=c;
+                printf("c=%c\n",c);
+            }
+        }
+    }
+    for(int i=0;i<index1;i++){
+        for(int j=0;j<index2;j++){
+            printf("%c",str[i][j]);
+        }
+    }
+    printf("\n%f",atof(str[0]));
     return 0;
 }
 
 
-
+/*22 城堡问题*/
 
 
 

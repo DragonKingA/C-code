@@ -58,12 +58,12 @@ typedef struct list_{/*±ãÓÚÔÚº¯ÊýÖÐµÃµ½Ê×½áµãµÄµØÖ·*/
 }List;
 
 void add(List *plist,int number){/*´«Èë*plistÏàµ±ÓÚ´«ÈëÒ»¸ö NODE **phead , ÆäÖ¸ÏòÖ¸Õë*head,Ê¹µÃ¿ÉÒÔÐÞ¸Ä*head´æ´¢µÄµØÖ·Öµ*/
-    //1.ÊµÏÖ½«numberÖµ´æÈëÒ»¸öÁ´±í½áµãÀï(¿ª±ÙÏÂÒ»¸ö½áµã)
+//----------1.ÊµÏÖ½«numberÖµ´æÈëÒ»¸öÁ´±í½áµãÀï(¿ª±ÙÏÂÒ»¸ö½áµã)
             NODE *p = (NODE*)malloc(sizeof(NODE));
             p->value=number;//´æÖµ
             p->next=NULL;
             
-            //2.¼ìË÷×îºóÒ»¸ö½áµãµÄHeadµØÖ·
+//----------2.¼ìË÷×îºóÒ»¸ö½áµãµÄµØÖ·
             NODE *last = plist->head;/*È¡³ö Ê×½áµãµØÖ· ´æÈë last ÖÐ¹©Ê¹ÓÃ*/
             printf("½áµã%d  plist -> head = %p\n",number,plist->head);
             if( plist -> head != NULL){
@@ -72,7 +72,7 @@ void add(List *plist,int number){/*´«Èë*plistÏàµ±ÓÚ´«ÈëÒ»¸ö NODE **phead , ÆäÖ¸Ï
                     last = last -> next;
                 }
 
-                //3.½«×îºóÒ»¸ö½áµã Óë ÐÂ¿ª±ÙµÄ½áµã Á´½Ó£¨½«ÐÂ½áµãµØÖ· ´æÈë Î²½áµãÖ¸Õënext¿Õ¼ä£©
+//--------------3.½«×îºóÒ»¸ö½áµã Óë ÐÂ¿ª±ÙµÄ½áµã Á´½Ó£¨½«ÐÂ½áµãµØÖ· ´æÈë Î²½áµãÖ¸Õënext¿Õ¼ä£©
                 last -> next = p;
                 
             }else{
@@ -125,9 +125,11 @@ void main(){
     //2.±éÀúÁ´±í
     NODE *p1;
     int count = 1;
-    for(p1 = list.head ; p1 != NULL ; p1 = p1 -> next){//Á´±í±éÀú»ù±¾Ð´·¨
+    for(p1 = list.head ; p1 != NULL ; p1 = p1 -> next){//Á´±í±éÀú»ù±¾Ð´·¨£¬´ÓÊ×½áµã¿ªÊ¼Ö±µ½Ã»ÓÐÏÂÒ»¸ö½áµã
         printf("%0p½áµã%d.value=%d\n",p1,count++,p1->value);
     }
-
+    // for(p1 = list.head ; p1 ; p1 = p1 -> next){//Ñ­»·Ìõ¼þÖ±½ÓÐ´p1Ò²ÐÐ£¬Ö»Òªp1²»Îª0£¨¼´NULL£©Ñ­»·¾Í²»»áÖÕÖ¹
+    //     printf("%0p½áµã%d.value=%d\n",p1,count++,p1->value);
+    // }
 
 }

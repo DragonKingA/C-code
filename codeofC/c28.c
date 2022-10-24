@@ -20,6 +20,7 @@ void main(){
 
 
 
+#define PRTmsg(msg) printf(msg)
 
 #define PRT printf("sum1=%d\n",sum1); \
             printf("sum2=%d\n",sum2)
@@ -28,7 +29,7 @@ void main(){
              printf("sum2=%d\n",sum2);
 //宏定义中的值可以是 *任何东西* , 甚至宏定义后若有分号‘;’或 空格 等 也会被原封不动地替换过去（除了注释符号及注释不会被替换），故习惯上 宏 不会加分号
 //若宏定义中值或语句超过一行，要在后面加 ‘\’
-//宏值可以含已定义的宏
+//宏值可以含已定义的宏，即宏里嵌套宏
 
 
 #define _DEBUG
@@ -38,11 +39,16 @@ void main(){
 
 
 #define cube(x) ((x)*(x)*(x))
-//宏定义可以接收参数，即 带参宏
+#define max(a,b) ((a)>(b) ? (a) : (b))
+//宏定义可以接收一个或多个参数，即 带参宏
 //类似于函数但确实完全不是函数，可以认为是将 某个表达式 替换到某处，并 以某个值算出的结果 存在
+//注意：宏定义里一切参数与值都有括号，整个宏值以及每个参数都有括号
 
 
-
+//总结：
+//宏有两种运算符：# 和 ##
+//宏没有类型检查，或是缺点，或是优点
+//部分带参宏可以被inline函数(含类型检查)所替代
 
 
 void main(){
@@ -54,9 +60,9 @@ void main(){
     PRT_
     printf("sum1*2 = %d\n",sum1*2);//5  1+2*2
     printf("sum1*2 = %d\n",sum2*2);//6  (1+2)*2
-
-
-    printf("cube(3)=%d\n",cube(3));
+    printf("max{sum2*2,sum1*2} = %d\n",max(sum2*2,sum1*2));//6
+    PRTmsg("PRTmsg打印\n");
+    printf("cube(3)=%d\n",cube(3));//27
 
 
 

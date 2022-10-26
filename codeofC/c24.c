@@ -1724,27 +1724,171 @@
 // }
 
 
-/*71 */
+/*71 求分数序列前N项和*/
+// #include <stdio.h>
+// int main(){
+//     int n;
+//     double a,b;
+//     a=2;
+//     b=1;
+//     double sum=2.00;
+//     scanf("%d",&n);
+//     for(int i=2;i<=n;i++){
+//         double t = a;
+//         a=a+b;
+//         b=t;
+//         sum+=a/t;
+//     }
+//     printf("%.2lf\n",sum);
+//     return 0;
+// }
 
 
-/*72 */
+
+
+/*72 求给定精度的简单交错序列部分和*/
+// #include <stdio.h>
+// #include <math.h>
+// int main(){
+//     double n;
+//     double sum=0.00;
+//     scanf("%lf",&n);
+//     for(int i=1;;i++){
+        
+//             if(i%2==0) sum-=1.0/(3*i-2);
+//             else sum+=1.0/(3*i-2);
+        
+//         if(1.0/(3*i-2)<=n){
+//             break;
+//         }
+        
+//     }
+//     printf("sum = %.6lf\n",sum);
+//     return 0;
+// }
+
+
+/*73 猜数字游戏*/
+// #include <stdio.h>
+// int main(void) {
+//     int num, N, gs;
+//     scanf("%d %d", &num, &N);
+//     int guess;
+//     while (1) {
+//         scanf("%d", &guess);
+//         gs++;
+//         if ((gs > N) || (guess < 0 && gs <= N)) {
+//             printf("Game Over\n");
+//             return 0;
+//         }
+//         if (guess > num) {
+//             printf("Too big\n");
+//         }
+//         if (guess < num) {
+//             printf("Too small\n");
+//         }
+//         if (guess == num) {
+//             if (gs == 1) {
+//                 printf("Bingo!\n");
+//             }
+//             else if (gs <= 3) {
+//                 printf("Lucky You!\n");
+//             }
+//             else {
+//                 printf("Good Guess!\n");
+//             }
+//             return 0;
+//         }
+//     }
+// }
+
+
+/*74 兔子繁衍问题(斐波那契数列)*/
+// #include <stdio.h>
+// int GetFib(int n){
+//     long long int a,b,c;
+//     a=b=c=1;
+//     while(n>2){
+//         c=a+b;
+//         b=a;
+//         a=c;
+//         n--;
+//     }
+//     return c;
+// }
+// int main(){
+//     int num=1;
+//     int T;
+//     scanf("%d",&T);
+//     while(GetFib(num++)<T);
+//     printf("%lld\n",num-1);
+//     return 0;
+// }
 
 
 
-/*73 */
+/*75 高空坠球*/
+// #include<stdio.h>
+// int main(){
+//     double h,n,hn;
+//     scanf("%lf %lf",&h,&n);
+//     double sum=h;
+//     for(int i=2;i<=n;i++){
+        
+//         h/=2;
+//         sum+=2*h;
+//         if(i==n) hn=h/2;
+//     }
+//     printf("%.1f %.1f\n",sum,hn);
+//     return 0;
+// }
 
 
-
-/*74 */
-
-
-
-/*75 */
-
-
-
-/*76 */
-
+/*76 黑洞数*/
+// #include<stdio.h>
+// void max(int *a,int *b,int *c){
+//     int t;
+//     if(*a<*b){
+//         t=*a;
+//         *a=*b;
+//         *b=t;
+//     }
+//     if(*a<*c){
+//         t=*a;
+//         *a=*c;
+//         *c=t;
+//     }
+//     if(*b<*c){
+//         t=*b;
+//         *b=*c;
+//         *c=t;
+//     }
+// }
+// int main(){
+//     int num;
+//     scanf("%d",&num);
+//     int a,b,c;
+//     a=num/100;
+//     b=num/10%10;
+//     c=num%10;
+//     max(&a,&b,&c);
+//     if(a==b&&b==c){
+//         printf("%d: %d - %d = %d\n",1,num,num,0);
+//     }else{
+//         int n1,n2,minus=0,cnt=1;
+//         while(minus!=495){
+//             n1=a*100+b*10+c;
+//             n2=c*100+b*10+a;
+//             minus=n1-n2; 
+//             printf("%d: %d - %d = %d\n",cnt++,n1,n2,minus);
+//             a=minus/100;
+//             b=minus/10%10;
+//             c=minus%10;
+//             max(&a,&b,&c);
+//         }
+//     }
+//     return 0;
+// }
 
 
 /*77 */
@@ -1753,6 +1897,29 @@
 
 /*78 */
 
+
+
+/*79 */
+
+
+/*80 */
+
+
+
+/*81 */
+
+
+/*82 */
+
+
+/*83 */
+
+
+
+/*84 */
+
+
+/*85 */
 
 
 
@@ -3781,37 +3948,37 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 /*26 波兰表达式*/
-#include<stdio.h>
-#include<math.h>
-#include<string.h>
-#define MAX 9999
-char str[MAX][MAX];
-double f(){
+// #include<stdio.h>
+// #include<math.h>
+// #include<string.h>
+// #define MAX 9999
+// char str[MAX][MAX];
+// double f(){
 
-}
-int main(){
-    char res[]="* + 11.0 12.0 + 24.0 35.0";
-    int index1=0,index2=0;
-    for(int i=0;i<strlen(res);i++){
-        char c = res[i];
-        if(c!=10&&c!=13){
-            if(c==32){
-                index1++;
-                index2=0;
-            }else{
-                str[index1][index2++]=c;
-                printf("c=%c\n",c);
-            }
-        }
-    }
-    for(int i=0;i<index1;i++){
-        for(int j=0;j<index2;j++){
-            printf("%c",str[i][j]);
-        }
-    }
-    printf("\n%f",atof(str[0]));
-    return 0;
-}
+// }
+// int main(){
+//     char res[]="* + 11.0 12.0 + 24.0 35.0";
+//     int index1=0,index2=0;
+//     for(int i=0;i<strlen(res);i++){
+//         char c = res[i];
+//         if(c!=10&&c!=13){
+//             if(c==32){
+//                 index1++;
+//                 index2=0;
+//             }else{
+//                 str[index1][index2++]=c;
+//                 printf("c=%c\n",c);
+//             }
+//         }
+//     }
+//     for(int i=0;i<index1;i++){
+//         for(int j=0;j<index2;j++){
+//             printf("%c",str[i][j]);
+//         }
+//     }
+//     printf("\n%f",atof(str[0]));
+//     return 0;
+// }
 
 
 /*22 城堡问题*/

@@ -45,6 +45,25 @@ void main(){
 //注意：宏定义里一切参数与值都有括号，整个宏值以及每个参数都有括号
 
 
+#define prtADD(a,b) printf(#a " + " #b " = %d\n" , ((a) + (b)))
+#define NAME_Xn(n) x ## n
+#define PRT_Xn(n) printf("x"#n " = %d\n",NAME_Xn(n))
+//当 # 运算符存在于宏值中，其意义就是把记号转换成字符串，这个过程叫做 字符串化
+// ## 运算符，可以把两个记号组合成一个记号
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //总结：
 //宏有两种运算符：# 和 ##
 //宏没有类型检查，或是缺点，或是优点
@@ -65,6 +84,12 @@ void main(){
     printf("cube(3)=%d\n",cube(3));//27
 
 
+    prtADD(5,10);
+
+    int NAME_Xn(1) = 14;
+    int x2 = 20;
+    PRT_Xn(1);
+    PRT_Xn(2);
 
 
 }

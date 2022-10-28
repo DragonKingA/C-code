@@ -1724,6 +1724,7 @@
 // }
 
 
+
 /*71 求分数序列前N项和*/
 // #include <stdio.h>
 // int main(){
@@ -1745,7 +1746,6 @@
 
 
 
-
 /*72 求给定精度的简单交错序列部分和*/
 // #include <stdio.h>
 // #include <math.h>
@@ -1753,19 +1753,17 @@
 //     double n;
 //     double sum=0.00;
 //     scanf("%lf",&n);
-//     for(int i=1;;i++){
-        
+//     for(int i=1;;i++){   
 //             if(i%2==0) sum-=1.0/(3*i-2);
-//             else sum+=1.0/(3*i-2);
-        
+//             else sum+=1.0/(3*i-2);   
 //         if(1.0/(3*i-2)<=n){
 //             break;
-//         }
-        
+//         } 
 //     }
 //     printf("sum = %.6lf\n",sum);
 //     return 0;
 // }
+
 
 
 /*73 猜数字游戏*/
@@ -1803,6 +1801,7 @@
 // }
 
 
+
 /*74 兔子繁衍问题(斐波那契数列)*/
 // #include <stdio.h>
 // int GetFib(int n){
@@ -1833,8 +1832,7 @@
 //     double h,n,hn;
 //     scanf("%lf %lf",&h,&n);
 //     double sum=h;
-//     for(int i=2;i<=n;i++){
-        
+//     for(int i=2;i<=n;i++){ 
 //         h/=2;
 //         sum+=2*h;
 //         if(i==n) hn=h/2;
@@ -1842,6 +1840,7 @@
 //     printf("%.1f %.1f\n",sum,hn);
 //     return 0;
 // }
+
 
 
 /*76 黑洞数*/
@@ -1891,6 +1890,7 @@
 // }
 
 
+
 /*77 冒泡排序*/
 //1.字符串处理(较复杂)
 // #include <stdio.h>
@@ -1911,25 +1911,24 @@
 //             for(int j=start;j<i;j++)    str_t[index1++] = str[j];
 //             strcpy(strEx[index2++],str_t);
 //             num[index3++]=atoi(strEx[index2-1]);
-
 //             memset(str_t,'\0',200);
 //             index1=0;
 //             start=i+1;
 //         }
 //     }
-    // for(int i=0;i<index3-1;i++){
-    //     for(int j=0;j<index3-i-1;j++){
-    //         if(num[j]>num[j+1]){
-    //             int t=num[j];
-    //             num[j]=num[j+1];
-    //             num[j+1]=t;
-    //         }
-    //     }
-    // }
-    // for(int i=0;i<index3;i++){
-    //     if(i==0) printf("%d",num[i]);
-    //     else printf(" %d",num[i]);
-    // }
+//     for(int i=0;i<index3-1;i++){
+//         for(int j=0;j<index3-i-1;j++){
+//             if(num[j]>num[j+1]){
+//                 int t=num[j];
+//                 num[j]=num[j+1];
+//                 num[j+1]=t;
+//             }
+//         }
+//     }
+//     for(int i=0;i<index3;i++){
+//         if(i==0) printf("%d",num[i]);
+//         else printf(" %d",num[i]);
+//     }
 //     return 0;
 // }
 //2.直接读取整数
@@ -1958,6 +1957,8 @@
 //     return 0;
 // }
 
+
+
 /*78 奇数单增序列*/
 // #include <stdio.h>
 // int numOrg[550];
@@ -1983,6 +1984,7 @@
 //     }
 //     return 0;
 // }
+
 
 
 /*79 整数奇偶排序*/
@@ -2037,6 +2039,8 @@
 //     return 0;
 // }
 
+
+
 /*80 合影效果*/
 //优化：其实可以女生数组先排正序再从后面开始输出就好了
 // #include <stdio.h>
@@ -2087,27 +2091,255 @@
 //     return 0;
 // }
 
+
+
 /*81 按1的个数排序*/
+// #include <stdio.h>
+// struct numstring{
+//     char str[300];
+//     int cnt;
+// };
+// struct numstring arr[150];
+// int counter(const char str[]){
+//     int i=0,ret=0;
+//     while(str[i]!='\0'){
+//         if(str[i++]=='1' && ret++);
+//     }
+//     return ret;
+// }
+// int main(){
+//     int N,max=0;
+//     scanf("%d",&N);
+//     for(int i=0,ifnot=1 ;i<N ;i++){
+//         scanf("%s",arr[i].str);
+//         arr[i].cnt = counter(arr[i].str);
+//         if(ifnot++==1)    max=arr[i].cnt;
+//         else if(arr[i].cnt>max)    max=arr[i].cnt;
+//     }
+//     for(int i=0 ;i<=max ;i++){
+//         for(int j=0 ;j<N ;j++){
+//             if(arr[j].cnt==i)   printf("%s\n",arr[j].str);
+//         }
+//     }
+//     return 0;
+// }
 
 
-/*82 */
+
+/*82 病人排队*/
+// #include <stdio.h>
+// #include <string.h>
+// struct patients{
+//     char id[50];
+//     int age;
+// }temp,eld[150],yog[150];
+// void sort_elder(struct patients eld[],int size){
+//     for(int i=0;i<size-1;i++){
+//         for(int j=0;j<size-1-i;j++){
+//             if(eld[j].age<eld[j+1].age){
+//                 temp = eld[j+1];
+//                 eld[j+1]=eld[j];
+//                 eld[j]=temp;
+//             }
+//         }
+//     }
+// }
+// int main(){
+//     int N,indexe=0,indexy=0;
+//     scanf("%d",&N);
+//     for(int i=0;i<N;i++){
+//         int age=0;
+//         char id_t[50];
+//         scanf("%s %d",id_t,&age);
+//         if(age>=60) {
+//             strcpy(eld[indexe].id,id_t);
+//             eld[indexe++].age = age;
+//         }else{
+//             strcpy(yog[indexy].id,id_t);
+//             yog[indexy++].age = age;
+//         }
+//     }
+//     sort_elder(eld,indexe);
+//     for(int i=0;i<indexe;i++)   printf("%s\n",eld[i].id);
+//     for(int i=0;i<indexy;i++)   printf("%s\n",yog[i].id);
+//     return 0;
+//}
 
 
-/*83 */
+
+/*83 提取数字串按数值排序*/
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// char str[500],str_t[500],strEx[500][500];
+// long long int num[310];
+// int main(){
+//     gets(str);
+//     int index1=0,index2=0,index3=0,i=0,j=0,ifallchar=0;
+//     while(i>=0){
+//         while(!(str[i]>='0' && str[i]<='9') && str[i]!='\0'){
+//             i++;
+//             ifallchar++;
+//         }
+//         if(ifallchar == strlen(str)){
+//             printf("0\n");
+//             break;
+//         }else if(str[i]=='\0')     break;
+//         for(j=i+1;str[j]>='0' && str[j]<='9' && str[j]!='\0';j++);
+//         for(int z=i;z<j;z++)    str_t[index1++] = str[z];
+//         strcpy(strEx[index2++],str_t);
+//         num[index3++]=atoll(strEx[index2-1]);
+
+//         memset(str_t,'\0',500);
+//         index1=0;
+//         i=j;
+//     }
+//     for(int i=0;i<index3-1;i++){
+//         for(int j=0;j<index3-i-1;j++){
+//             if(num[j]>num[j+1]){
+//                 long long int t=num[j];
+//                 num[j]=num[j+1];
+//                 num[j+1]=t;
+//             }
+//         }
+//     }
+//     for(int i=0;i<index3;i++){
+//         if(i==0) printf("%lld",num[i]);
+//         else printf(",%lld",num[i]);
+//     }
+//     return 0;
+// }
 
 
 
-/*84 */
+/*84 DNA排序*/
+// #include <stdio.h>
+// #include <string.h>
+// struct strarr{
+//     int cnt;
+//     char str[100];
+// }temp,dna[150];
+// int counter(const char str[]){
+//     int ret=0;
+//     for(int i=0;i<strlen(str)-1;i++){
+//         for(int j=i+1;j<strlen(str);j++){
+//             if(str[i]>str[j]) ret++;
+//         }
+//     }
+//     return ret;
+// }
+// int main(){
+//     int n,m,i=0,j=0;
+//     scanf("%d %d",&n,&m);
+//     getchar();
+//     while(i<m){
+//         for(j=0;j<n;j++)    dna[i].str[j]=getchar();
+//         getchar();
+//         dna[i].cnt = counter(dna[i].str);
+//         i++;
+//     }
+//     for(int a=0;a<m-1;a++){
+//         for(int b=0;b<m-1-a;b++){
+//             if(dna[b].cnt > dna[b+1].cnt){
+//                 temp=dna[b+1];
+//                 dna[b+1]=dna[b];
+//                 dna[b]=temp;
+//             }
+//         }
+//     }
+//     for(int a=0;a<m;a++) printf("%s\n",dna[a].str);
+//     return 0;
+// }
 
 
-/*85 */
+
+/*85 第 K 名*/
+// #include <stdio.h>
+// struct playerinfo{
+//     int time;
+//     char name[200];
+// }players[200];
+// int main(){
+//     int N,K;
+//     scanf("%d %d",&N,&K);
+//     for(int i=0;i<N;i++)    scanf("%s %d",players[i].name,&players[i].time);
+//     for(int i=0;i<N-1;i++){
+//         for(int j=0;j<N-1-i;j++){
+//             if(players[j].time > players[j+1].time){
+//                 struct playerinfo temp = players[j+1];
+//                 players[j+1] = players[j];
+//                 players[j] = temp;
+//             }
+//         }
+//     }
+//     printf("%s\n",players[K-1].name);
+//     return 0;
+// }
 
 
 
+/*86 01串排序(依据ASCII码)*/
+// #include <stdio.h>
+// #include <string.h>
+// struct numstring{
+//     char str[300];
+//     int cnt;
+// }arr[150];
+// int counter(const char str[]){
+//     int i=0,ret=0;
+//     while(str[i]!='\0') if(str[i++]=='1' && ret++);
+//     return ret;
+// }
+// void exchange(struct numstring arr[],int index){
+//     struct numstring temp;
+//     temp = arr[index+1];
+//     arr[index+1] = arr[index];
+//     arr[index] = temp;
+// }
+// int main(){
+//     int N,max=0;
+//     scanf("%d",&N);
+//     for(int i=0,ifnot=1 ;i<N ;i++){
+//         scanf("%s",arr[i].str);
+//         arr[i].cnt = counter(arr[i].str);
+//         if(ifnot++==1)    max=arr[i].cnt;
+//         else if(arr[i].cnt>max)    max=arr[i].cnt;
+//     }
+//     for(int i=0 ;i<N-1 ;i++){
+//         for(int j=0 ;j<N-1-i ;j++){
+//             if(strlen(arr[j].str) > strlen(arr[j+1].str)){
+//                 exchange(arr,j);
+//             }else if(strlen(arr[j].str) == strlen(arr[j+1].str)){
+//                 if(arr[j].cnt > arr[j+1].cnt){
+//                     exchange(arr,j);
+//                 }else if(arr[j].cnt == arr[j+1].cnt && strcmp(arr[j].str,arr[j+1].str)>0){
+//                     exchange(arr,j);
+//                 }
+//             }
+//         }
+//     }
+//     for(int i=0;i<N;i++)    printf("%s\n",arr[i].str);
+//     return 0;
+// }
 
 
 
+/*87 */
 
+
+
+/*88 */
+
+
+
+/*89 */
+
+
+/*90 */
+
+
+
+/*91 */
 
 
 

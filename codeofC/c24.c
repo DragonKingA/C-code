@@ -1891,22 +1891,203 @@
 // }
 
 
-/*77 */
+/*77 冒泡排序*/
+//1.字符串处理(较复杂)
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// char str[500],str_t[200],strEx[150][150];
+// int num[150];
+// int main(){
+//     gets(str);
+//     int index1=0,index2=0,index3=0;
+//     for(int i=0,start=0;;i++){
+//         if(str[i]=='\0'){
+//             for(int j=start;j<i;j++)    str_t[index1++] = str[j];
+//             strcpy(strEx[index2++],str_t);
+//             num[index3++]=atoi(strEx[index2-1]);
+//             break;
+//         }else if(str[i]==32){
+//             for(int j=start;j<i;j++)    str_t[index1++] = str[j];
+//             strcpy(strEx[index2++],str_t);
+//             num[index3++]=atoi(strEx[index2-1]);
+
+//             memset(str_t,'\0',200);
+//             index1=0;
+//             start=i+1;
+//         }
+//     }
+    // for(int i=0;i<index3-1;i++){
+    //     for(int j=0;j<index3-i-1;j++){
+    //         if(num[j]>num[j+1]){
+    //             int t=num[j];
+    //             num[j]=num[j+1];
+    //             num[j+1]=t;
+    //         }
+    //     }
+    // }
+    // for(int i=0;i<index3;i++){
+    //     if(i==0) printf("%d",num[i]);
+    //     else printf(" %d",num[i]);
+    // }
+//     return 0;
+// }
+//2.直接读取整数
+// #include<stdio.h>
+// int num[200];
+// int main(){
+//     int cnt=0;
+//     for(int i=0;;i++){
+//         scanf("%d",&num[i]);
+//         cnt++;
+//         if(getchar()=='\n') break;
+//     }
+//     for(int i=0;i<cnt-1;i++){
+//         for(int j=0;j<cnt-i-1;j++){
+//             if(num[j]>num[j+1]){
+//                 int t=num[j];
+//                 num[j]=num[j+1];
+//                 num[j+1]=t;
+//             }
+//         }
+//     }
+//     for(int i=0;i<cnt;i++){
+//         if(i==0) printf("%d",num[i]);
+//         else printf(" %d",num[i]);
+//     }
+//     return 0;
+// }
+
+/*78 奇数单增序列*/
+// #include <stdio.h>
+// int numOrg[550];
+// int main(){
+//     int n,num,cnt=0;
+//     scanf("%d",&n);
+//     for(int i=0;i<n;i++){
+//         scanf("%d",&num);
+//         if(num%2!=0) numOrg[cnt++]=num;
+//     }
+//     for(int i=0;i<cnt-1;i++){
+//         for(int j=0;j<cnt-1-i;j++){
+//             if(numOrg[j]>numOrg[j+1]){
+//                 int t = numOrg[j+1];
+//                 numOrg[j+1]=numOrg[j];
+//                 numOrg[j]=t;
+//             }
+//         }
+//     }
+//     for(int i=0;i<cnt;i++){
+//         if(i==0) printf("%d",numOrg[i]);
+//         else printf(",%d",numOrg[i]);
+//     }
+//     return 0;
+// }
 
 
+/*79 整数奇偶排序*/
+// #include <stdio.h>
+// int num,numE[10],numO[10];
+// void sortEx(int num[],int size,int mode){
+//     //mode=1就小到大
+//     for(int i=0;i<size-1;i++){
+//         for(int j=0;j<size-1-i;j++){
+//             if(mode){
+//                 if(num[j]>num[j+1]){
+//                     int t = num[j+1];
+//                     num[j+1]=num[j];
+//                     num[j]=t;
+//                 }
+//             }else{
+//                 if(num[j]<num[j+1]){
+//                     int t = num[j+1];
+//                     num[j+1]=num[j];
+//                     num[j]=t;
+//                 }
+//             }
+//         }
+//     }
+// }
+// void prtarr(int numO[],int numE[],int sizeO,int sizeE){
+//     int ifprt=0;
+//     for(int i=0;i<sizeO;i++){
+//         if(i==0) printf("%d",numO[i]);
+//         else printf(" %d",numO[i]);
+//         ifprt=1;
+//     }
+//     for(int i=0;i<sizeE;i++){
+//         if(ifprt){
+//             printf(" %d",numE[i]);
+//         }else{
+//             if(i==0) printf("%d",numE[i]);
+//             else printf(" %d",numE[i]);
+//         }
+//     }
+// }
+// int main(){
+//     int indexE=0,indexO=0;
+//     for(int i=0;i<10;i++){
+//         scanf("%d",&num);
+//         if(num % 2==0) numE[indexE++]=num;
+//         else numO[indexO++]=num;
+//     }
+//     sortEx(numE,indexE,1);
+//     sortEx(numO,indexO,0);
+//     prtarr(numO,numE,indexO,indexE);
+//     return 0;
+// }
 
-/*78 */
+/*80 合影效果*/
+//优化：其实可以女生数组先排正序再从后面开始输出就好了
+// #include <stdio.h>
+// void sortEx(double num[],int size,int mode){
+//     for(int i=0;i<size-1;i++){
+//         for(int j=0;j<size-1-i;j++){
+//             if(mode){
+//                 if(num[j]>num[j+1]){
+//                     double t = num[j+1];
+//                     num[j+1]=num[j];
+//                     num[j]=t;
+//                 }
+//             }else{
+//                 if(num[j]<num[j+1]){
+//                     double t = num[j+1];
+//                     num[j+1]=num[j];
+//                     num[j]=t;
+//                 }
+//             }
+//         }
+//     }
+// }
+// int main(){
+//     char str[10];
+//     int n,indexm=0,indexf=0;
+//     double hei,male[50],female[50];
+//     scanf("%d",&n);
+//     for(int i=0;i<n;i++){
+//         scanf("%s %lf",str,&hei);
+//         if(str[0]=='m')     male[indexm++]=hei;
+//         else if(str[0]=='f')    female[indexf++]=hei;
+//     }
+//     sortEx(male,indexm,1);
+//     sortEx(female,indexf,0);
+//     int ifprt=0;
+//     for(int i=0;i<indexm;i++){
+//         if(i==0) printf("%.2lf",male[i]);
+//         else printf(" %.2lf",male[i]);
+//         ifprt=1;
+//     }
+//     for(int i=0;i<indexf;i++){
+//         if(ifprt)   printf(" %.2lf",female[i]);
+//         else{
+//             if(i==0) printf("%.2lf",female[i]);
+//             else printf(" %.2lf",female[i]);
+//         }
+//     }
+//     return 0;
+// }
 
-
-
-/*79 */
-
-
-/*80 */
-
-
-
-/*81 */
+/*81 按1的个数排序*/
 
 
 /*82 */

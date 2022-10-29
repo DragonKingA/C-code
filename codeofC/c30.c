@@ -102,6 +102,8 @@ void main() {
     int skip;
     scanf("%*d%d",&skip);//第一次输入的数被丢弃，接收第二次输入的数并存入skip中
     printf("%d\n",skip);//输出第二次输入的数
-
+    
+    
+	
 
 }

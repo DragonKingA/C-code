@@ -82,14 +82,15 @@ void main(){
     printf("max{sum2*2,sum1*2} = %d\n",max(sum2*2,sum1*2));//6
     PRTmsg("PRTmsg¥Ú”°\n");
     printf("cube(3)=%d\n",cube(3));//27
+    
 
 
     prtADD(5,10);
 
-    int NAME_Xn(1) = 14;
+    int NAME_Xn(1) = 14;//º¥int x1 = 14;
     int x2 = 20;
-    PRT_Xn(1);
-    PRT_Xn(2);
+    PRT_Xn(1);//º¥printf("x1 = %d\n",x1);
+    PRT_Xn(2);//º¥printf("x2 = %d\n",x2);
 
 
 }

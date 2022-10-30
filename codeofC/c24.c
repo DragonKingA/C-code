@@ -4394,11 +4394,54 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 // }
 
 
-/*22 城堡问题*/
+/*27 城堡问题*/
 
 
+/*28 Number of letters*/
+// #include <stdio.h>
+// #include <string.h>
+// typedef struct chartimes{
+//     char c;
+//     int cnt;
+// }ct;
+// ct counter(char str[]){
+//     ct chars[1020];
+//     ct max;
+//     max.cnt=0;
+//     int m=0;
+//     for(int i=0;i<strlen(str)-1-1;i++){
+//         chars[m].cnt=0;
+//         if(str[i]!=32){
+//             for(int j=i;j<strlen(str);j++){
+//                 if(str[i]==str[j] && str[j]!=32){
+//                     chars[m].c = str[i];
+//                     chars[m].cnt++;
+//                     if(i!=j) str[j]=32;
+//                 }
+//             }
+        
+//             if(chars[m].cnt>max.cnt){
+//                 max = chars[m];
+//             }
+//             str[i] = 32;
+//             m++;
+//         }
+//     }
+//     return max;
+// }
+// int main(){
+//     int N;
+//     scanf("%d",&N);
+//     for(int i=0;i<N;i++){
+//         char str[1020];
+//         scanf("%s",str);
+//         ct tep = counter(str);
 
+//         printf("%c %d\n",tep.c,tep.cnt);
+//     }
 
+//     return 0;
+// }
 
 
 
@@ -4427,4 +4470,269 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓洛谷题单↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+//P2142 高精度减法 (未解决)
+// #include <stdio.h>
+// #include <string.h>
+// #include <stdlib.h>
+// #include <math.h>
+// #define SIZE 10800
+// char num1[SIZE],num2[SIZE];
+// int n1[SIZE],n2[SIZE],minus[SIZE];
+// int main(){
+//     int cnt=0;
+//     memset(n1,0,SIZE);
+//     memset(n2,0,SIZE);
+//     memset(minus,0,SIZE);
+//     scanf("%s %s",num1,num2);
+//     for(int i=0;num1[i]!='\0';i++)  n1[i] = (int)num1[i]-48;
+//     for(int i=0;num2[i]!='\0';i++)  n2[i] = (int)num2[i]-48;
+//     for(int i=strlen(num1)-1 , j=strlen(num2)-1 , z=0; i>0&&j>0 ;i--,j--,z++){
+//         int t = n1[i] - n2[j];
+//         if(t<0 && i!=0 && j!=0){
+//             n1[i-1]--;
+//             minus[z] = abs(t);
+//         }else{
+//             minus[z] = t;
+//         }
+        
+//         cnt++;
+//     }
+//     //1231234
+//     //5678
+    
+//     for(int i=cnt-1;i>0;i--) printf("%d",minus[i]);
 
+//     //倒序输出minus
+
+
+//     return 0;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑洛谷题单↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓月赛↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+// #include <stdio.h>
+// typedef struct people{
+//     char name[20];
+//     int sex;
+//     int cf;
+//     int at;
+//     int face;
+//     int body;
+// }peo;
+// peo all[100002];
+// int exchange(peo all[],int i,int j){
+//     if(all[j].sex<all[j+1].sex){
+//                 return 1;
+//             }else if(all[j].sex == all[j+1].sex){
+//                 if(all[j].cf<all[j+1].cf){
+//                     return 1;
+//                 }else if(all[j].cf == all[j+1].cf){
+//                     if(all[j].at<all[j+1].at){
+//                         return 1;
+//                     }else if(all[j].cf ==all[j+1].cf){
+//                         if(all[j].face<all[j+1].face){
+//                             return 1;
+//                         }else if(all[j].face == all[j+1].face && all[j].face<all[j+1].face){
+//                             return 1;
+//                         }
+//                     }
+//                 }
+//             }
+//     return 0;
+// }
+// int main(){
+//     int n;
+//     scanf("%d",&n);
+//     for(int i=0;i<n;i++){
+//         scanf("%s %d %d %d %d %d",all[i].name,&all[i].sex,&all[i].cf,&all[i].at,&all[i].face,&all[i].body);
+//     }
+//     for(int i=0;i<n-1;i++){
+//         for(int j=0;j<n-1-i;j++){
+//             if(exchange(all,i,j)==1){
+//                 peo temp = all[j+1];
+//                 all[j+1]=all[j];
+//                 all[j]=temp;
+//             }
+//         }
+//     }
+//     for(int i=0;i<n;i++) printf("%s %d %d %d %d %d\n",all[i].name,all[i].sex,all[i].cf,all[i].at,all[i].face,all[i].body);
+//     return 0;
+// }
+
+
+
+//应当枚举再查是否含给定字串
+#include <stdio.h>
+#include <string.h>
+char ser[10030];
+char temp[10030];
+int main(){
+    int n,m,size=0,index=0;
+    scanf("%d %d",&n,&m);
+    scanf("%s %s",ser,temp);
+    size = strlen(ser);
+    for(int i=0;temp[i] != '\0';i++){
+        int h=size-1;
+        if(i>=size-1){
+            int ifright=1;
+            for(int j=i;j>i-size;j--,h--){
+                if(ser[h] != temp[j]){
+                    ifright =0 ;
+                    break;
+                }
+            }
+            if(ifright==1) index = i;
+        }
+    }
+    printf("index=%d\n",index);
+    // for(int i=0,k=0;(index+i)<strlen(temp);i++){
+    //     char strm[20];
+    //     memset(strm,'\0',20);
+    //     if((index + i + 1)>=m ){
+    //         strncpy(strm,temp+k,m);
+    //         printf("temp=%s\n",temp+k);
+    //         printf("%s\n",strm);
+    //         k++;
+    //     }
+    // }
+    for(int i=0,k=0;(index+i)<strlen(temp);i++){
+        char strm[20];
+        memset(strm,'\0',20);
+        if((index + i + 1)>=m ){
+            strncpy(strm,temp+k,m);
+            printf("temp=%s\n",temp+k);
+            printf("%s\n",strm);
+            k++;
+        }
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+//F
+// #include <stdio.h>
+// long long int arr[10020];
+// int main(){
+//     long long int n,x,y,tmin=0;
+//     scanf("%lld",&n);
+//     for(int i=0;i<n;i++){
+//         scanf("%lld",&arr[i]);
+//     }
+//     // for(int i=0;i<n-1;i++){
+//     //     for(int j=0;j<n-1-i;j++){
+//     //         if(arr[j]<arr[j+1]){
+//     //             long long int t=arr[j+1];
+//     //             arr[j+1]=arr[j];
+//     //             arr[j]=t;
+//     //         }
+//     //     }
+//     // }
+//     scanf("%lld%lld",&x,&y);
+//     for(int i=0;i<n;i++){
+//         if((arr[i]*x) < y){
+//             tmin+=arr[i]*x;
+//         }else{
+//             tmin+=y;
+//         }
+//     }
+//     printf("%lld\n",tmin);
+//     return 0;
+// }
+
+
+
+
+// #include <stdio.h>
+// int main(){
+//     unsigned long long int a,b;
+//     scanf("%llu %llu",&a,&b);
+//     printf("%llu\n",a+b);
+//     return 0;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑月赛↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

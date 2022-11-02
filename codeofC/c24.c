@@ -2324,28 +2324,141 @@
 
 
 
-/*87 */
+/*87 输出三角形字符阵*/
+// #include <stdio.h>
+// int main(){
+//     int n;
+//     scanf("%d",&n);
+//     char c = 'A';
+//     for(int i=0;i<n;i++){
+//         for(int j=0;j<n-i;j++){
+//             printf("%c ",c++);
+//         }
+//         printf("\n");
+//     }
+//     return 0;
+// }
+
+
+/*88 求幂级数展开部分*/
+// #include <stdio.h>
+// #include <math.h>
+// int main(){
+//     double x,sum=1;
+//     scanf("%lf",&x);
+//     for(int i=1;;i++){
+//         double t = 1;
+//         for(int j=2;j<=i;j++){
+//             t*=j;
+//         }
+//         sum+=pow(x,i)/t;
+//         if(pow(x,i)/t < 0.00001) break;
+//     }
+//     printf("%.4lf\n",sum);
+//     return 0;
+// }
 
 
 
-/*88 */
+/*89 输出整数各位数字（递归）*/
+// #include <stdio.h>
+// #include <math.h>
+// void prt(int x){
+//     if(x > 9){
+//         prt(x/10);
+//     }
+//     printf("%d ",x%10);
+// }
+// int main(){
+//     int x;
+//     scanf("%d",&x);
+//     prt(x);
+//     return 0;
+// }
+
+/*90 判断回文数*/
+// #include <stdio.h>
+// #include <string.h>
+// char str[40000];
+// int main(){
+//     int n,x,ifnot=1;
+//     scanf("%d",&n);
+//     for(int i=0;i<n;i++){
+//         scanf("%s",str);
+//         ifnot = 1;
+//         for(int j=0,m=strlen(str)-1;j<strlen(str)/2;){
+//             if(str[j++] != str[m--]){
+//                 ifnot=0;
+//             }
+//         }
+//         if(ifnot) printf("Yes\n");
+//         else printf("No\n");
+//         memset(str,'\0',40000);
+//     }
+//     return 0;
+// }
+
+
+/*91 找完数*/
+// #include <stdio.h>
+// int main(){
+//     int m,n,ifnot=1;
+//     scanf("%d%d",&m,&n);
+//     for(int i=m;i<=n;i++){
+//         int sum=0,t=0;
+//         int arr[40000];
+//         for(int j=1,m=0;j<i;j++){
+//             if(i%j==0){
+//                 sum+=j;
+//                 arr[m++]=j;
+//             }
+//             t=m;
+//         }
+        
+//         if(sum == i){
+//             ifnot = 0;
+//             printf("%d = ",i);
+//             for(int h=0;h<t;h++){
+//                 if(h==0) printf("%d",arr[h]);
+//                 else printf(" + %d",arr[h]);
+//             }
+//             printf("\n");
+//         }
+//     }
+//     if(ifnot){
+//         printf("None\n");
+//     }
+//     return 0;
+// }
 
 
 
-/*89 */
+
+/*92 验证“哥德巴赫猜想”（素数）*/
+// #include <stdio.h>
+// #include <math.h>
+// int isPrime(int num){
+//     for(int j=2;j<=sqrt(num);j++){
+//         if(num % j == 0){
+//             return 0;
+//         }
+//     }
+//     return 1;
+// }
+// int main(){
+//     int n;
+//     scanf("%d",&n);
+//     for(int i=2;i<=n/2;i++){
+//       if(isPrime(i) && isPrime(n-i)){
+//         printf("%d = %d + %d",n,i,n-i);
+//         break;
+//       }
+//     }
+//     return 0;
+// }
 
 
-/*90 */
-
-
-
-/*91 */
-
-
-
-
-
-
+ 
 
 
 /*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑零碎小题↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
@@ -2622,17 +2735,17 @@
 // #include <stdio.h>
 // #include <math.h>
 // int isPrime(int num){//1为素数，0为非素数
-//     int ret = 1;
-//     if(num % 2 != 0){
-//         for(int j=3;j<sqrt(num);j++){
-//             if(num % j == 0){
-//                 ret = 0;
-//             }
-//         }
-//     }else{
-//         ret = 0;
-//     }
-//     return ret;
+    // int ret = 1;
+    // if(num % 2 != 0){
+    //     for(int j=3;j<sqrt(num);j++){
+    //         if(num % j == 0){
+    //             ret = 0;
+    //         }
+    //     }
+    // }else{
+    //     ret = 0;
+    // }
+    // return ret;
 // }
 // int main(){
 //     int x,y,t,f;
@@ -4548,6 +4661,323 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓算法↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+/*一.贪心算法：
+1.贪心算法的基本思路是从问题的某一个初始解出发一步一步地进行，根据某个优化测度，每一步都要确保能获得局部最优解。
+每一步只考虑一个数据，他的选取应该满足局部优化的条件。若下一个数据和部分最优解连在一起不再是可行解时，
+就不把该数据添加到部分解中，直到把所有数据枚举完，或者不能再添加算法停止.
+2.由于不从整体最优上加以考虑，他所做出的是在某种意义上的局部最优解，故有：
+    该算法存在的问题：
+    1.不能保证求得的最后解是最佳的
+    2.不能用来求最大值或最小值的问题
+    3.只能求满足某些约束条件的可行解的范围
+*/
+//1.平衡字符串
+// #include <stdio.h>
+// #define MAX 10000
+// int main(){
+//     char str[MAX];
+//     int cnt=0,cnt_t=0;
+//     scanf("%s",str);
+//     for(int i=0 ; str[i] != '\0' ;i++){
+//         if(str[i] == 'R') cnt_t++;
+//         else if(str[i] == 'L') cnt_t--;
+//         if(cnt_t == 0){
+//             cnt++;
+//         }
+//     }
+//     printf("%d",cnt);
+//     return 0;
+// }
+
+
+
+//2.买卖股票的最佳时机
+//只在相邻的上升趋势的两天买与卖，得差价即这两天买卖所得利润,等价于每天都买卖
+// #include <stdio.h>
+// int main(){
+//     int prices[] = {1,2,3,4,5};
+//     int pricesSize = sizeof(prices)/sizeof(prices[0]);
+//     int profit=0;
+//     for(int i=1 ; i<pricesSize ; i++){
+//         if(prices[i-1]<prices[i]){
+//             profit += prices[i] - prices[i-1];
+//         }
+//     }
+//     printf("%d",profit);
+//     return 0;
+// }
+
+
+
+//3.跳跃游戏
+// #include <stdio.h>
+// #include <stdbool.h>
+// int main(){
+//     bool canJump = true;
+//     int nums[] = {3,2,1,0,4};
+//     int numsSize = sizeof(nums) / sizeof(nums[0]);
+//     int temp = 0;
+//     for(int i=0;i<numsSize;i++){
+//         //如果能走的步数比下标量还小，就已经无法再走下去了
+//         if(temp < i){
+//             canJump = false;
+//             break;
+//         }
+//         temp = temp > (i+nums[i]) ? temp : (i+nums[i]);
+//     }
+//     printf("%s\n",canJump > 0 ? "true" : "false");
+//     return 0;
+// }
+
+
+//4.电影节 (对于无重叠区间/不重复区间的计数)
+//这类问题，先依据区间右端点进行排序，再遍历数组，
+//当左端点大于等于已有右端点值时即发现一个不重合区间(cnt初始为1，因为默认排序后第一个必为不重合区间)。
+// #include<stdio.h>
+// #include<stdlib.h>
+// #define size 200
+// int cmp(const void* a , const void* b){
+//     return ((int *)a)[1] - ((int *)b)[1] ;
+// }
+// int main(){
+//     int n;
+//     while(scanf("%d",&n),n){
+//         int arr[size][2],cnt=1;
+//         for(int m=0;m<n;m++)    scanf("%d%d",&arr[m][0],&arr[m][1]);
+//         qsort(arr,n,sizeof(arr[0]),cmp);
+//         for(int i=0,rNum=arr[0][1];i<n;i++){
+//             if(arr[i][0] >= rNum){
+//                 rNum = arr[i][1];
+//                 cnt++;
+//             }
+//         }
+//         printf("%d\n",cnt);
+//     }
+//     return 0;
+// }
+
+
+
+
+//5.数列分段
+// #include <stdio.h>
+// #define size 100000+100
+// int arr[size];
+// int main(){
+//     int n,m,cnt=0,sum=0;
+//     scanf("%d %d",&n,&m);
+//     for(int i=0;i<n;i++) scanf("%d",&arr[i]);
+//     for(int i=0;i<n;i++){
+//         if(arr[i]+sum > m){
+//             sum=0;
+//             cnt++;
+//         }
+//         sum += arr[i];
+//     }
+//     printf("%d\n",++cnt);
+//     return 0;
+// }
+
+
+//6.圣诞老人的礼物
+// #include<stdio.h>
+// #include<stdlib.h>
+// struct gift{
+//     double value;
+//     double weight;
+// }gifts[150];
+// int cmp(const void* a, const void* b){
+//     return ((struct gift *)a)->value / ((struct gift *)a)->weight  <  ((struct gift *)b)->value / ((struct gift *)b)->weight  ?   1 : -1 ;
+// }
+// int main(){
+//     int n,m,a,b;
+//     double sum=0.0;
+//     scanf("%d%d",&n,&m);
+//     for(int i=0;i<n;i++)    scanf("%lf %lf",&gifts[i].value,&gifts[i].weight);
+//     qsort(gifts,n,sizeof(gifts[0]),cmp);
+//     for(int i=0,j=0;i<n;i++){
+//         if((m-j) >= gifts[i].weight){
+//             sum += gifts[i].value;
+//             j += gifts[i].weight;
+//         }else{
+//             sum += gifts[i].value * (m-j) / gifts[i].weight;
+//             break;
+//         }
+//     }
+//     printf("%.1f\n",sum);
+//     return 0;
+// }
+
+
+
+
+//7.种树
+//排完序后把要种的树都从右端点开始种
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// #define size 30000+100
+// int cmp(const void* a , const void* b){
+//     return ((int *)a)[1] - ((int *)b)[1] ;
+// }
+// int arr[size][3];
+// int tree[size];
+// int main(){
+//     int n,h,cnt=0;
+//     scanf("%d%d",&n,&h);
+//     memset(tree,0,size);
+//     for(int i=0;i<h;i++){
+//         scanf("%d %d %d",&arr[i][0],&arr[i][1],&arr[i][2]);
+//     }
+//     qsort(arr,h,sizeof(arr[0]),cmp);
+//     for(int i=0  ; i<h ; i++){
+//         //从右往左种,
+//         //先遍历是否有重叠且已经种好的，若有就消耗数量
+//         for(int j=arr[i][0]; j<=arr[i][1] ; j++){
+//             if(arr[i][2]==0) break;
+//             if(tree[j]==1) arr[i][2]--;
+//         }
+//         for(int j=arr[i][1]; j>=arr[i][0] ; j--){
+//             //重叠处的处理：若已经种了就消耗“要种的数量”
+//             if(arr[i][2]==0) break;
+//             if(tree[j]==0){
+//                 tree[j]=1;
+//                 arr[i][2]--;
+//                 cnt++;
+//             }
+//         }
+//     }
+//     printf("%d\n",cnt);
+//     return 0;
+// }
+
+
+
+
+//8.
+
+
+
+
+//9.最小新整数
+#include <stdio.h>
+int maxofnum(int n){
+    int max=n%10,cnt=1;
+    for(int i=n;i>0;){
+        max = max > (i%10) ? max:(i%10);
+        i/=10;
+    }
+    for(int i=n;i>0;){
+        if(i==max) break;
+        i/=10;
+        cnt*=10;
+    }
+    return cnt;
+}
+void numPRT(int n){
+    if(n>9){
+        numPRT(n/10);
+    }
+    if(n%10 != 0)   printf("%d",n%10);
+}
+int main(){
+    int n,t,k;
+    scanf("%d",&t);
+    for(int i=0;i<t;i++){
+        scanf("%d%d",&n,&k);
+        int m=n;
+        for(int j=0;j<k;j++){
+            int res=maxofnum(m);
+            m -= res * (m/res%10);//此处问题
+            printf("res=%d , m=%d\n",maxofnum(128456),m);
+        }
+        numPRT(m);
+        printf("\n");
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑算法↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4609,52 +5039,52 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 //应当枚举再查是否含给定字串
-#include <stdio.h>
-#include <string.h>
-char ser[10030];
-char temp[10030];
-int main(){
-    int n,m,size=0,index=0;
-    scanf("%d %d",&n,&m);
-    scanf("%s %s",ser,temp);
-    size = strlen(ser);
-    for(int i=0;temp[i] != '\0';i++){
-        int h=size-1;
-        if(i>=size-1){
-            int ifright=1;
-            for(int j=i;j>i-size;j--,h--){
-                if(ser[h] != temp[j]){
-                    ifright =0 ;
-                    break;
-                }
-            }
-            if(ifright==1) index = i;
-        }
-    }
-    printf("index=%d\n",index);
-    // for(int i=0,k=0;(index+i)<strlen(temp);i++){
-    //     char strm[20];
-    //     memset(strm,'\0',20);
-    //     if((index + i + 1)>=m ){
-    //         strncpy(strm,temp+k,m);
-    //         printf("temp=%s\n",temp+k);
-    //         printf("%s\n",strm);
-    //         k++;
-    //     }
-    // }
-    for(int i=0,k=0;(index+i)<strlen(temp);i++){
-        char strm[20];
-        memset(strm,'\0',20);
-        if((index + i + 1)>=m ){
-            strncpy(strm,temp+k,m);
-            printf("temp=%s\n",temp+k);
-            printf("%s\n",strm);
-            k++;
-        }
-    }
+// #include <stdio.h>
+// #include <string.h>
+// char ser[10030];
+// char temp[10030];
+// int main(){
+//     int n,m,size=0,index=0;
+//     scanf("%d %d",&n,&m);
+//     scanf("%s %s",ser,temp);
+//     size = strlen(ser);
+//     for(int i=0;temp[i] != '\0';i++){
+//         int h=size-1;
+//         if(i>=size-1){
+//             int ifright=1;
+//             for(int j=i;j>i-size;j--,h--){
+//                 if(ser[h] != temp[j]){
+//                     ifright =0 ;
+//                     break;
+//                 }
+//             }
+//             if(ifright==1) index = i;
+//         }
+//     }
+//     printf("index=%d\n",index);
+//     // for(int i=0,k=0;(index+i)<strlen(temp);i++){
+//     //     char strm[20];
+//     //     memset(strm,'\0',20);
+//     //     if((index + i + 1)>=m ){
+//     //         strncpy(strm,temp+k,m);
+//     //         printf("temp=%s\n",temp+k);
+//     //         printf("%s\n",strm);
+//     //         k++;
+//     //     }
+//     // }
+//     for(int i=0,k=0;(index+i)<strlen(temp);i++){
+//         char strm[20];
+//         memset(strm,'\0',20);
+//         if((index + i + 1)>=m ){
+//             strncpy(strm,temp+k,m);
+//             printf("temp=%s\n",temp+k);
+//             printf("%s\n",strm);
+//             k++;
+//         }
+//     }
 
-    return 0;
-}
+//     return 0;
+// }
 
 
 

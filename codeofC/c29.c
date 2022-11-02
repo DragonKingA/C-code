@@ -4,8 +4,10 @@
 struct stu{
     char name[20];
     int age;
+
+    int sortindex;
 };
-struct stu s[3] = {{"zhangsan", 30}, {"lisi", 34}, {"wangwu", 20}};
+struct stu s[] = {{"zhangsan", 30}, {"lisi", 34}, {"abc", 20}, {"bca", 10}, {"wangwu", 20}, {"lzl", 20}, {"cba", 8}};
 
 
 
@@ -58,23 +60,43 @@ void qsort( void *base, //void*¿ÉÒÔ´æÈëÈÎºÎÀàĞÍÊı¾İ£¬ÕâÀï´æÈë´ıÅÅĞòÊı¾İÖĞµÚÒ»¸öÔ
             //compareº¯ÊıÊÇÓÃÀ´±È½Ï´ıÅÅĞòÊı¾İÖĞÁ½¸öÔªËØµÄº¯Êı£¬ÇÒ±¾Éí½ÓÊÕÈÎÒâÀàĞÍµÄ´ı±È½ÏµÄÁ½¸öÔªËØ
             );
 int cmp_int(const void *e1 , const void *e2){//ÒòÎªe1,e2ÊÇÎŞÀàĞÍÖ¸Õë£¬ÏµÍ³²»ÖªµÀ¸ÃÖ¸ÕëÕ¼¼¸¸ö×Ö½Ú£¬¹ÊÒªÏÈ½øĞĞÇ¿ÖÆÀàĞÍ×ª»»²ÅÄÜÊ¹ÓÃ
-    return *(int *)e1 > *(int *)e2 ;//ÕıĞòÅÅÁĞ£¬Èôe1´óÓÚe2 , Ôòreturn 1 , ¹Êe1ºÍe2¾Í½»»»
-    //¼´return *(int *)e1 - *(int *)e2 ;
+    return *(int *)e1 - *(int *)e2 ;//ÕıĞòÅÅÁĞ£¬Èôe1´óÓÚe2 , Ôòreturn 1 , ¹Êe1ºÍe2¾Í½»»»
+    //¶øreturn *(int *)e1 > *(int *)e2 ;²»°üº¬Á½ÕßÏàµÈ¼´·µ»Ø0µÄÇé¿ö£¬¹Ê»á³öÏÖÏàµÈÕßÈÔÈ»·¢Éú½»»»µÄÇé¿ö
 }
 int cmp_struct_age(const void* e1, const void* e2){
-    return ((struct stu *)e1)->age > ((struct stu *)e2)->age ;
+    if(((struct stu *)e1)->age != ((struct stu *)e2)->age)
+        return ((struct stu *)e1)->age - ((struct stu *)e2)->age > 0 ? 1:-1 ;
+    else
+        return ((struct stu *)e1)->sortindex - ((struct stu *)e2)->sortindex ;
+        //·ÀÖ¹ÏàµÈµÄÁ½ÕßÈÔÈ»·¢Éú½»»»
+    //return ((struct stu *)e1)->age > ((struct stu *)e2)->age ;ÎŞ·¨ÄÒÀ¨ËùÓĞ·¶Î§
 }
 int cmp_struct_name(const void* e1, const void* e2){
-    return strcmp(((struct stu *)e1)->name , ((struct stu *)e2)->name) ;//ÉıĞò
+    if(strcmp(((struct stu *)e1)->name , ((struct stu *)e2)->name) != 0)
+        return strcmp(((struct stu *)e1)->name , ((struct stu *)e2)->name);//ÉıĞò
+    else
+        return ((struct stu *)e1)->sortindex - ((struct stu *)e2)->sortindex ;
 }
 /*
 cmp·µ»ØÖµÇé¿ö£º
 <0  elem1 less than elem2 
 ==0 elem1 equivalent to elem2 
 >0  elem1 greater than elem2 
+
+cmpº¯ÊıµÄ·µ»ØÖµ£¬<0(²»½øĞĞÖÃ»»)£¬0(²»½øĞĞÖÃ»»)£¬>0(½øĞĞÖÃ»»)¡£
+
+¶Ô²»Í¬ÀàĞÍÅÅĞòºóreturnÊ±µÄĞ´·¨:
+int     :    return *(int *)a - *(int *)b
+double  :    return  ( *(double *)a - *(double *)b ) > 0 ? 1 : -1 ; //ÊıÖµÅÅĞòÍ¬Öµ½»»»²»Ó°Ïì×îÖÕ½á¹û
+char    :    return (*(char *)a - *(char *)b);
+struct s:    if( ((struct s *)a) -> data != ((struct s *)b) -> data )
+                return ((struct s *)a) -> data  -  ((struct s *)b) -> data  >  0  ?  1 : -1 ; (ÕâÀïdataÎªÊıÖµÀàĞÍ)
+             else
+                return ((struct stu *)a)->sortindex - ((struct stu *)b)->sortindex ; 
+                //ÕâÀïsortindexÔÚÅÅĞòÇ°³õÊ¼»¯£¬´ú±í×ÅÔªËØË³Ğò£¬ÕâÑù¿ÉÒÔ±£Ö¤Í¬ÖµÏÂ²»·¢Éú½»»»¼´±£³ÖÔ­Ë³Ğò
 */
 
-void main(){
+int main(){
     int i=0;
     int *p = &i;
     int a[]={1,2};
@@ -145,8 +167,13 @@ main()=00007ff72f851598
 
     printf("\n\n");
 
+    //ÏÈ³õÊ¼»¯sortindex
+    for(int i=1;i<sizeof(s)/sizeof(s[0]);i++) s[i].sortindex = i ;
     qsort(s, sizeof(s)/sizeof(s[0]), sizeof(s[0]), cmp_struct_age);
-    for(int i=0;i<sizeof(s)/sizeof(s[0]);printf("%s.age=%d\n",s[i].name,s[i].age),i++);
+    // for(int i=0;i<sizeof(s)/sizeof(s[0]);printf("%s.age=%d\n",s[i].name,s[i].age),i++);
+    for(int i=0;i<sizeof(s)/sizeof(s[0]);i++){
+        printf("%s.age=%d\n",s[i].name,s[i].age);
+    }
 
     printf("\n");
 
@@ -155,5 +182,5 @@ main()=00007ff72f851598
 
 
 
-
+    return 0;
 }

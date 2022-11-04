@@ -4856,58 +4856,249 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-//8.
+//8.电池的寿命
+// #include <stdio.h>
+// int main(){
+//     int n;
+//     while(scanf("%d",&n)!=EOF){
+//         double t,sum=0.0,res=0.0,max=0.0;
+//         for(int i=0;i<n;i++){
+//             scanf("%lf",&t);
+//             sum+=t;
+//             max = max > t ? max : t;
+//         }   
+//         if(sum < 2*max){
+//             //此时前面所有电池量都能与最大电池量成对，也就是说最大号电池一直用
+//             res = sum - max;
+//         }else{
+//             res = sum / 2;
+//         }
+//         printf("%.1lf\n",res);
+//         //电池不应该一个一个看，而是将可成双的电池量全部糅合成一个大号量电池，不能成双的电池量即废弃
+//         //if sum<2*max 即这些电池不够整体分成两组
+//         //
+//         //else
+//         //  
+
+//         //3 3 5
+//         //3 3 (2.5 + 2.5) 正好两组电池完整消耗
+//         //res = sum/2
+
+//         //3 3 5 5
+//         //3 3 (2.5+2.5) (2.5+2.5)
+//         //8
+//     }
+//     return 0;
+// }
+
 
 
 
 
 //9.最小新整数
-#include <stdio.h>
-int maxofnum(int n){
-    int max=n%10,cnt=1;
-    for(int i=n;i>0;){
-        max = max > (i%10) ? max:(i%10);
-        i/=10;
+//1.WA
+// #include <stdio.h>
+// int maxofnum(int n){
+//     int max=n%10,cnt=1;
+//     for(int i=n;i>0;){
+//         max = max > (i%10) ? max:(i%10);
+//         i/=10;
+//     }
+//     for(int i=n;i>0;){
+//         if(i%10==max) break;
+//         i/=10;
+//         cnt*=10;
+//     }
+//     return cnt;
+// }
+// void numPRT(int n){
+//     if(n>9){
+//         numPRT(n/10);
+//     }
+//     if(n%10 != 0)   printf("%d",n%10);
+// }
+// int main(){
+//     int n,t,k;
+//     scanf("%d",&t);
+//     for(int i=0;i<t;i++){
+//         scanf("%d%d",&n,&k);
+//         int m=n;
+//         for(int j=0;j<k;j++){
+//             int res=maxofnum(m);
+//             m -= res * (m/res%10);
+//         }
+//         numPRT(m);
+//         printf("\n");
+//     }
+//     return 0;
+// }
+//2.AC
+// #include<stdio.h>
+// #include<string.h>
+// char str[20];
+// int main(){
+//     int t,k,len=0;
+//     scanf("%d",&t);
+//     while(t--){
+//         scanf("%s%d",str,&k);
+//         len = strlen(str);
+//         while(k--){
+//             //遍历str,相邻数前者小则其后整体往前挪,包括'\0'
+//             //9128456'\0'   len
+//             //128456'\0'
+//             //12456'\0'
+//             for(int i=0;i<len;i++){
+//                 if(str[i] > str[i+1]){
+//                     for(int j=i;j<len;j++){
+//                         str[j] = str[j+1];
+//                     }
+//                     break;
+//                 }
+
+//             }
+//             //每次挪完说明strlen少1
+//             len--;
+//         }
+//         printf("%s\n",str);
+//         memset(str,'\0',strlen(str));
+//     }
+//     return 0;
+// }
+
+
+
+
+//11.线段
+// #include <stdio.h>
+// #include <stdlib.h>
+// #define SIZE 1000000+1
+// struct line{
+//     int lef;
+//     int rig;
+// }lines[SIZE];
+// int cmp(const void* a, const void* b){
+//     return ((struct line *)a)->rig - ((struct line *)b)->rig;
+// }
+// int main(){
+//     int n,a,b,cnt=1;
+//     scanf("%d",&n);
+//     for(int i=0;i<n;i++)    scanf("%d %d",&lines[i].lef,&lines[i].rig);
+//     qsort(lines ,n , sizeof(lines[0]), cmp);
+//     for(int i=1,t=lines[0].rig;i<n;i++){
+//         if(lines[i].lef >= t){//有重复者直接忽略，只有算作非重复线段者才作为最右端
+//             cnt++;
+//             t=lines[i].rig;
+//         }
+//     }
+//     printf("%d\n",cnt);
+//     return 0;
+// }
+
+//12.智力大冲浪
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+struct game{
+    int t;
+    int pns;
+}games[550];
+int cmp(const void* a, const void* b){
+    int t1=((struct game *)a)->t , t2=((struct game *)b)->t ;
+    if(t1==t2){
+        return ((struct game *)a)->pns < ((struct game *)b)->pns ;
+    }else{
+        return t1>t2 ;
     }
-    for(int i=n;i>0;){
-        if(i==max) break;
-        i/=10;
-        cnt*=10;
-    }
-    return cnt;
 }
-void numPRT(int n){
-    if(n>9){
-        numPRT(n/10);
-    }
-    if(n%10 != 0)   printf("%d",n%10);
-}
+// int cmp(const void* a, const void* b){
+//         return ((struct game *)a)->pns < ((struct game *)b)->pns ;
+// }
+char ifnot[550]={'0'};
 int main(){
-    int n,t,k;
-    scanf("%d",&t);
-    for(int i=0;i<t;i++){
-        scanf("%d%d",&n,&k);
-        int m=n;
-        for(int j=0;j<k;j++){
-            int res=maxofnum(m);
-            m -= res * (m/res%10);//此处问题
-            printf("res=%d , m=%d\n",maxofnum(128456),m);
+    int money,n,cnt=1,sumofpns=0;
+    scanf("%d%d",&money,&n);
+    memset(ifnot+1, '0', n);
+    for(int i=1;i<=n;i++) scanf("%d",&games[i].t);
+    for(int i=1;i<=n;i++) scanf("%d",&games[i].pns);
+    qsort(games+1 ,n ,sizeof(games[0]) ,cmp);
+    for(int i=1;i<=n;i++){
+        int tag=0;
+        for(int j=games[i].t ; j ; j--){
+            if(ifnot[j]=='0'){
+                ifnot[j]='1';
+                tag=1;
+                break;
+            }
         }
-        numPRT(m);
-        printf("\n");
+        if(tag==0){
+            for(int j=n ; j ; j--){
+                if(ifnot[j]=='0'){
+                    ifnot[j]='1';
+                    break;
+                }
+
+            }
+            money-=games[i].pns;
+        }
     }
 
+
+    // for(int i=1;i<=n;i++){
+    //     if(ifnot[ games[i].t ]=='0')    ifnot[ games[i].t ] = '1';
+    //     else if(games[i].pns > games[cnt].pns){
+    //         struct game temp = games[cnt] ;
+    //         games[cnt]=games[i];
+    //         games[i]=temp;
+    //         cnt++;
+    //     }
+    // }
+    // for(int i=1,j=1;i<=n;i++){
+    //     if(games[i].t < j){
+    //         money -= games[i].pns;
+    //     }else{
+    //         j++;
+    //     }
+    // }
+    printf("%d\n",money);
+    //规定时间前一刻只玩最贵的,其余同时间段替换前面罚钱少的
     return 0;
 }
+// 1    2   3    4  5  6  7
+//1   2   3    4    4   4   6
+//30 60   40  70   50   20  10
+//30+20
+//4   2   3    4   1    4   6 
+//50  60  40  70   30   20  10
 
 
 
+//if(ifnot[i]){
+//     ifnot[i]=0;
+//}else{
+//     
+//} 
+
+//1 2 3 4 4 4 6
+//
 
 
-
-
-
-
+//13.Find Amir
+// #include <stdio.h>
+// int main(){
+//     int n;
+//     scanf("%d",&n);
+//     int cnt=0;
+//     if(n%2==0) cnt=n/2-1;
+//     else    cnt=n/2 ;
+//     printf("%d\n",cnt);
+//         // printf("%d\n",n / 2 - ((n & 1) ? 0 : 1));
+//     return 0;
+// }
+//1 2 3 4 5 6 7  8  111
+//1 1 1 1
+//10 1  9 2  8 3 7 4 6 5
+//1 2 3 4   1
+//
 
 
 

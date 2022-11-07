@@ -4435,31 +4435,57 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 /*22 城堡问题*/
-//sum=
 //一堵墙    1 2 4 8
 //两堵墙    3 5 9 6 10 12
 //三堵墙    7 14 11 13
 //四堵墙    15
-// #include<stdio.h>
-// #include<string.h>
-// int wall[100][100]; 
-// int main(){
-//     int ver,hor;
-//     memset(wall,0,sizeof(wall));
-//     scanf("%d",&ver);   
-//     scanf("%d",&hor);
-//     for(int i=0;i<ver;i++){
-//         for(int j=0;j<ver;j++){
-//             scanf("%d",&wall[i][j]);
-
-//         }
-
-
-//     }
-
-
-//     return 0;
-// }
+#include<stdio.h>
+#include<string.h>
+int wall[105][105];
+int dir[4][2] = {{0,-1}, {-1,0}, {0,1}, {1,0}};//依次判断四个方向, 西 北 东 南   1 2 4 8
+int dirjudge[4]={4,8,1,2};
+int square_max=1, ver, hor, rooms=0, temp=0, t=0;
+//dfs实现
+int dfs(int x, int y){
+    int nextX, nextY;
+    if(x>=0 && x<ver && y>=0 && y<hor && wall[x][y]>=0 && (!(wall[x][y] & dirjudge[t]))){//判断条件
+        wall[x][y] = -1;
+        for(int i=0; i<4 ; i++){
+            nextX = x + dir[i][0];
+            nextY = y + dir[i][1];
+            t=i;
+            dfs(nextX, nextY); 
+        }
+        temp++;
+        return 1;
+    }
+    return 0;
+}
+int main(){
+    memset(wall,0,sizeof(wall));
+    scanf("%d",&ver);   
+    scanf("%d",&hor);
+    for(int i=0;i<ver;i++){
+        for(int j=0;j<hor;j++){
+            scanf("%d",&wall[i][j]);
+            if(wall[i][j]==15){
+                rooms++;
+                wall[i][j]=-1;
+            }
+        }
+    }
+    for(int i=0;i<ver;i++){
+        for(int j=0;j<hor;j++){
+            if(dfs(i,j)) {
+                rooms++;
+                square_max = temp>square_max ? temp:square_max;
+                temp=0;
+            }
+        }
+    }
+    printf("%d\n%d\n",rooms,square_max);
+    return 0;
+}
 
 
 
@@ -4672,6 +4698,7 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
     1.不能保证求得的最后解是最佳的
     2.不能用来求最大值或最小值的问题
     3.只能求满足某些约束条件的可行解的范围
+3.验证想法正确性：首先看第一项满不满足，再推导至n项。不同的想法总能举出反例直至一个没有反例的
 */
 //1.平衡字符串
 // #include <stdio.h>
@@ -4893,8 +4920,6 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 
 
 
-
-
 //9.最小新整数
 //1.WA
 // #include <stdio.h>
@@ -4954,7 +4979,6 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //                     }
 //                     break;
 //                 }
-
 //             }
 //             //每次挪完说明strlen少1
 //             len--;
@@ -4964,6 +4988,267 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //     }
 //     return 0;
 // }
+
+
+
+//*10.田忌赛马
+//1.WA
+// #include <stdio.h>
+// #include <stdlib.h>
+// #define SIZE 1100
+// int cmp(const void* a, const void* b){
+//     return ((int *)a)[0] < ((int *)b)[0] ;
+// }
+// int main(){
+//     int n;
+//     while(scanf("%d",&n)!=EOF, n){
+//         int c[SIZE][2],s[SIZE];
+//         int c_t[SIZE];
+//         int max=0 ,min=0;
+//         for(int i=0;i<n;i++) {
+//             scanf("%d",&c[i][0]);
+//             c[i][1]=c_t[i]=1;
+//         }
+//         for(int i=0;i<n;i++) {
+//             scanf("%d",&s[i]);
+//         }
+//         qsort(c ,n ,sizeof(c[0]) ,cmp);
+//         qsort(s ,n ,sizeof(s[0]) ,cmp);
+//         for(int i=0;i<n;i++){
+//             int ifnotmax=1,ifnotmin=1;
+//             for(int j=0 ; j<n ; j++){
+//                 if( c[j][1] ){
+//                     if(s[i] > c[j][0]){
+//                         max+=3;
+//                         c[j][1] = 0;
+//                         ifnotmax = 0;
+//                         break;
+//                     }else if(s[i] == c[j][0]){
+//                         max+=2;
+//                         c[j][1] = 0;
+//                         ifnotmax = 0;
+//                         break;
+//                     }
+                    
+//                 }
+//             }
+//             if(ifnotmax){
+//                 max+=1;
+//                 for(int j=0;j<n;j++){
+//                     if(c[j][1]) {
+//                         c[j][1]=0;
+//                         break;
+//                     }
+//                 }
+//             }
+
+//             for(int j=0 ; j<n ; j++){
+//                 if( c_t[j] ){
+//                     if(s[i] < c[j][0]){
+//                         min+=1;
+//                         c_t[j] = 0;
+//                         ifnotmin = 0;
+//                         break;
+//                     }else if(s[i] == c[j][0]){
+//                         min+=2;
+//                         c_t[j] = 0;
+//                         ifnotmin = 0;
+//                         break;
+//                     }
+                    
+//                 }
+//             }
+//             if(ifnotmin){
+//                 min+=3;
+//                 for(int j=n-1;j>=0;j--){
+//                     if(c_t[j]) {
+//                         c_t[j]=0;
+//                         break;
+//                     }
+//                 }
+                
+//             }
+
+//         }
+//         //双层循环
+//         //max:
+//         //从s[0]开始 从c[0]开始找 c[j][1] && 大于等于c[j][0],找到就+=,且c[j][1]=0
+//         //if该s[i]没找到就+=1,并且重置ifnot=1
+
+//         //min:
+//         //从s[0]开始 从c[0]开始找 c_t[j] &&小于等于c[j][0],找到就+=,且c_t[j]=0
+//         //if该s[i]没找到就+=3,并且重置ifnot=1
+
+//         printf("%d %d\n",max,min);
+//     }
+//     return 0;
+// }
+//30 17 6
+//22 11 5
+//max=7
+//min=3
+
+//30
+//22
+//max=1
+//min=1
+
+//22
+//30
+//max=3
+//min=3
+
+//20 19
+//22 18
+//max=4
+//min=4
+//2.AC
+// #include <stdio.h>
+// #include <stdlib.h>
+// #define SIZE 1100
+// int cmp(const void* a, const void* b){
+//     return *(int *)a < *(int *)b ;
+// }
+// int main(){
+//     int n;
+//     while(scanf("%d",&n)!=EOF, n){
+//         int c[SIZE],s[SIZE];
+//         int max=0 ,min=0;
+//         for(int i=0;i<n;i++) scanf("%d",&c[i]);
+//         for(int i=0;i<n;i++) scanf("%d",&s[i]);
+//         qsort(c ,n ,sizeof(c[0]) ,cmp);
+//         qsort(s ,n ,sizeof(s[0]) ,cmp);
+//         int cmax,cmin,smax,smin;
+//         cmin=smin=n-1;//最小点数定位器
+//         cmax=smax=0;//最大点数定位器
+//         while(smax <= smin){//最大点数定位和最小点数定位不能各自逾越，相当于只进行n次
+//             if(s[smax] > c[cmax]){//最大点数能赢对面最大点数，能赢就赢
+//                 max+=3;
+//                 smax++;
+//                 cmax++;
+//                 //各自定位变量往后走
+//             //每次运行一次都要出一次胜负结果，如果要输只能先让最小点数输给对面最大点数
+//             }else if(s[smax] < c[cmax]){//最大点数赢不了对面最大点数，那就用己方最小点数去输，即t--
+//                 max+=1;
+//                 smin--;
+//                 cmax++;
+//             //以下是平手时，那就不能随便安排出最大点数，先看看最小点数有没有价值
+//             }else if(s[smin] > c[cmin]){//双方最小点数互比，能赢最好，防止后面浪费掉一次赢的机会
+//                 max+=3;
+//                 smin--;
+//                 cmin--;
+//                 //双方最小点数定位前移
+//             }else{//最小点数赢不了就直接去消耗掉对方最大点数
+//                 max += (s[smin] == c[cmax]) ? 2:1 ;//此时最大者相等，最小者最多只能乞求相等，不然就只能输
+//                 smin--;
+//                 cmax++;
+//             }
+//         }
+//         cmin=smin=n-1;//最小点数定位器
+//         cmax=smax=0;//最大点数定位器
+//         while(smax <= smin){
+//             if(s[smax] < c[cmax]){//最大点数能输就输
+//                 min+=1;
+//                 smax++;
+//                 cmax++;
+//             //每次运行都要出一次胜负，若最大的都大于对面了，那它只能输给对面最小点数
+//             }else if(s[smax] > c[cmax]){
+//                 min+=3;
+//                 cmin--;
+//                 smax++;
+//             //若最大者平局
+//             }else if(s[smin] < c[cmin]){//比双方最小者，能输就输，
+//                 min+=1;
+//                 smin--;
+//                 cmin--;
+//             }else{//输不了就只能消耗对面最小点数,最多乞求打平，不然只能赢
+//                 min += (c[cmin] == s[smax]) ? 2:3 ;
+//                 smax++;
+//                 cmin--;
+//             }
+//         }
+//         printf("%d %d\n",max,min);
+//     }
+//     return 0;
+// }
+// 30 17 6  c
+// 22 11 5  s
+//max=7
+//min=3
+
+// 3
+// 92 83 71   cmax(从最大点数定位) , cmin(从最小点数定位)      
+// 95 87 74   smax(从最大点数定位) , cmax(从最小点数定位)           
+// 9 5
+
+// 95 87 74
+// 92 83 71
+//7 3
+// #include <stdio.h>
+// #include <stdlib.h>
+// #define SIZE 1100
+// int cmp(const void* a, const void* b){
+//     return *(int *)a < *(int *)b ;
+// }
+// int f(int c[], int s[], int n, int tag){
+//         int cmax,cmin,smax,smin,max=0,min=0;;
+//         cmin=smin=n-1;
+//         cmax=smax=0;
+//         while(smax <= smin){
+//             if(s[smax] > c[cmax]){
+//                 max+=3;
+//                 min+=1;
+//                 smax++;
+//                 cmax++;
+//             }else if(s[smax] < c[cmax]){
+//                 max+=1;
+//                 min+=3;
+//                 smin--;
+//                 cmax++;
+//             }else if(s[smin] > c[cmin]){
+//                 max+=3;
+//                 min+=1;
+//                 smin--;
+//                 cmin--;
+//             }else{
+//                 max += (s[smin] == c[cmax]) ? 2:1;
+//                 min += (s[smin] == c[cmax]) ? 2:3;
+//                 smin--;
+//                 cmax++;
+//             }
+//         }
+//         if(!tag) return max;
+//         else return min;
+// }
+// int main(){
+//     int n;
+//     while(scanf("%d",&n)!=EOF, n){
+//         int c[SIZE] ,s[SIZE] ,tag=1;
+//         for(int i=0;i<n;i++) scanf("%d",&c[i]);
+//         for(int i=0;i<n;i++) scanf("%d",&s[i]);
+//         qsort(c ,n ,sizeof(c[0]) ,cmp);
+//         qsort(s ,n ,sizeof(s[0]) ,cmp);
+//         printf("%d %d\n",f(c ,s ,n ,tag),f(s ,c ,n ,tag--));
+//     }
+//     return 0;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4994,92 +5279,80 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //     return 0;
 // }
 
+
+
 //12.智力大冲浪
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-struct game{
-    int t;
-    int pns;
-}games[550];
-int cmp(const void* a, const void* b){
-    int t1=((struct game *)a)->t , t2=((struct game *)b)->t ;
-    if(t1==t2){
-        return ((struct game *)a)->pns < ((struct game *)b)->pns ;
-    }else{
-        return t1>t2 ;
-    }
-}
+// #include<stdio.h>
+// #include<stdlib.h>
+// #include<string.h>
+// struct game{
+//     int t;
+//     int pns;
+// }games[550];
+// // int cmp(const void* a, const void* b){
+// //     int t1=((struct game *)a)->t , t2=((struct game *)b)->t ;
+// //     if(t1==t2){
+// //         return ((struct game *)a)->pns < ((struct game *)b)->pns ;
+// //     }else{
+// //         return t1>t2 ;
+// //     }
+// // }
 // int cmp(const void* a, const void* b){
 //         return ((struct game *)a)->pns < ((struct game *)b)->pns ;
 // }
-char ifnot[550]={'0'};
-int main(){
-    int money,n,cnt=1,sumofpns=0;
-    scanf("%d%d",&money,&n);
-    memset(ifnot+1, '0', n);
-    for(int i=1;i<=n;i++) scanf("%d",&games[i].t);
-    for(int i=1;i<=n;i++) scanf("%d",&games[i].pns);
-    qsort(games+1 ,n ,sizeof(games[0]) ,cmp);
-    for(int i=1;i<=n;i++){
-        int tag=0;
-        for(int j=games[i].t ; j ; j--){
-            if(ifnot[j]=='0'){
-                ifnot[j]='1';
-                tag=1;
-                break;
-            }
-        }
-        if(tag==0){
-            for(int j=n ; j ; j--){
-                if(ifnot[j]=='0'){
-                    ifnot[j]='1';
-                    break;
-                }
+// char ifnot[550]={'0'};
+// int main(){
+//     int money,n,cnt=1,sumofpns=0;
+//     scanf("%d%d",&money,&n);
+//     memset(ifnot+1, '0', n);
+//     for(int i=1;i<=n;i++) scanf("%d",&games[i].t);
+//     for(int i=1;i<=n;i++) scanf("%d",&games[i].pns);
+//     qsort(games+1 ,n ,sizeof(games[0]) ,cmp);
+//     for(int i=1;i<=n;i++){
+//         //从自己的时限开始往前排位置，因为已经经过了按罚钱数排序
+//         //同时间段的可以在前面选空位，哪怕后面的需要这个位置，但罚钱数不比他多
+//         int flag=0;
+//         for(int j=games[i].t ; j ; j--){
+//             if(ifnot[j]=='0'){
+//                 ifnot[j]='1';
+//                 flag=1;
+//                 break;
+//             }
+//         }
+//         if(flag==0){
+//             for(int j=n ; j ; j--){
+//                 if(ifnot[j]=='0'){
+//                     ifnot[j]='1';
+//                     break;
+//                 }
 
-            }
-            money-=games[i].pns;
-        }
-    }
+//             }
+//             money-=games[i].pns;
+//         }
+//     }
 
+//     //因为
+//     // for(int i=1;i<=n;i++){
+//     //     if(ifnot[ games[i].t ]=='0')    ifnot[ games[i].t ] = '1';
+//     //     else if(games[i].pns > games[cnt].pns){
+//     //         struct game temp = games[cnt] ;
+//     //         games[cnt]=games[i];
+//     //         games[i]=temp;
+//     //         cnt++;
+//     //     }
+//     // }
+//     // for(int i=1,j=1;i<=n;i++){
+//     //     if(games[i].t < j){
+//     //         money -= games[i].pns;
+//     //     }else{
+//     //         j++;
+//     //     }
+//     // }
+//     printf("%d\n",money);
+//     //规定时间前一刻只玩最贵的,其余同时间段替换前面罚钱少的
+//     return 0;
+// }
 
-    // for(int i=1;i<=n;i++){
-    //     if(ifnot[ games[i].t ]=='0')    ifnot[ games[i].t ] = '1';
-    //     else if(games[i].pns > games[cnt].pns){
-    //         struct game temp = games[cnt] ;
-    //         games[cnt]=games[i];
-    //         games[i]=temp;
-    //         cnt++;
-    //     }
-    // }
-    // for(int i=1,j=1;i<=n;i++){
-    //     if(games[i].t < j){
-    //         money -= games[i].pns;
-    //     }else{
-    //         j++;
-    //     }
-    // }
-    printf("%d\n",money);
-    //规定时间前一刻只玩最贵的,其余同时间段替换前面罚钱少的
-    return 0;
-}
-// 1    2   3    4  5  6  7
-//1   2   3    4    4   4   6
-//30 60   40  70   50   20  10
-//30+20
-//4   2   3    4   1    4   6 
-//50  60  40  70   30   20  10
-
-
-
-//if(ifnot[i]){
-//     ifnot[i]=0;
-//}else{
-//     
-//} 
-
-//1 2 3 4 4 4 6
-//
 
 
 //13.Find Amir
@@ -5099,6 +5372,42 @@ int main(){
 //10 1  9 2  8 3 7 4 6 5
 //1 2 3 4   1
 //
+
+
+
+
+
+
+
+
+
+
+/*二.DFS(深度优先搜索算法) ：
+1.基本概念：
+深度优先搜索算法（Depth First Search，简称DFS），一种用于遍历或搜索树或图的算法。 
+沿着树的深度遍历树的节点，尽可能深的搜索树的分支。当节点v的所在边都己被探寻过或者在搜寻时结点不满足条件，
+搜索将回溯到发现节点v的那条边的起始节点。整个进程反复进行直到所有节点都被访问为止。
+属于盲目搜索,最糟糕的情况算法时间复杂度为O(!n)。
+2.算法思想：
+回溯法（探索与回溯法）是一种选优搜索法，又称为试探法，按选优条件向前搜索，以达到目标。
+但当探索到某一步时，发现原先选择并不优或达不到目标，就退回一步重新选择，
+这种走不通就退回再走的技术为回溯法，而满足回溯条件的某个状态的点称为“回溯点”。
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -2458,6 +2458,265 @@
 // }
 
 
+/*93 菲波那契数列*/
+// #include <stdio.h>
+// int f(int n){
+//     int a=1,b=1,t;
+//     for(int i=3;i<=n;i++){
+//         t=b;
+//         b=a+b;
+//         a=t;
+//     }
+//     return b;
+// }
+// int main(){
+//     int T,n;
+//     scanf("%d",&T);
+//     while(T--){
+//         scanf("%d",&n);
+//         printf("%d\n",f(n));
+//     }
+//     return 0;
+// }
+
+
+/*94 Pell数列*/
+//当递归结果会越long long int时，题目一般会取模数，请注意一定是对结果取模
+// #include <stdio.h>
+// long long int func(int n){
+//     if(n==1) return 1;
+//     long long int a1=1,a2=2,an;
+//     for(int i=3;i<=n;i++){
+//         an=(2*a2+a1)%32767;
+//         a1=a2;
+//         a2=an;
+//     }
+//     return a2;
+// }
+// int main(){
+//     int T,n;
+//     scanf("%d",&T);
+//     while(T--){
+//         scanf("%d",&n);
+//         printf("%lld\n",func(n));
+//     }
+//     return 0;
+// }
+
+
+
+/*95 公约公倍*/
+// #include <stdio.h>
+// int gcd(int m, int n){//m*n/gcd = lcm
+//     int res=0,max= m>n ? m:n;
+//     for(int i=1;i<=max;i++){
+//         if(m%i==0&&n%i==0) res=i;
+//     }
+//     return res;
+// }
+// int main(){
+//     int m,n;
+//     scanf("%d%d",&m,&n);
+//     printf("%d %d\n",gcd(m,n),m*n/gcd(m,n));
+//     return 0;
+// }
+
+
+
+/*96 欧拉函数*/
+// #include <stdio.h>
+// int gcd(int m, int n){
+//     int res=0,max= m>n ? m:n;
+//     for(int i=1;i<=max;i++){
+//         if(m%i==0&&n%i==0) res=i;
+//     }
+//     return res;
+// }
+// int f(int n){
+//     int cnt=0;
+//     for(int i=1;i<=n;i++){
+//         if(gcd(n,i)==1){
+//             cnt++;
+//         }
+//     }
+//     return cnt;
+// }
+// int main(){
+//     int t;
+//     scanf("%d",&t);
+//     while(t--){
+//         int n;
+//         scanf("%d",&n);
+//         printf("%d\n",f(n));
+//     }
+//     return 0;
+// }
+
+
+
+
+
+
+
+/*97 分解因数*/
+/*
+   81
+  9 9
+3 3 3 3
+
+   72
+  8 9
+2 4  3 3
+
+   20
+2 10
+4 5
+2 2 5
+
+*/
+#include <stdio.h>
+#include <math.h>
+int cnt=0;
+void f(int n, int r){
+    if(n==1) cnt++;
+    for(int i=r;i<=n;i++){
+        if(n%i==0){
+            f(n/i,i);
+        }
+    }
+}
+int main(){
+    int T,n;
+    scanf("%d",&T);
+    while(T--){
+        scanf("%d",&n);
+        if(n==2) printf("1\n");
+        else{
+            f(n,2);
+            printf("%d\n",cnt);
+            cnt=0;
+        }
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+/*98 亲和数（函数）*/
+// #include <stdio.h>
+// #include <math.h>
+// int amicable_number(int a, int b){
+//     int suma=0,sumb=0;
+//     for(int i=1;i<a;i++){
+//         if(a%i==0) suma+=i;
+//     }
+//     for(int i=1;i<b;i++){
+//         if(b%i==0) sumb+=i;
+//     }
+//     if(suma==b&&sumb==a) return 1;
+//     else return 0;
+// }
+// int main(){
+//     int t;
+//     scanf("%d",&t);
+//     while(t--){
+//         int m,n;
+//         scanf("%d%d",&m,&n);
+//         printf("%s",amicable_number(m,n)&&m!=n ? "YES\n" : "NO\n");
+//     }
+//     return 0;
+// }
+
+
+
+/*99 使用函数求余弦函数的近似值*/
+// #include <stdio.h>
+// #include <math.h>
+// int p(int i){
+//     int res=1;
+//     for(int t=1;t<=i;t++) res*=t;
+//     return res;
+// }
+// double mycos(double eps, double x){
+//     int flag=1,i=0;
+//     double res=0,t=1;
+//     while(t>=eps){
+//         t=pow(x,i)/p(i);
+//         res+=flag*t;
+//         flag=-flag;
+//         i+=2;
+//     }
+//     return res;
+// }
+// int main(){
+//     double eps,x;
+//     scanf("%lf%lf",&eps,&x);
+//     printf("cos(%.2lf) = %.6lf\n", x, mycos(eps,x));
+//     return 0;
+// }
+
+
+
+
+
+
+/*100 使用函数验证哥德巴赫猜想*/
+// #include <stdio.h>
+// #include <math.h>
+// int prime(int num){
+//     for(int j=2;j<=sqrt(num);j++){
+//         if(num % j == 0){
+//             return 0;
+//         }
+//     }
+//     return 1;
+// }
+// int main(){
+//     int m,n;
+//     scanf("%d%d",&m,&n);
+//     for(int j=m,cnt=1;j<=n;j++){
+//         for(int i=2;i<=j/2;i++){
+//             if(j>=6 && j%2==0 && prime(i) && prime(j-i)){
+//                 if(cnt%5==0) printf("%d=%d+%d\n",j,i,j-i);
+//                 else printf("%d=%d+%d, ",j,i,j-i);
+//                 cnt++;
+//                 break;
+//             }
+//         }
+//     }
+//     return 0;
+// }
+
+
+
+/*101 */
+
+
+
+
+
+/*102 */
+
+
+
+
+/*103 */
+
+
+
+
+
+/*104 */
+
+
+
+
+
+
  
 
 
@@ -2565,18 +2824,18 @@
 // int main(){
 //     int a,b,c,min,max,count=0;
 //     while(scanf("%d %d",&min,&max) != EOF){
-//         for(int i=min;i<=max;i++){
-//             a = i/100;
-//             b = i/10%10;
-//             c = i%10;
-//             if(i == a*a*a + b*b*b + c*c*c){
-//                 if(count++ > 0){
-//                     printf(" %d",i);
-//                 }else{
-//                     printf("%d",i);
-//                 }
-//             }
-//         }
+        // for(int i=min;i<=max;i++){
+        //     a = i/100;
+        //     b = i/10%10;
+        //     c = i%10;
+        //     if(i == a*a*a + b*b*b + c*c*c){
+        //         if(count++ > 0){
+        //             printf(" %d",i);
+        //         }else{
+        //             printf("%d",i);
+        //         }
+        //     }
+        // }
 //         if(count == 0){printf("no\n");}else{printf("\n");}
 //         count = 0;
 //     }
@@ -4439,104 +4698,137 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //两堵墙    3 5 9 6 10 12
 //三堵墙    7 14 11 13
 //四堵墙    15
-#include<stdio.h>
-#include<string.h>
-int wall[105][105];
-int dir[4][2] = {{0,-1}, {-1,0}, {0,1}, {1,0}};//依次判断四个方向, 西 北 东 南   1 2 4 8
-int dirjudge[4]={4,8,1,2};
-int square_max=1, ver, hor, rooms=0, temp=0, t=0;
-//dfs实现
-int dfs(int x, int y){
-    int nextX, nextY;
-    if(x>=0 && x<ver && y>=0 && y<hor && wall[x][y]>=0 && (!(wall[x][y] & dirjudge[t]))){//判断条件
-        wall[x][y] = -1;
-        for(int i=0; i<4 ; i++){
-            nextX = x + dir[i][0];
-            nextY = y + dir[i][1];
-            t=i;
-            dfs(nextX, nextY); 
-        }
-        temp++;
-        return 1;
-    }
-    return 0;
-}
-int main(){
-    memset(wall,0,sizeof(wall));
-    scanf("%d",&ver);   
-    scanf("%d",&hor);
-    for(int i=0;i<ver;i++){
-        for(int j=0;j<hor;j++){
-            scanf("%d",&wall[i][j]);
-            if(wall[i][j]==15){
-                rooms++;
-                wall[i][j]=-1;
-            }
-        }
-    }
-    for(int i=0;i<ver;i++){
-        for(int j=0;j<hor;j++){
-            if(dfs(i,j)) {
-                rooms++;
-                square_max = temp>square_max ? temp:square_max;
-                temp=0;
-            }
-        }
-    }
-    printf("%d\n%d\n",rooms,square_max);
-    return 0;
-}
-
-
-
-/*23 城堡问题*/
-
-
-/*24 城堡问题*/
-
-
-
-/*25 城堡问题*/
-
-
-/*26 波兰表达式*/
 // #include<stdio.h>
-// #include<math.h>
 // #include<string.h>
-// #define MAX 9999
-// char str[MAX][MAX];
-// double f(){
-
+// int wall[105][105];
+// int dir[4][2] = {{0,-1}, {-1,0}, {0,1}, {1,0}};//依次判断四个方向, 西 北 东 南   1 2 4 8
+// int dirjudge[4]={4,8,1,2};
+// int square_max=1, ver, hor, rooms=0, temp=0, t=0;
+// int dfs(int x, int y, int iffirst){
+//     int nextX, nextY;
+//     if(x>=0 && x<ver && y>=0 && y<hor && wall[x][y]>=0 && (iffirst || (!(wall[x][y] & dirjudge[t]))) ){//判断条件
+//         wall[x][y] = -1;
+//         for(int i=0; i<4 ; i++){
+//             nextX = x + dir[i][0];
+//             nextY = y + dir[i][1];
+//             t=i;
+//             dfs(nextX, nextY, 0); 
+//         }
+//         temp++;
+//         return 1;
+//     }
+//     return 0;
 // }
 // int main(){
-//     char res[]="* + 11.0 12.0 + 24.0 35.0";
-//     int index1=0,index2=0;
-//     for(int i=0;i<strlen(res);i++){
-//         char c = res[i];
-//         if(c!=10&&c!=13){
-//             if(c==32){
-//                 index1++;
-//                 index2=0;
-//             }else{
-//                 str[index1][index2++]=c;
-//                 printf("c=%c\n",c);
+//     scanf("%d%d",&ver, &hor);
+//     for(int i=0;i<ver;i++){
+//         for(int j=0;j<hor;j++)  scanf("%d",&wall[i][j]);
+//     }
+//     for(int i=0;i<ver;i++){
+//         for(int j=0;j<hor;j++){
+//             if(dfs(i,j,1)) {
+//                 rooms++;
+//                 square_max = temp>square_max ? temp:square_max;
+//                 temp=0;
 //             }
 //         }
 //     }
-//     for(int i=0;i<index1;i++){
-//         for(int j=0;j<index2;j++){
-//             printf("%c",str[i][j]);
-//         }
-//     }
-//     printf("\n%f",atof(str[0]));
+//     printf("%d\n%d\n",rooms,square_max);
 //     return 0;
 // }
 
 
-/*27 城堡问题*/
+
+/*23 两倍*/
+// #include <stdio.h>
+// int arr[16];
+// int main(){
+//     int n,index=0,cnt=0;
+//     while(scanf("%d",&n)!=EOF, n)   arr[index++] = n;
+//     for(int i=0;i<index;i++){
+//         for(int j=0;j<index;j++){
+//             if(arr[i]*2 == arr[j])  cnt++;
+//         }
+//     }
+//     printf("%d\n",cnt);
+//     return 0;
+// }
+
+
+
+/*24 打印所有水仙花数(三位数)*/
+// #include <stdio.h>
+// int main(){
+//     int a,b,c;
+//     for(int i=100;i<1000;i++){
+//         a = i/100;
+//         b = i/10%10;
+//         c = i%10;
+//         if(i == a*a*a + b*b*b + c*c*c)  printf("%d\n", i);
+//     }
+//     return 0;
+// }
+
+
+
+/*25 Biorhythms(生理周期)*/
+// #include <stdio.h>
+// int main(){
+//     int p,e,i,d,cnt=1;
+//     while(scanf("%d%d%d%d",&p,&e,&i,&d)!=EOF && (p!=-1||e!=-1||i!=-1||d!=-1)){
+//         p%=23;
+//         e%=28;
+//         i%=33;
+//         for(int m=d+1;;m++){//从后往前遍历是错的
+//             if((m-p)%23==0 && (m-e)%28==0 && (m-i)%33==0){
+//                 printf("Case %d: the next triple peak occurs in %d days.\n",cnt++,m-d);
+//                 break;
+//             } 
+//         }
+//     }
+//     return 0;
+// }
+
+
+
+/*26 波兰表达式*/
+// #include <stdio.h>
+// #include <stdlib.h>
+// double func(){//递归就是一种栈应用，本身波兰表达式就是契合 计算机实际解算表达式的方式
+//     char str[33000];
+//     scanf("%s",str);
+//     switch(str[0]){
+//         case '+':
+//             return func() + func();
+//         case '-':
+//             return func() - func();
+//         case '*':
+//             return func() * func();
+//         case '/':
+//             return func() / func();
+//         default:
+//             return atof(str);
+//     }
+// }
+// int main(){
+//     printf("%f\n",func());
+//     return 0;
+// }
+
+
+
+/*27 第一个C++程序*/
+// #include <iostream>
+// using namespace std;
+// int main(){
+//     cout << "Welcome to C++!";
+//     return 0;
+// }
+
 
 
 /*28 Number of letters*/
+//1.WA
 // #include <stdio.h>
 // #include <string.h>
 // typedef struct chartimes{
@@ -4558,7 +4850,6 @@ int main(){
 //                     if(i!=j) str[j]=32;
 //                 }
 //             }
-        
 //             if(chars[m].cnt>max.cnt){
 //                 max = chars[m];
 //             }
@@ -4575,10 +4866,33 @@ int main(){
 //         char str[1020];
 //         scanf("%s",str);
 //         ct tep = counter(str);
-
 //         printf("%c %d\n",tep.c,tep.cnt);
 //     }
-
+//     return 0;
+// }
+//2.AC
+// #include <stdio.h>
+// #include <string.h>
+// int main(){
+//     int n;
+//     scanf("%d",&n);
+//     while(n--){
+//         char str[1100];
+//         int cnt[30], max=0;
+//         char maxchar;
+//         memset(cnt, 0, sizeof(cnt));
+//         scanf("%s",str);
+//         for(int i=0;str[i]!='\0';i++){
+//             cnt[ str[i]-'a' ]++;
+//         }
+//         for(int i=0;i<27;i++){
+//             if(cnt[i] > max){
+//                 max = cnt[i];
+//                 maxchar = i + 'a';
+//             }
+//         }
+//         printf("%c %d\n",maxchar,max);
+//     }
 //     return 0;
 // }
 
@@ -4587,7 +4901,221 @@ int main(){
 
 
 
+/*29 肿瘤面积*/
+// #include <stdio.h>
+// int arr[1005][1005];
+// int main(){
+//     int n,a1,a2,b1,b2;
+//     scanf("%d",&n);
+//     for(int i=0,iffirst=1;i<n;i++){
+//         for(int j=0;j<n;j++){
+//             scanf("%d",&arr[i][j]);
+//             if(arr[i][j]==0){
+//                 if(iffirst){
+//                     iffirst=0;
+//                     a1=i;
+//                     b1=j;
+//                 }
+//                 a2=i;
+//                 b2=j;
+//             }
+//         }    
+//     }
+//     printf("%d\n",(a2-a1-1)*(b2-b1-1));
+//     return 0;
+// }
 
+
+
+/*30 Hangover*/
+// #include <stdio.h>
+// int main(){
+//     double n;
+//     while(scanf("%lf",&n)!=EOF ,n){
+//         double sum=0;
+//         int i=0;
+//         do{
+//             i++;
+//             sum += 1.0/(i+1);
+//         }while(sum<n);
+//         printf("%d card(s)\n",i);
+//     }
+//     return 0;
+// }
+
+
+
+/*31 求阶乘的和*/
+// #include <stdio.h>
+// int t=1;
+// int sum(int n){
+//     if(n>=2){
+//         t*=n--;
+//         sum(n);
+//     }
+//     return t;
+// }
+// int main(){
+//     int n,s=0;
+//     scanf("%d",&n);
+//     for(int i=1;i<=n;i++){
+//         s+=sum(i);
+//         t=1;
+//     }
+//     printf("%d\n",s);
+//     return 0;
+// }
+
+
+
+/*32 八进制到十进制*/
+// #include <stdio.h>
+// #include <math.h>
+// int a,arr[200001];
+// int main(){
+//     scanf("%d",&a);
+//     int index=0,sum=0;
+//     while(a>0){
+//         arr[index++] = a%10;
+//         a/=10;
+//     }
+//     for(int i=0;i<index;i++){
+//         sum += arr[i]*pow(8,i);
+//     }
+//     printf("%d\n",sum);
+//     return 0;
+// }
+
+
+
+/*33 大整数(高精度)乘法*/
+// #include <stdio.h>
+// #include <string.h>
+// char n1[205],n2[205];
+// int a[40000],b[40000],res[40002];
+// int main(){//'0' = 48
+//     scanf("%s%s",&n1,&n2);
+//     memset(res, 0, sizeof(res));
+//     int len1=strlen(n1), len2=strlen(n2);
+//     for(int i=0;i<len1;i++) a[i] = n1[len1-1-i] - '0';
+//     for(int i=0;i<len2;i++) b[i] = n2[len2-1-i] - '0';
+//     for(int i=0;i<len1;i++){
+//         for(int j=0;j<len2;j++){
+//             res[i+j] += a[i]*b[j];
+//             res[i+j+1] += res[i+j]/10;//十位数进位至下一个索引位置
+//             res[i+j] %= 10;//在该位结果只保留个位数
+//         }
+//     }
+//     for(int i=len1+len2-1;i>=0;i--){
+//         if(i==len1+len2-1 && res[i]==0) continue;//高位数可能太小，导致在最高位产生前导零
+//         printf("%d",res[i]);
+//     }
+//     //  1  2  3
+//     //X 4  5  6
+//     //  6 12 18
+//    //5 10 15  0
+//  //4 8 12  0  0
+//     return 0;
+// }
+
+
+
+/*34 骑车与走路 */
+// #include <stdio.h>
+// int main(){
+//     int n;
+//     scanf("%d",&n);
+//     while(n--){
+//         double t1=50,t2=0,s;
+//         scanf("%lf",&s);
+//         t1+=s/3.0;
+//         t2+=s/1.2;
+//         if(t1==t2) printf("All\n");
+//         else printf("%s\n",t1<t2?"Bike":"Walk");
+//     }
+//     return 0;
+// }
+
+
+
+/*35 垂直直方图*/
+// #include <stdio.h>
+// #include <string.h>
+// char str[400];
+// int sum[30];
+// int main(){
+//     int max=0,n=4;
+//     memset(sum, 0, sizeof(sum));
+//     while(n--){
+//         gets(str);
+//         for(int i=0;i<strlen(str);i++){
+//             if(str[i]>='A' && str[i]<='Z')  sum[str[i] - 'A']++;//这里判断语句一定要写，不能只判定是否为空格，否则RE
+//         }
+//     }
+//     for(int i=0;i<26;i++)   max = max>sum[i] ? max:sum[i];
+//     for(int i=max;i>0;i--){
+//         for(int j=0;j<26;j++){
+//             if(sum[j]>=i)   printf(" *"+!j);
+//             else    printf("  "+!j);
+//         }
+//         printf("\n");
+//     }
+//     printf("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z");
+//     return 0;
+// }
+
+
+
+/*36 计算2的N次方*/
+// #include <stdio.h>
+// #include <string.h>
+// int main(){
+//     int n, res[35]={1}, index=1;
+//     memset(res+1, 0, sizeof(res)-sizeof(res[0]));
+//     scanf("%d",&n);
+//     for(int i=0;i<n;i++){
+//         int temp=0;//这里必须另设变量储存，否则会出错
+//         for(int j=0;j<index;j++){
+//             temp += res[j]*2;
+//             res[j] = temp%10;
+//             temp /= 10;
+//         }
+//         if(temp!=0) res[index++]+=temp;//其实直接 =1 即可，因为撑死都是进1
+//     }
+//     while(index) printf("%d",res[--index]);
+//     return 0;
+// }
+
+
+
+/*37 数字三角形*/
+// #include <stdio.h>
+// int a[105][105];//a[i][j] -> a[i+1][j]或a[i+1][j+1]
+
+// int main(){
+//     int n;
+//     scanf("%d",&n);
+//     for(int i=0;i<n;i++){
+//         for(int j=0;j<i+1;j++){
+//             scanf("%d",&a[i][j]);
+//         }
+//     }
+    
+
+
+
+
+
+
+
+//     return 0;
+// }
+
+
+
+/*38 Number of letters*/
+
+/*39 Number of letters*/
 
 
 
@@ -5382,7 +5910,68 @@ int main(){
 
 
 
-/*二.DFS(深度优先搜索算法) ：
+
+/*二.递归*/
+
+//1.爬楼梯(斐波那契数列)
+// #include <stdio.h>
+// int f(int n){
+//     if(n==1) return 1;
+//     else if(n==2) return 2;
+//     return f(n-1)+f(n-2);
+// }
+// int main(){
+//     int n;
+//     while(scanf("%d",&n)!=EOF){
+//         printf("%d\n",f(n));
+//     }
+//     return 0;
+// }
+
+
+//2.Function Run Fun
+//记忆性搜索 / 还可以用记忆宏定义后面一长串使代码简洁
+//记忆性搜索属于一种动态规划应用,某种意义上来说动态规划包含 记忆性dfs
+//即#define S((a),(b),(c)) save[a][b][c]!=0 ? save[a][b][c] : (save[a][b][c]=w(a,b,c));
+// #include <stdio.h>
+// int save[22][22][22]={0};
+// int w(int a,int b,int c){
+//     int res,res1,res2,res3,res4;
+//     if(a<=0 || b<=0 || c<=0){
+//         return 1;
+//     }else if(a>20 || b>20 || c>20){
+//         res = save[20][20][20]!=0 ? save[20][20][20] : (save[20][20][20]=w(20,20,20));
+//         return res;
+//     }else if(a<b && b<c){
+//         res1 = save[a][b][c-1]!=0 ? save[a][b][c-1] : (save[a][b][c-1]=w(a,b,c-1));
+//         res2 = save[a][b-1][c-1]!=0 ? save[a][b-1][c-1] : (save[a][b-1][c-1]=w(a,b-1,c-1));
+//         res3 = save[a][b-1][c]!=0 ? save[a][b-1][c] : (save[a][b-1][c]=w(a,b-1,c));
+//         return res1+res2-res3;
+//     }else{
+//         res1 = save[a-1][b][c]!=0 ? save[a-1][b][c] : (save[a-1][b][c]=w(a-1,b,c));
+//         res2 = save[a-1][b-1][c]!=0 ? save[a-1][b-1][c] : (save[a-1][b-1][c]=w(a-1,b-1,c));
+//         res3 = save[a-1][b][c-1]!=0 ? save[a-1][b][c-1] : (save[a-1][b][c-1]=w(a-1,b,c-1));
+//         res4 = save[a-1][b-1][c-1]!=0 ? save[a-1][b-1][c-1] : (save[a-1][b-1][c-1]=w(a-1,b-1,c-1));
+//         return res1+res2+res3-res4;
+//     }
+// }
+// int main(){
+//     int a,b,c;
+//     while(scanf("%d%d%d",&a,&b,&c)!=EOF){
+//         if(a==-1&&b==-1&&c==-1) break;
+//         printf("w(%d, %d, %d) = %d\n",a,b,c,w(a,b,c));
+//     }
+//     return 0;
+// }
+
+
+
+
+
+
+
+
+/*三.DFS(深度优先搜索算法) ：
 1.基本概念：
 深度优先搜索算法（Depth First Search，简称DFS），一种用于遍历或搜索树或图的算法。 
 沿着树的深度遍历树的节点，尽可能深的搜索树的分支。当节点v的所在边都己被探寻过或者在搜寻时结点不满足条件，
@@ -5392,16 +5981,115 @@ int main(){
 回溯法（探索与回溯法）是一种选优搜索法，又称为试探法，按选优条件向前搜索，以达到目标。
 但当探索到某一步时，发现原先选择并不优或达不到目标，就退回一步重新选择，
 这种走不通就退回再走的技术为回溯法，而满足回溯条件的某个状态的点称为“回溯点”。
+3.基本模板:
+int check(参数)
+{
+    if(满足条件)
+        return 1;
+    return 0;
+}
+ 
+void dfs(int step)//若要计数则int dfs(...),并在满足check条件内return 1,在条件外return 0
+{
+        判断边界
+        {
+            相应操作
+        }
+        尝试每一种可能
+        {
+               满足check条件
+               标记
+               继续下一步dfs(step+1)
+               恢复初始状态（回溯的时候要用到）
+        }
+}
+
+int main()
+{
+    ...
+    一般需要循环所有点，线性的单层循环，二维图类就双层循环，并调用dfs,若要计数则if(dfs(...)) cnt++;
+    return 0;
+}
 */
 
 
 
+//1.城堡问题
+// #include<stdio.h>
+// #include<string.h>
+// int wall[105][105];
+// int dir[4][2] = {{0,-1}, {-1,0}, {0,1}, {1,0}};//依次判断四个方向, 西 北 东 南   1 2 4 8
+// int dirjudge[4]={4,8,1,2};
+// int square_max=1, ver, hor, rooms=0, temp=0, t=0;
+// int dfs(int x, int y, int iffirst){
+//     int nextX, nextY;
+//     if(x>=0 && x<ver && y>=0 && y<hor && wall[x][y]>=0 && (iffirst || (!(wall[x][y] & dirjudge[t]))) ){//判断条件
+//         wall[x][y] = -1;
+//         for(int i=0; i<4 ; i++){
+//             nextX = x + dir[i][0];
+//             nextY = y + dir[i][1];
+//             t=i;
+//             dfs(nextX, nextY, 0); 
+//         }
+//         temp++;
+//         return 1;
+//     }
+//     return 0;
+// }
+// int main(){
+//     scanf("%d%d",&ver, &hor);
+//     for(int i=0;i<ver;i++){
+//         for(int j=0;j<hor;j++)  scanf("%d",&wall[i][j]);
+//     }
+//     for(int i=0;i<ver;i++){
+//         for(int j=0;j<hor;j++){
+//             if(dfs(i,j,1)) {
+//                 rooms++;
+//                 square_max = temp>square_max ? temp:square_max;
+//                 temp=0;
+//             }
+//         }
+//     }
+//     printf("%d\n%d\n",rooms,square_max);
+//     return 0;
+// }
 
 
 
 
 
 
+
+
+/*四.动态规划
+动态规划是一种算法思想：将原问题分解为子问题，再依据子问题的解得出原问题的解，理解“最优子结构”和“重复子问题”。
+*/
+
+
+//1.The Triangle
+// #include <stdio.h>
+// int a[105][105],res[105][105]={0};//a[i][j] -> a[i+1][j]或a[i+1][j+1]
+// int n;
+// int max(int a,int b){
+//     return a>b?a:b;
+// }
+// int dp(int i, int j){//具有记忆性，一条路径中会有已经搜过的最大子路径（可能还没到底）
+//     if(i==n) {//判断终止:到树根
+//         res[i][j]=a[i][j];
+//         return res[i][j];
+//     }else{
+//         if(!res[i][j])  res[i][j]=a[i][j]+max(dp(i+1,j),dp(i+1,j+1));//每次都走最大路径
+//         return res[i][j];
+//     }
+// }
+// int main(){
+//     scanf("%d",&n);
+//     for(int i=1;i<=n;i++){
+//         for(int j=1;j<=i;j++)   scanf("%d",&a[i][j]);
+//     }
+//     printf("%d\n",dp(1,1));
+//     return 0;
+// }
 
 
 
@@ -5422,7 +6110,6 @@ int main(){
 
 /*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑算法↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 
 

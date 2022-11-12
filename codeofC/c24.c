@@ -6130,29 +6130,28 @@ int main()
 
 
 //1.The Triangle
-// #include <stdio.h>
-// int a[105][105],res[105][105]={0};//a[i][j] -> a[i+1][j]或a[i+1][j+1]
-// int n;
-// int max(int a,int b){
-//     return a>b?a:b;
-// }
-// int dp(int i, int j){//具有记忆性，一条路径中会有已经搜过的最大子路径（可能还没到底）
-//     if(i==n) {//判断终止:到树根
-//         res[i][j]=a[i][j];
-//         return res[i][j];
-//     }else{
-//         if(!res[i][j])  res[i][j]=a[i][j]+max(dp(i+1,j),dp(i+1,j+1));//每次都走最大路径
-//         return res[i][j];
-//     }
-// }
-// int main(){
-//     scanf("%d",&n);
-//     for(int i=1;i<=n;i++){
-//         for(int j=1;j<=i;j++)   scanf("%d",&a[i][j]);
-//     }
-//     printf("%d\n",dp(1,1));
-//     return 0;
-// }
+#include <stdio.h>
+int a[105][105],res[105][105]={0};//a[i][j] -> a[i+1][j]或a[i+1][j+1]
+int n;
+int max(int a,int b){
+    return a>b?a:b;
+}
+int dp(int i, int j){//具有记忆性，一条路径中会有已经搜过的最大子路径（可能还没到底）
+    if(i==n) {//判断终止:到树根
+        return a[i][j];
+    }else{
+        if(!res[i][j])  res[i][j]=a[i][j]+max(dp(i+1,j),dp(i+1,j+1));//每次都走最大路径
+        return res[i][j];
+    }
+}
+int main(){
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=i;j++)   scanf("%d",&a[i][j]);
+    }
+    printf("%d\n",dp(1,1));
+    return 0;
+}
 
 
 

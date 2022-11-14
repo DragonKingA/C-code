@@ -2519,7 +2519,7 @@
 //     scanf("%d%d",&m,&n);
 //     printf("%d %d\n",gcd(m,n),m*n/gcd(m,n));
 //     return 0;
-// }
+// }//
 
 
 

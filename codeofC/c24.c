@@ -6002,10 +6002,98 @@ i=9时，9作为原数45的因数，经历f(1,9)计算自身使cnt++(cnt=3)，对5X9的一次计算
 // }
 
 
-//6.汉诺塔问题
+
+//*6.汉诺塔问题
+// #include <stdio.h>
+// void moveOne(int num, char init, char dest){//每一移动一次都打印一次
+//     printf("%d:%c->%c\n",num,init,dest);
+// }
+// void move(int num, char init, char temp, char dest){
+//     if(num == 1) moveOne(1,init,dest);
+//     else{
+//         move(num-1,init,dest,temp);
+//         moveOne(num,init,dest);
+//         move(num-1,temp,init,dest);
+//     }
+// }
+// int main(){
+//     char a,b,c;
+//     int n;
+//     scanf("%d %c %c %c",&n,&a,&b,&c);
+//     move(n,a,b,c);
+//     return 0;
+// }
 
 
 
+//*7.The Sierpinski Fractal 分治?
+/*
+定义一个地图，输入范围到10，那么地图大小是 1024*2048
+对每个输入，可以提前知道要画的范围，比如7 要画的范围是 128*256，对此范围递归，则有三个子范围要画
+对每个子范围都有三个子范围，递归终点是基础图形(base)
+n==1   /\                 
+	  /__\				  
+									
+n==2   /\
+ 	  /__\
+	 /\  /\
+	/__\/__\
+	
+n==3   /\
+      /__\
+     /\  /\
+    /__\/__\
+   /\      /\
+  /__\    /__\
+ /\  /\  /\  /\
+/__\/__\/__\/__\
+
+能够发现，第n个形态都是由3个第n-1个形态组成（中上，左下，右下），每个形态左下角定为坐标(x,y)
+因此从第n个开始递归，递归边界为n==1
+*/
+// #include <stdio.h>
+// #include <math.h>
+// #include <string.h>
+// char base[2][5]={
+//     " /\\",
+//     "/__\\"
+// };
+// char str[1500][2500];
+// void SF(int x, int y, int sz){
+//     if(sz == 2){
+//         for(int i=y, ii=0; ii < 2 ; i++,ii++)
+//             for(int j=x, jj=0; jj < 4 ; j++,jj++)
+//                 str[i][j] = base[ii][jj];
+//         return;
+//     }
+//     //中上，左下，右下,每组占两行,占四列(故跨列时sz不用 >>1 来除2)
+//     SF(x + (sz>>1), y, sz>>1);
+//     SF(x, y + (sz>>1), sz>>1);
+//     SF(x + sz, y + (sz>>1), sz>>1);
+// }
+// int main(){
+//     int n;
+//     while(scanf("%d",&n)!=EOF, n){
+//         memset(str, 0, sizeof(str));
+//         // int sz = (2<<n);
+//         int sz = (int)(pow(2, n));
+//         SF(0, 0, sz);
+//         for(int i=0 ; i<sz ; i++){
+//             int j = sz << 1;
+//             for(; !str[i][j]; j--);//从最后每行最后开始，遍历到有字符为止,即确定每行末尾索引位置j
+//                 for(int k = 0; k <= j; k++)
+//                     printf("%c", str[i][k] ? str[i][k] : ' ');//0就打空格，否则打出字符
+//             printf("\n");
+//         }
+//         printf("\n");
+//     }
+//     return 0;
+// }
+
+
+
+
+//???8.算24
 
 
 

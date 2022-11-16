@@ -2426,7 +2426,7 @@
 //         }
 //     }
 //     if(ifnot){
-//         printf("None\n");
+//         printf("No perfect number\n");
 //     }
 //     return 0;
 // }
@@ -2655,24 +2655,179 @@
 
 
 
-/*101 */
+/*101 空心的数字金字塔*/
+// #include <stdio.h>
+// void hollow_pyramid(int n){
+//     int block=1;
+//     for(int i=1;i<=n;i++){
+//         if(n==2&&i==2) {printf("2 2");break;}
+//         for(int j=1;j<=n-i;j++) printf(" ");
+//         if(i!=n){
+//             printf("%d",i);
+//             if(i>=2){
+//                 for(int k=1;k<=block;k++)   printf(" ");
+//                 printf("%d",i);
+//                 block+=2;
+//             }
+//         }else{
+//             for(int k=1;k<=block+2;k++){
+//                 printf("%d",i);
+//                 if(n==1) break;
+//             }
+//         }
+//         printf("\n");
+//     }
+// }
+// int main(){
+//     int n;
+//     scanf("%d",&n);
+//     hollow_pyramid(n);
+//     return 0;
+// }
+
+
+
+/*102 使用函数求素数和*/
+// #include <stdio.h>
+// #include <math.h>
+// int a[500];
+// int index1;
+// int isPrime(int num){
+//     if(num % 2 == 0 && num!=2 || num==1) return 0;
+//     for(int j=2;j<=sqrt(num);j++){
+//         if(num % j == 0){
+//             return 0;
+//         }
+//     }
+//     return 1;
+// }
+// int Prime_sum(int m,int n){
+//     int sum=0;
+//     if(m>n){
+//         int t=n;
+//         n=m;
+//         m=t;
+//     }
+//     for(int i=m;i<=n;i++){
+//         if(isPrime(i)==1){
+//             a[index1]=i;
+//             index1++;
+//             sum+=i;
+//         }
+//     }
+//     return sum;
+// }
+// int main(){
+//     int m,n,s;
+//     scanf("%d %d",&m,&n);
+//     printf("Sum of ( ");
+//     s=Prime_sum(m,n);
+//     for(int i=0;i<index1;i++) printf("%d ",a[i]);
+//     printf(") = %d",s);
+//     return 0;
+// }
+
+
+
+/*103 使用函数统计指定数字的个数*/
+// #include <stdio.h>
+// int countdigit(int number, int digit){
+//     int num = number>0 ? number:(-number);
+//     int cnt=0;
+//     if(num==0&&digit==0) cnt++;
+//     while(num>0){
+//         if(num%10 == digit) cnt++;
+//         num/=10; 
+//     }
+//     return cnt;
+// }
+// int main(){
+//     int num,digit;
+//     scanf("%d %d",&num,&digit);
+//     printf("Number of digit %d in %d: %d",digit,num,countdigit(num,digit));
+//     return 0;
+// }
+
+
+
+/*104 使用函数输出指定范围内的Fibonacci数*/
+// #include <stdio.h>
+// int GetFib(int n){
+//     long long int a,b,c;
+//     a=b=c=1;
+//     while(n>2){
+//         c=a+b;
+//         b=a;
+//         a=c;
+//         n--;
+//     }
+//     return c;
+// }
+// int main(){
+//     int m,n,i=1,t,ifnot=1;
+//     scanf("%d %d",&m,&n);
+//     while((t=GetFib(i))<m){i++;ifnot=0;}
+//     if(t<=n){
+//         printf("%d",t);
+//         while((t=GetFib(++i))<=n){
+//             printf(" %d"+ifnot,t);
+//         }
+//     }else{
+//         printf("No Fibonacci number");
+//     }
+//     return 0;
+// }
+
+
+
+/*105 勤奋的大佬（循环）*/
+// #include <stdio.h>
+// int main(){
+//     int T,x,y,n;
+//     scanf("%d",&T);
+//     while(T--){
+//         int cnt=0;
+//         scanf("%d %d %d",&x,&y,&n);
+//         for(int i=1;i<=n;i++){
+//             if(i%(x+1)==0 && i%(y+1)==0)   cnt+=36;
+//         }
+//         printf("%d\n",cnt);
+//     }
+//     return 0;
+// }
+
+
+
+/*106 字符合并*/
+// #include <stdio.h>
+// #include <string.h>
+// char a[1<<10];
+// int main(){
+//     int n,cnt=0,ifnot=1;
+//     scanf("%d",&n);
+//     getchar();
+//     gets(a);
+//     for(int i=0; cnt<n && a[i]!='#' ;i++){
+//         if(a[i]>='a' && a[i]<='z'){
+//             printf("%c", a[i]);
+//             cnt++;
+//         }else if(a[i]>='A' && a[i]<='Z'){
+//             printf(" %c" + ifnot, a[i]);
+//             cnt += 2-ifnot;
+//             ifnot = 0;
+//         }
+//     }
+//     return 0;
+// }
+
+
+
+/*107 */
 
 
 
 
-
-/*102 */
-
-
-
-
-/*103 */
-
-
-
-
-
-/*104 */
+/*108 */
 
 
 
@@ -6093,8 +6248,52 @@ n==3   /\
 
 
 
-//???8.算24
-
+//*8.算24
+// #include <stdio.h>
+// #include <math.h>
+// double a[4];
+// /*
+// 5 5 5 1
+// 正确的路径为:
+// 1. 1/5           b={?, ?, 0.2}
+// 2. 5 - 1/5       b={?, 4.8}
+// 3. 5 * (5 - 1/5) b={24}
+// */
+// const double eps = 1e-8;
+// int ifzero(double x){
+//     return fabs(x) <= eps;
+//     //浮点型数据不能直接用 x == 0 判断是否为0,必须要以精度为准，若小于精度则视为0，因为浮点数无论如何都没有确切的0，则实际恒不等于0
+// }
+// int cal(const double a[], int len){
+//     if(len == 1) return ifzero(a[0]-24) ? 1:0;
+//     double b[4];
+//     int lenb = len-2;
+//     for(int i=0;i<len;i++){
+//         for(int j=0;j<len;j++){
+//             if(i==j) continue;
+//             for(int k=0,l=0; k<len ; k++){
+//                 if(k!=i && k!=j) b[l++] = a[k];
+//             }
+//             for(int k=0;k<4;k++){
+//                 switch(k){
+//                     case 0: b[lenb] = a[i] + a[j]; break;
+//                     case 1: b[lenb] = a[i] - a[j]; break;
+//                     case 2: b[lenb] = a[i] * a[j]; break;
+//                     default:
+//                         if(!ifzero(a[j])) b[lenb] = a[i] / a[j];
+//                 }
+//                 if(cal(b,len-1)) return 1;               
+//             }
+//         }
+//     }
+//     return 0;
+// }
+// int main(){
+//     while(scanf("%lf %lf %lf %lf",&a[0],&a[1],&a[2],&a[3])!=EOF, a[0]&&a[1]&&a[2]&&a[3]){
+//         printf(cal(a,4) ? "YES\n" : "NO\n");
+//     }
+//     return 0;
+// }
 
 
 

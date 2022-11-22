@@ -2822,15 +2822,258 @@
 
 
 
-/*107 */
+/*107 简化的插入排序*/
+// #include <stdio.h>
+// #include <stdlib.h>
+// int a[15];
+// int cmp(const void *a, const void *b)
+// {
+//     return *(int *)a > *(int *)b;
+// }
+// int main()
+// {
+//     int n;
+//     scanf("%d",&n);
+//     for(int i=0;i<=n;i++)    scanf("%d",&a[i]);
+//     qsort(a, n+1, sizeof(a[0]), cmp);
+//     for(int i=0;i<=n;i++)    printf("%d ",a[i]);
+//     return 0;
+// }
+
+
+
+/*108 交换最小值和最大值*/
+// #include <stdio.h>
+// int main()
+// {
+//     int n,a[15],min=0,max=0,maxindex=0,minindex=0;
+//     scanf("%d",&n);
+//     for(int i=0;i<n;i++)
+//     {
+//         scanf("%d",&a[i]);
+//         if(i==0) min=max=a[0];
+//         else
+//         {
+//             if(a[i] < min)    {minindex = i; min=a[i];}
+//             else if(a[i] > max)     {maxindex = i; max=a[i];}
+//         }
+//     }
+//     int t = a[0];
+//     a[0] = a[minindex];
+//     a[minindex] = t;
+//     if(maxindex == 0) maxindex=minindex;
+//     t = a[n-1];
+//     a[n-1] = a[maxindex];
+//     a[maxindex] = t;
+//     for(int i=0;i<n;i++) printf("%d ", a[i]);
+//     return 0;
+// }
+
+
+
+/*109 求一批整数中出现最多的各位数字*/
+// #include <stdio.h>
+// int a[10] = {0,0,0,0,0,0,0,0,0,0};
+// void count(int x)
+// {
+//     if(x>0)
+//     {
+//         a[x%10]++;
+//         count(x/10);
+//     }
+// }
+// int main()
+// {
+//     int T,x,maxcnt=0;
+//     scanf("%d",&T);
+//     while(T--)
+//     {
+//         scanf("%d",&x);
+//         if(x==0) a[0]++;
+//         else count(x);
+//     }
+//     for(int i=0;i<10;i++)  maxcnt = a[i] > maxcnt ? a[i] : maxcnt;
+//     printf("%d:",maxcnt);
+//     for(int i=0;i<10;i++)
+//         if(a[i] == maxcnt) printf(" %d",i);
+//     return 0;
+// }
+
+
+
+/*110 找出不是两个数组共有的元素*/
+// #include <stdio.h>
+// int main()
+// {
+//     int N[2],a[2][25],res[20],resindex=0;
+//     for(int i=0;i<2;i++)
+//     {
+//         scanf("%d",&N[i]);
+//         for(int j=0;j<N[i];j++) scanf("%d",&a[i][j]);
+//     }
+//     for(int i=0;i<2;i++)
+//     {
+//         for(int j=0;j<N[i];j++)
+//         {
+//             int ifnot=1;
+//             for(int k=0;k<N[1-i];k++)
+//                 if(a[i][j]==a[1-i][k])
+//                 {
+//                     ifnot=0;
+//                     break;
+//                 }
+//             if(ifnot)   res[resindex++]=a[i][j];
+//         }
+//     }
+//     for(int i=0,num=res[0];i<resindex;i++)
+//     {
+//         if(res[i]!=num || !i)   printf(" %d" + !i, res[i]);
+//         for(int j=i+1;j<resindex;j++) res[j] = (res[i] == res[j] ? num : res[j]); 
+//     }
+//     return 0;
+// }
+
+
+
+/*111 求整数序列中出现次数最多的数*/
+// #include <stdio.h>
+// int main()
+// {
+//     int N,num[1000];
+//     scanf("%d",&N);
+//     for(int i=0;i<N;i++)    scanf("%d",&num[i]);
+//     int maxnum=num[0],maxcnt=1;
+//     for(int i=0;i<N-1;i++)
+//     {
+//         int tcnt=1;
+//         for(int j=i+1;j<N;j++)
+//             if(num[j] == num[i])    tcnt++;
+//         if(maxcnt<tcnt)
+//         {
+//             maxcnt = tcnt;
+//             maxnum = num[i];
+//         }
+//     }
+//     printf("%d %d",maxnum,maxcnt);
+//     return 0;
+// }
+
+
+
+/*112 组个最小数*/
+// #include <stdio.h>
+// int main()
+// {
+//     int a[10];
+//     for(int i=0,iffirst=0;i<10;i++)
+//     {
+//         scanf("%d",&a[i]);
+//         if(i>0 && a[i]>0 && !(iffirst++))
+//         {
+//             printf("%d",i);
+//             a[i]--;
+//         }
+//     }
+//     for(int i=0;i<10;i++)
+//         while(a[i]--) printf("%d",i);
+//     return 0;
+// }
+
+
+
+/*113 奖金提成*/
+// #include <stdio.h>
+// int f(int x)
+// {
+//     int res=0;
+//     switch(x/10000)
+//     {
+//         case 0:
+//         case 1: res=x/10;break;
+//         case 2: res=f(10000) + (x-10000)*75/1000;break;
+//         case 3:
+//         case 4: res=f(20000) + (x-20000)*5/100;break;
+//         case 5:
+//         case 6: res=f(40000) + (x-40000)*3/100;break;
+//         case 7:
+//         case 8: 
+//         case 9:
+//         case 10: res=f(60000) + (x-60000)*15/1000;break;
+//         default: res=f(100000) + (x-100000)/100;break;
+//     }  
+//     return res;
+// }
+// int main()
+// {
+//     int T;
+//     scanf("%d",&T);
+//     while(T--)
+//     {
+//         int x;
+//         scanf("%d",&x);
+//         printf("%d\n",f(x));
+//     }
+//     return 0;
+// }
+
+
+
+/*114 扫雪挑战*/
+#include <stdio.h>
+#include <stdlib.h>
+int cmp(const void *a, const void *b)
+{
+    return ((int *)a)[1] > ((int *)b)[1];
+}
+int a[1000005][2];
+int main()
+{
+    int d,Q,min=0;
+    scanf("%d%d",&d,&Q);
+    for(int i=0;i<Q;i++) 
+    {
+        scanf("%d %d",&a[i][0],&a[i][1]);
+        if(!i) min = a[i][0]>0 ? (a[i][0]-1):0;
+        else min = min<a[i][0] ? min:(a[i][0]-1);
+    }
+    int res=min;
+    if(min>d || Q==0) res=d;
+    else
+    {
+        qsort(a, Q, sizeof(a[0]), cmp);
+        for(int i=0;i<Q;i++)
+        {
+            if(i==Q-1) res += d>a[i][1] ? (d-a[i][1]):0;
+            else res += a[i+1][0]>a[i][1] ? (a[i+1][0]-a[i][1]-1):0;
+        }
+    }
+    printf("%d",res);
+    return 0;
+}
+/*
+1   100
+ 101    300
+   250    350 
+
+*/
 
 
 
 
-/*108 */
 
 
 
+
+/*115 */
+
+
+
+
+
+
+
+
+/*116 */
 
 
 

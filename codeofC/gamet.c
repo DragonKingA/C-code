@@ -5,7 +5,7 @@
 //  X   O   O
 //  O   X   
 //  X   O   X
-//X赢
+// X赢
 
 //https://blog.csdn.net/weixin_29938387/article/details/117045031?ops_request_misc=&request_id=&biz_id=102&utm_term=c%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E7%AA%97%E5%8F%A3%E6%8C%89%E9%92%AE&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-117045031.142^v47^pc_rank_34_default_23,201^v3^control&spm=1018.2226.3001.4187
 
@@ -262,7 +262,7 @@ int WINAPI  WinMain(
     //==============================================================================================================================================
 
     //创建 窗口类名szClassName
-    static TCHAR szClassName[]=TEXT("HelloWin");//所有的字符串都是用TCHAR来定义的
+    static TCHAR szClassName[]=TEXT("");//所有的字符串都是用TCHAR来定义的
     HWND hwnd;//定义 窗口句柄名为hwnd
     MSG msg;//消息
     WNDCLASS wndclass;//创建一个窗口类

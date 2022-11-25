@@ -156,13 +156,3 @@ LRESULT CALLBACK WndProc(
 //出现编译错误情况，在左侧.vscode中修改tasks.json
 //在"args"下加入"-mwindows"即可
 //或编译时应当输入gcc c19.c -mwindows或gcc c19.c -o a -mwindows
-
-
-
-
-
-
-
-// void main(){
- 
-// }

@@ -3019,48 +3019,55 @@
 
 
 /*114 …®—©ÃÙ’Ω*/
-#include <stdio.h>
-#include <stdlib.h>
-int cmp(const void *a, const void *b)
-{
-    return ((int *)a)[1] > ((int *)b)[1];
-}
-int a[1000005][2];
-int main()
-{
-    int d,Q,min=0;
-    scanf("%d%d",&d,&Q);
-    for(int i=0;i<Q;i++) 
-    {
-        scanf("%d %d",&a[i][0],&a[i][1]);
-        if(!i) min = a[i][0]>0 ? (a[i][0]-1):0;
-        else min = min<a[i][0] ? min:(a[i][0]-1);
-    }
-    int res=min;
-    if(min>d || Q==0) res=d;
-    else
-    {
-        qsort(a, Q, sizeof(a[0]), cmp);
-        for(int i=0;i<Q;i++)
-        {
-            if(i==Q-1) res += d>a[i][1] ? (d-a[i][1]):0;
-            else res += a[i+1][0]>a[i][1] ? (a[i+1][0]-a[i][1]-1):0;
-        }
-    }
-    printf("%d",res);
-    return 0;
-}
-/*
-1   100
- 101    300
-   250    350 
-
-*/
-
-
-
-
-
+//WA
+// #include <stdio.h>
+// #include <stdlib.h>
+// int cmp(const void *a, const void *b)
+// {
+//     return ((int *)a)[1] - ((int *)b)[1];
+// }   
+// int a[10005][2];
+// int main()
+// {
+//     int d,Q,min = 0;
+//     scanf("%d%d", &d, &Q);
+//     for(int i=0;i<Q;i++) 
+//     {
+//         scanf("%d %d", &a[i][0], &a[i][1]);
+//         if(!i) min = a[i][0] > 0 ? (a[i][0]-1):0;
+//         else min = min < a[i][0] ? min:(a[i][0]-1);
+//     }
+//     int res = min;
+//     if(min > d || Q == 0) res = d;
+//     else
+//     {
+//         qsort(a, Q, sizeof(a[0]), cmp);
+//         for(int i=0;i<Q;i++)
+//         {
+//             if(i == Q-1) res += d > a[i][1] ? (d - a[i][1]):0;
+//             else res += a[i+1][0] > a[i][1] ? (a[i+1][0] - a[i][1] - 1):0;
+//         }
+//     }
+//     printf("%d", res);
+//     return 0;
+// }
+//AC
+// #include <stdio.h>
+// #include <string.h>
+// int a[1000000]={0};
+// int main()
+// {
+//     int d,Q,res=0;
+//     scanf("%d%d", &d, &Q);
+//     for(int i=0,lef=0,rig=0;i<Q;i++) 
+//     {
+//         scanf("%d %d", &lef, &rig);
+//         for(int i=lef;i<=rig;i++) a[i]=1;
+//     }
+//     for(int i=1;i<=d;i++) res += !a[i];
+//     printf("%d", res);
+//     return 0;
+// }
 
 
 

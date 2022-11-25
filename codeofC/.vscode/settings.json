@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "c27resizablearray.h": "c",
+        "aclui.h": "c",
+        "math.h": "c"
+    }
+}

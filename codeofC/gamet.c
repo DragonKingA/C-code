@@ -220,6 +220,7 @@ void Judge_And_MsgBoxFeedback(int ret,HWND hwnd,int time_s){//hwnd为弹窗所有者（
             strcat(strDraw,strO_t);
             MessageBox(hwnd,strDraw,TEXT("Judge:"),MB_OK);
         }
+
         //判断最终胜家，然后输出最终统计结果
         //MessageBox(hwnd,TEXT(""),TEXT("结果统计:"),MB_OK);
         //初始化游戏参数
@@ -447,6 +448,7 @@ LRESULT CALLBACK WndProc(
                     &rect,
                     DT_SINGLELINE | DT_CENTER | DT_VCENTER            
                 );                                          */
+                
             //终止绘制
             EndPaint(hwnd,&ps);
             return 0;

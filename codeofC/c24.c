@@ -3072,15 +3072,208 @@
 
 
 /*115 */
+// #include <stdio.h>
+// int a[15][15],T,n;
+// int main()
+// {
+//     scanf("%d",&T);
+//     while(T--)
+//     {
+//         int ifnot=1;
+//         scanf("%d",&n);
+//         for(int i=0;i<n;i++)
+//             for(int j=0;j<n;j++)
+//                 scanf("%d",&a[i][j]);
+//         for(int i=1;i<n;i++)
+//             for(int j=0;j<i;j++)
+//                 if(a[i][j]!=0) ifnot=0;
+//         if(ifnot&&n>1) printf("YES\n");
+//         else printf("NO\n");
+//     }
+//     return 0;
+// }
+
+
+
+/*116 杨辉三角*/
+// #include <stdio.h>
+// int a[20][20]={{0}};
+// int main()
+// {
+//     int n;
+//     scanf("%d",&n);
+//     for(int i=0;i<n;i++)
+//     {
+//         for(int j=1;j<=n-i-1;j++) printf(" ");
+//         for(int j=0;j<=i;j++)
+//         {
+//             if(j==0||i==j) a[i][j]=1;
+//             if(i>=2&&j>=1) a[i][j]=a[i-1][j-1]+a[i-1][j];
+//             printf("%4d",a[i][j]);
+//         }
+//         printf("\n");
+//     }
+//     return 0;
+// }
+
+
+
+/*117 找鞍点*/
+// #include <stdio.h>
+// int a[20][20],m,n;
+// int main()
+// {
+//     scanf("%d%d",&m,&n);
+//     m=m%n;
+//     for(int i=1;i<=n;i++)
+//         for(int j=6;j<n+6;j++)
+//              scanf("%d",&a[i][j]);
+//     for(int i=1;i<=n;i++)
+//         for(int j=n+5,h=1;j>=n&&h<=m;j--,h++)
+//             a[i][6-h]=a[i][j];
+//     for(int i=1;i<=n;i++)
+//     {
+//         for(int j=0;j<=n+5-m;j++)
+//             if(a[i][j]!=0) printf("%d ",a[i][j]);
+//         printf("\n");
+//     }
+//     return 0;
+// }
+
+
+
+/*118 螺旋方阵*/
+// #include<stdio.h>
+// int a[15][15];
+// int main(){
+//    int N,m=1;
+//    int i,j,k,z,c;
+//    scanf("%d",&N);
+//    for(c=0;c<=N/2+1;c++){
+//         for(i=c;i<=N-c-1;i++){
+//             a[c][i]=m++;
+//         }
+//         for(j=c+1;j<N-c;j++){
+//            a[j][N-c-1]=m++;
+//         }
+//         for(k=N-c-2;k>=c;k--){
+//             a[N-c-1][k]=m++;
+//         }
+//         for(z=N-c-2;z>=c+1;z--){
+//             a[z][c]=m++;
+//         }
+//    }
+//    for(i=0;i<N;i++){
+//         for(j=0;j<N;j++){
+//             printf("%3d",a[i][j]);
+//         }
+//         printf("\n");
+//    }
+// }
+
+//2*n-1次
+
+
+/*119 简易连连看*/
+// #include<stdio.h>
+// char a[15][15],ch;
+// int main(){
+//     int N,n,x1,x2,y1,y2,sum=0,judge=0,alldown=0;
+//     scanf("%d",&N);
+//     getchar();
+//     for(int i=1;i<=2*N;i++)
+//         for(int j=1;j<=2*N;j++)
+//             while((ch=getchar())!=32&&ch!='\n') a[i][j]=ch;
+//     scanf("%d",&n);
+//     for(int i=1;i<=n;i++)
+//     {
+//         int ifnot=0;
+//         scanf("%d%d%d%d",&x1,&y1,&x2,&y2);
+//         if(alldown) continue;
+//         if(a[x1][y1]==a[x2][y2]&&a[x1][y1]!='*')
+//         {
+//             a[x1][y1]=a[x2][y2]='*';
+//             ifnot=1;
+//             judge++;
+//             if(judge==N*N*2) {printf("Congratulations!\n");alldown=1;}
+//         }
+//         else
+//         {
+//             sum++;
+//             printf("Uh-oh\n");
+//         }
+//         if(sum==3)
+//         {
+//             printf("Game Over\n");
+//             alldown=1;
+//         }
+//         if(!alldown&&ifnot)
+//             for(int i=1;i<=2*N;i++)
+//             {
+//                 for(int j=1;j<=2*N;j++) printf(" %c"+!(j-1),a[i][j]);
+//                 printf("\n");
+//             }
+//     }
+//     return 0;
+// }
+
+
+
+/*120 打印单月日历*/
+// #include <stdio.h>
+// int main()
+// {
+//     int day,beg;
+//     scanf("%d%d",&day,&beg);
+//     for(int i=1;i<beg;i++) printf("   "+!i);
+//     for(int i=1,ifnot=1;i<=day;i++)
+//     {
+//         printf(" %2d"+ifnot,i);
+//         ifnot=0;
+//         if((i+beg-1)%7==0) 
+//         {
+//             ifnot=1;
+//             printf("\n");
+//         }
+//     }
+//     return 0;
+// }
+
+
+
+/*121 最大乘积连续子序列*/
+// #include<stdio.h>
+// int main()
+// {
+//     int n,a[10],M,max=-1;
+//     scanf("%d",&n);
+//     for(int i=1;i<=n;i++) scanf("%d",&a[i]);
+//     for(int i=1;i<=n;i++)
+//     {
+//         M=a[i];
+//         for(int j=i+1;j<=n;j++)
+//         {
+//             M*=a[j];
+//             if(M>max) max=M;
+//         }
+//     }
+//     printf("%d",(max<0?0:max));
+//     return 0;
+// }
+
+
+
+
+/*122 */
 
 
 
 
 
+/*123 */
 
 
 
-/*116 */
 
 
 
@@ -5377,11 +5570,11 @@ while(scanf("%d",&n)==1)	赋值失败，跳出循环
 //         if(i==len1+len2-1 && res[i]==0) continue;//高位数可能太小，导致在最高位产生前导零
 //         printf("%d",res[i]);
 //     }
-//     //  1  2  3
-//     //X 4  5  6
-//     //  6 12 18
-//    //5 10 15  0
-//  //4 8 12  0  0
+//      1  2  3
+//     X 4  5  6
+//      6 12 18
+//    5 10 15  0
+//  4 8 12  0  0
 //     return 0;
 // }
 

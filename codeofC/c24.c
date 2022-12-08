@@ -3264,17 +3264,266 @@
 
 
 
-/*122 */
+/*122 英文字母替换加密*/
+// #include <stdio.h>
+// #include <string.h>
+// #include <ctype.h>
+// char str[30000];
+// int main()
+// {
+//     gets(str);
+//     for(int i=0;i<strlen(str);i++)
+//     {
+//         char ch = str[i];
+//         if(isalpha(ch))
+//         {
+//             if(isupper(ch))
+//             {
+//                 str[i]=tolower(ch);
+//                 if(ch=='Z') str[i]='a';
+//                 else str[i] += 1;
+//             }else
+//             {
+//                 str[i]=toupper(ch);
+//                 if(ch=='z') str[i]='A';
+//                 else str[i] += 1;
+//             }
+//         }
+//     }
+//     puts(str);
+//     return 0;
+// }
+
+
+
+/*123 近似求PI*/
+// #include <stdio.h>
+// int main()
+// {
+//     double eps, res = 1, sum = 1;
+//     int i = 1;
+//     scanf("%le", &eps);
+//     while(res >= eps)
+//     {
+//         double m = 1, n = 1;
+//         for(int j = 1; j <= i; j++) 
+//         {
+//             m *= j;
+//             n *= 3 + 2*(j-1);
+//         }
+//         res = m / n;
+//         sum += res;
+//         i++;
+//     }
+//     printf("PI = %.5f", 2*sum);
+//     return 0;
+// }
+
+
+
+/*124 简单计算器*/
+// #include <stdio.h>
+// #include <string.h>
+// #include <ctype.h>
+// #include <stdlib.h>
+// char s[30000];
+// int num[30000];
+// int main()
+// {
+//     gets(s);
+//     int ind = 0, flag = 0;
+//     for(int i = 0; i < strlen(s); i++)
+//     {
+//         if(isdigit(s[i]))
+//             num[ind++] = atoi(s + i);
+//         while(isdigit(s[i])) i++;
+//     }
+//     int i = 0, res = num[0];
+//     ind = 1;
+//     while(s[i] != '\0')
+//     {
+//         if(!isdigit(s[i]))
+//         {
+//             switch(s[i])
+//             {
+//                 case '+': res += num[ind++]; break;
+//                 case '-': res -= num[ind++]; break;  
+//                 case '*': res *= num[ind++]; break;
+//                 case '/':
+//                     if(num[ind] == 0)
+//                     {
+//                         flag = 1;
+//                         goto HERE;
+//                     }
+//                     else
+//                         res /= num[ind++];
+//                     break;
+//                 case '=': break;
+//                 default:
+//                     flag = 1;
+//                     goto HERE;
+//             }
+//         }
+//         i++;
+//     }
+//     HERE:
+//     if(flag) printf("ERROR");
+//     else printf("%d", res);
+//     return 0;
+// }
+
+
+
+/*125 单词首字母大写*/
+// #include <stdio.h>
+// #include <string.h>
+// #include <ctype.h>
+// char s[30000];
+// int main()
+// {
+//     gets(s);
+//     int i = 0;
+//     while(s[i]!='\0')
+//     {
+//         if(isalpha(s[i]))
+//             s[i] = toupper(s[i]);
+//         while(isalpha(s[i])) i++;
+//         i++;
+//     }
+//     puts(s);
+//     return 0;
+// }
+
+
+
+/*126 统计单词的长度*/
+// #include <stdio.h>
+// #include <string.h>
+// #include <ctype.h>
+// char s[30000];
+// int sum[30000];
+// int main()
+// {
+//     gets(s);
+//     int i = 0, ind = 0;
+//     while(s[i]!='\0')
+//     {
+//         int cnt = 0;
+//         while(s[i]!=' '&&s[i]!='\0') i++, cnt++;
+//         if(cnt != 0) sum[ind++] = cnt;
+//         i++;
+//     }
+//     if(ind != 0)
+//         for(int i=0;i<ind;i++)
+//             printf("%d ", sum[i]);            
+//     else 
+//         printf("0");
+//     return 0;
+// }
+
+
+
+/*127 使用函数输出水仙花数*/
+// #include <stdio.h>
+// int narcissistic(int i)
+// {
+//     int a,b,c,d;
+//     a = i/100%10, b = i/10%10, c = i%10, d = i/1000;
+//     if(d == 0 && i == a*a*a + b*b*b + c*c*c)
+//         return 1;
+//     else if(i == a*a*a*a + b*b*b*b + c*c*c*c + d*d*d*d)
+//         return 1;    
+//     return 0;
+// }
+// void print_n(int m, int n)
+// {
+//     for(int i=m+1;i<n;i++)
+//         if(narcissistic(i)) 
+//             printf("%d\n", i);
+// }
+// int main(){
+//     int min,max,count=0;
+//     scanf("%d %d",&min,&max);
+//     print_n(min, max);
+//     return 0;
+// }
+
+
+
+/*128 转化数为英文单词*/
+// #include <stdio.h>
+// char s1[][10] = {"\0","one","two","three","four","five","six","seven","eight","nine","\0","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"};
+// char s2[][10] = {"\0","ten","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"};
+// int main(){
+//     int x;
+//     scanf("%d", &x);
+//     if(x >= 10 && x <= 99)
+//     {
+//         if(x>10 && x<20) printf("%s", s1[x]);
+//         else if(x % 10 == 0) printf("%s", s2[x/10]);
+//         else printf("%s-%s", s2[x/10], s1[x%10]);
+//     }
+//     else
+//         printf("Illegal number!");
+//     return 0;
+// }
+
+
+
+/*129 碰撞检测*/
+// #include <stdio.h>
+// #include <math.h>
+// int max(int a, int b)
+// {
+//     return a > b ? a : b;
+// }
+// int main()
+// {
+//     int T;
+//     scanf("%d", &T);
+//     while(T--)
+//     {
+//         int x11,y11,x12,y12;
+//         int x21,y21,x22,y22;
+//         scanf("%d%d%d%d",&x11,&y11,&x12,&y12);
+//         scanf("%d%d%d%d",&x21,&y21,&x22,&y22);
+//         int disx1 = abs(x12 - x11), disx2 = abs(x22 - x21), disy1 = abs(y12 - y11), disy2 = abs(y22 - y21);
+//         if(max(abs(x21 - x12),abs(x22 - x11)) <= (disx1 + disx2) && max(abs(y21 - y12),abs(y22 - y11)) <= (disy1 + disy2))
+//             printf("YES\n");
+//         else
+//             printf("NO\n");
+//     }
+//     return 0;
+// }
+
+
+
+/*130 */
+
+
+
+
+/*131 */
+
+
+
+
+/*132 */
+
+
+
+/*133 */
+
+
+
+
+/*134 */
 
 
 
 
 
-/*123 */
-
-
-
-
+/*135 */
 
 
  
@@ -3384,18 +3633,18 @@
 // int main(){
 //     int a,b,c,min,max,count=0;
 //     while(scanf("%d %d",&min,&max) != EOF){
-        // for(int i=min;i<=max;i++){
-        //     a = i/100;
-        //     b = i/10%10;
-        //     c = i%10;
-        //     if(i == a*a*a + b*b*b + c*c*c){
-        //         if(count++ > 0){
-        //             printf(" %d",i);
-        //         }else{
-        //             printf("%d",i);
-        //         }
-        //     }
-        // }
+//         for(int i=min;i<=max;i++){
+//             a = i/100;
+//             b = i/10%10;
+//             c = i%10;
+//             if(i == a*a*a + b*b*b + c*c*c){
+//                 if(count++ > 0){
+//                     printf(" %d",i);
+//                 }else{
+//                     printf("%d",i);
+//                 }
+//             }
+//         }
 //         if(count == 0){printf("no\n");}else{printf("\n");}
 //         count = 0;
 //     }

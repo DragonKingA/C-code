@@ -279,7 +279,7 @@ int WINAPI  WinMain(
     wndclass.hInstance=hInstance;//当前窗口句柄
     wndclass.hIcon=LoadIcon(NULL,IDI_APPLICATION);//窗口图标样式
     wndclass.hCursor=LoadCursor(NULL,IDC_ARROW);//鼠标样式，cursor=光标
-    wndclass.hbrBackground=(HBRUSH)GetStockObject(WHITE_BRUSH);
+    wndclass.hbrBackground=(HBRUSH)GetStockObject(WHITE_BRUSH); //窗口背景画刷(白色) 该句可能导致运行错误，故不予使用
     wndclass.lpszMenuName=NULL;//窗口菜单
     wndclass.lpszClassName=szClassName;//窗口类名
     //注册操作
